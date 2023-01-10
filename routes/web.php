@@ -22,12 +22,12 @@ Route::post('login', [App\Http\Controllers\Login::class, 'login'])->name('login'
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/getUserName', [App\Http\Controllers\Register::class, 'getUserNameAjax'])->name('getUserName');
 
-Route::prefix('user')->group(function () 
+Route::prefix('user')->group(function ()
 {
-Route::middleware('auth')->group(function () 
+Route::middleware('auth')->group(function ()
 {
 Route::get('/dashboard', [App\Http\Controllers\UserPanel\Dashboard::class, 'index'])->name('user.dashboard');
- 
+
 // profile
 Route::get('/profile', [App\Http\Controllers\UserPanel\Profile::class, 'index'])->name('user.profile');
 Route::post('/update-profile', [App\Http\Controllers\UserPanel\Profile::class, 'profile_update'])->name('user.update-profile');
@@ -49,6 +49,14 @@ Route::any('/SubmitBuyFund', [App\Http\Controllers\UserPanel\AddFund::class, 'Su
 // invest
 Route::get('/invest', [App\Http\Controllers\UserPanel\Invest::class, 'index'])->name('user.invest');
 Route::post('/fundActivation', [App\Http\Controllers\UserPanel\Invest::class, 'fundActivation'])->name('user.fundActivation');
+Route::get('/DepositHistory', [App\Http\Controllers\UserPanel\Invest::class, 'invest_list'])->name('user.DepositHistory');
+
 // end invest
+
+// withdraw
+Route::get('/Withdraw', [App\Http\Controllers\UserPanel\Withdraws::class, 'index'])->name('user.Withdraw');
+Route::get('/WithdrawRequest', [App\Http\Controllers\UserPanel\Withdraws::class, 'WithdrawRequest'])->name('user.WithdrawRequest');
+
+
 });
 });
