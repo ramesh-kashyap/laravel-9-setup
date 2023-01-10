@@ -34,9 +34,9 @@ class Invest extends Controller
                 // 'user_id' => 'required',
                 'amount' => 'required|numeric|min:0',
                 'user_id' => 'required|exists:users,username',
-                'transaction_password' => 'required',
-
-
+                'transaction_password' => 'required',          
+                     
+              
             ]);
 
             if($validation->fails()) {
@@ -48,9 +48,9 @@ class Invest extends Controller
                $password= $request->transaction_password;
                if (Hash::check($password, $user->tpassword))
                {
-
+                 
                $balance=Auth::user()->FundBalance();
-
+                
               $user_detail=User::where('username',$request->user_id)->orderBy('id','desc')->limit(1)->first();
                 //   $icon_image = $request->file('icon_image');
                   // print_r($user_detail);die;
@@ -60,21 +60,21 @@ class Invest extends Controller
                     $invoice = substr(str_shuffle("0123456789"), 0, 7);
                   $last_package=($invest_check)?$invest_check->amount:0;
 
-
+              
                   if (!empty($invest_check) && $user_detail->active_status!="Inactive")
-                  {
+                  {                 
                     return Redirect::back()->withErrors(array('User Already Activated'));
                   }
 
-                //   if ($last_package>$request->amount)
+                //   if ($last_package>$request->amount) 
                 //   {
                 //     return Redirect::back()->withErrors(array('Please choose amount above last package &#8377; '.$request->amount));
                 //   }
-
+                     
                       // dd($balance);
                     if ($balance>=$request->amount)
                      {
-
+          
 
                    $data = [
                         'plan' => 1,
@@ -87,12 +87,12 @@ class Invest extends Controller
                         'sdate' => Date("Y-m-d"),
                         'active_from' => $user->username,
                         'walletType' =>1,
-
+                        
                     ];
                     $payment =  Investment::insert($data);
 
-
-                    if ($user_detail->active_status=="Pending")
+             
+                    if ($user_detail->active_status=="Pending") 
                     {
                      $user_update=array('active_status'=>'Active','adate'=>Date("Y-m-d H:i:s"),'package'=>$request->amount);
                       User::where('id',$user_detail->id)->update($user_update);
@@ -100,17 +100,17 @@ class Invest extends Controller
                     else
                     {
                       $user_update=array('active_status'=>'Active','package'=>$request->amount);
-                      User::where('id',$user_detail->id)->update($user_update);
+                      User::where('id',$user_detail->id)->update($user_update); 
                     }
 
-
+                    
                     add_direct_income($user_detail->id,$request->amount);
-
-
-
+                
+           
+            
              $notify[] = ['success', $user_detail->username.' User Activation  Submited successfully'];
              return redirect()->back()->withNotify($notify);
-
+      
               }
               else
               {
@@ -121,7 +121,7 @@ class Invest extends Controller
             {
               return Redirect::back()->withErrors(array('Invalid Transaction Password'));
             }
-
+                 
 
           }
            catch(\Exception $e){
@@ -133,34 +133,5 @@ class Invest extends Controller
               }
         }
 
-
-        public function invest_list(Request $request)
-        {
-
-            $user=Auth::user();
-
-            $limit = $request->limit ? $request->limit : 10;
-             $status = $request->status ? $request->status : null;
-             $search = $request->search ? $request->search : null;
-             $notes = Investment::where('user_id',$user->id);
-            if($search <> null && $request->reset!="Reset"){
-             $notes = $notes->where(function($q) use($search){
-               $q->Where('user_id_fk', 'LIKE', '%' . $search . '%')
-               ->orWhere('txn_no', 'LIKE', '%' . $search . '%')
-               ->orWhere('status', 'LIKE', '%' . $search . '%')
-               ->orWhere('type', 'LIKE', '%' . $search . '%')
-               ->orWhere('amount', 'LIKE', '%' . $search . '%');
-             });
-
-            }
-
-             $notes = $notes->paginate($limit)->appends(['limit' => $limit ]);
-
-           $this->data['search'] =$search;
-           $this->data['deposit_list'] =$notes;
-           $this->data['page'] = 'user.invest.DepositHistory';
-           return $this->dashboard_layout();
-
-        }
 
 }

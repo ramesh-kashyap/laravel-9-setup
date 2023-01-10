@@ -49,7 +49,11 @@
 
 </head>
 <style>
+<<<<<<< HEAD
+ 
+=======
 
+>>>>>>> 21ac9f4462982d86f53b69f2e1705a3f83a38b58
 .dark-layout label {
     color: #D0D2D6;
     margin-top: 19px;
@@ -122,7 +126,11 @@
                 <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">PERSONAL</span><i
                         data-feather="more-horizontal"></i>
                 </li>
+<<<<<<< HEAD
+             
+=======
 
+>>>>>>> 21ac9f4462982d86f53b69f2e1705a3f83a38b58
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span
                             class="menu-title text-truncate" data-i18n="Invoice">Profile</span></a>
                     <ul class="menu-content">
@@ -145,14 +153,32 @@
                     data-feather="dollar-sign"></i><span
                             class="menu-title text-truncate" data-i18n="File Manager">Add Fund</span></a>
                 </li>
+<<<<<<< HEAD
+              
+=======
 
+>>>>>>> 21ac9f4462982d86f53b69f2e1705a3f83a38b58
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="key"></i><span
                             class="menu-title text-truncate" data-i18n="Roles &amp; Permission">Buy Package</span></a>
                     <ul class="menu-content">
                         <li><a class="d-flex align-items-center" href="{{route('user.invest')}}"><i data-feather="circle"></i><span
                                     class="menu-item text-truncate" data-i18n="Roles">Package Activation</span></a>
                         </li>
+<<<<<<< HEAD
+                        <li><a class="d-flex align-items-center" href="ActiveHistory"><i data-feather="circle"></i><span
+                                    class="menu-item text-truncate" data-i18n="Permission">Activation History</span></a>
+                        </li>
+<<<<<<< HEAD
+                        <li><a class="d-flex align-items-center" href="DepositHistory"><i
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> 7e447c8 (add new)
+=======
+>>>>>>> 7e447c838534593ee01118e00472f764e71ea38c
+>>>>>>> a6e629789e3dca5a6ba19de4304093ff8920bdc5
                         <li><a class="d-flex align-items-center" href="{{ route('user.DepositHistory') }}"><i
+>>>>>>> 21ac9f4462982d86f53b69f2e1705a3f83a38b58
                                     data-feather="circle"></i><span class="menu-item text-truncate"
                                     data-i18n="Permission">Activation History</span></a>
                         </li>
