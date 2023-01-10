@@ -162,7 +162,7 @@
                             data-feather="credit-card"></i><span class="menu-title text-truncate"
                             data-i18n="eCommerce">Withdrawals</span></a>
                     <ul class="menu-content">
-                        <li><a class="d-flex align-items-center" href="PayoutINR"><i data-feather="circle"></i><span
+                        <li><a class="d-flex align-items-center" href="{{ route('user.Withdraw') }}"><i data-feather="circle"></i><span
                                     class="menu-item text-truncate" data-i18n="Shop">INR Withdrawal</span></a>
                         </li>
                         <li><a class="d-flex align-items-center" href="PayoutCrypto"><i data-feather="circle"></i><span

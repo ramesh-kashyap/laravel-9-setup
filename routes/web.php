@@ -55,8 +55,7 @@ Route::get('/DepositHistory', [App\Http\Controllers\UserPanel\Invest::class, 'in
 
 // withdraw
 Route::get('/Withdraw', [App\Http\Controllers\UserPanel\Withdraws::class, 'index'])->name('user.Withdraw');
-
-
+Route::get('/WithdrawRequest', [App\Http\Controllers\UserPanel\Withdraws::class, 'WithdrawRequest'])->name('user.WithdrawRequest');
 
 
 });

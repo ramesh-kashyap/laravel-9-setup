@@ -18,13 +18,15 @@ class Withdraws extends Controller
 {
     public function index()
     {
-
-
         $user=Auth::user();
         $bank = Bank::where('user_id',$user->id)->orderBy('id','desc')->get();
+        $this->data['bank'] = $bank;
+        $this->data['page'] = 'user.withdraw.WithdrawRequest';
+        return $this->dashboard_layout();
+    }
 
-           $this->data['bank'] = $bank;
-             $this->data['page'] = 'user.withdraw.withdraw-request';
-             return $this->dashboard_layout();
+    public function WithdrawRequest(Request $request)
+    {
+
     }
 }
