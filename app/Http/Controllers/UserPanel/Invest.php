@@ -157,7 +157,7 @@ class Invest extends Controller
              $notes = $notes->paginate($limit)->appends(['limit' => $limit ]);
 
            $this->data['search'] =$search;
-           $this->data['level_income'] =$notes;
+           $this->data['deposit_list'] =$notes;
            $this->data['page'] = 'user.invest.DepositHistory';
            return $this->dashboard_layout();
 
