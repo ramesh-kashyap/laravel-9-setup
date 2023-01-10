@@ -28,7 +28,7 @@
                                         <table class="dt-multilingual table">
                                             <thead>
                                                 <tr>
-                                                    <th class="wd-15p">#</th>
+                                                    <th class="wd-15p">#S.NO</th>
                                                     <th class="wd-15p">Amount</th>
 
 

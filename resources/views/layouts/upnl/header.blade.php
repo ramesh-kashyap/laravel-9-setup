@@ -183,21 +183,21 @@
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="users"></i><span
                             class="menu-title text-truncate" data-i18n="User">My Team</span></a>
                     <ul class="menu-content">
-                        <li><a class="d-flex align-items-center" href="DirectTeam"><i data-feather="circle"></i><span
+                        <li><a class="d-flex align-items-center" href="{{ route('user.referral-team') }}"><i data-feather="circle"></i><span
                                     class="menu-item text-truncate" data-i18n="List">Refferal</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" href="DownTeam"><i data-feather="circle"></i><span
+                        <li><a class="d-flex align-items-center" href="{{ route('user.my-reEntry') }}"><i data-feather="circle"></i><span
                                     class="menu-item text-truncate" data-i18n="List">My Team</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" href="AutoPoolBonus"><i data-feather="circle"></i><span
+                        <li><a class="d-flex align-items-center" href="{{ route('user.AutoPoolBonus') }}"><i data-feather="circle"></i><span
                                     class="menu-item text-truncate" data-i18n="FAQ">AutoPool Profit</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" href="levelteam"><i data-feather="circle"></i><span
-                                    class="menu-item text-truncate" data-i18n="List">Level Chart</span></a>
+                        <li><a class="d-flex align-items-center" href="{{ route('user.level-team') }}"><i data-feather="circle"></i><span
+                                    class="menu-item text-truncate" data-i18n="List">Level Team</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" href="clubteam"><i data-feather="circle"></i><span
+                        {{-- <li><a class="d-flex align-items-center" href="clubteam"><i data-feather="circle"></i><span
                                     class="menu-item text-truncate" data-i18n="List">Club Chart</span></a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="list"></i><span

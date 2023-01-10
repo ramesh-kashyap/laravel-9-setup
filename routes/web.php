@@ -18,6 +18,9 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
+
+
 Route::post('login', [App\Http\Controllers\Login::class, 'login'])->name('login');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/getUserName', [App\Http\Controllers\Register::class, 'getUserNameAjax'])->name('getUserName');
@@ -57,6 +60,14 @@ Route::get('/DepositHistory', [App\Http\Controllers\UserPanel\Invest::class, 'in
 Route::get('/Withdraw', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'index'])->name('user.WithdrawRequest');
 Route::post('/Withdraw-Request', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'Withdraw_Request'])->name('user.Withdraw-Request');
 Route::get('/WithdrawHistory', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'Withdraw_History'])->name('user.WithdrawHistory');
+// end withdraw
+
+//team
+Route::get('/referral-team', [App\Http\Controllers\UserPanel\Team::class, 'index'])->name('user.referral-team');
+Route::get('/my-reEntry', [App\Http\Controllers\UserPanel\Team::class, 'reentryAccount'])->name('user.my-reEntry');
+Route::get('/level-team', [App\Http\Controllers\UserPanel\Team::class, 'LevelTeam'])->name('user.level-team');
+Route::get('/AutoPoolBonus', [App\Http\Controllers\UserPanel\Team::class, 'AutoPoolBonus'])->name('user.AutoPoolBonus');
+//end team
 
 });
 });
