@@ -56,6 +56,7 @@
 
                                         </tbody>
                                     </table>
+                                    {{ $deposit_list->withQueryString()->links() }}
                                 </div>
                             </div>
                         </div>
