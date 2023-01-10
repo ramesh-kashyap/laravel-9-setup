@@ -164,16 +164,19 @@
                         <li><a class="d-flex align-items-center" href="{{route('user.invest')}}"><i data-feather="circle"></i><span
                                     class="menu-item text-truncate" data-i18n="Roles">Package Activation</span></a>
                         </li>
+<<<<<<< HEAD
                         <li><a class="d-flex align-items-center" href="ActiveHistory"><i data-feather="circle"></i><span
                                     class="menu-item text-truncate" data-i18n="Permission">Activation History</span></a>
                         </li>
 <<<<<<< HEAD
                         <li><a class="d-flex align-items-center" href="DepositHistory"><i
 =======
+=======
+>>>>>>> 7e447c8 (add new)
                         <li><a class="d-flex align-items-center" href="{{ route('user.DepositHistory') }}"><i
 >>>>>>> 21ac9f4462982d86f53b69f2e1705a3f83a38b58
                                     data-feather="circle"></i><span class="menu-item text-truncate"
-                                    data-i18n="Permission">Your Deposits</span></a>
+                                    data-i18n="Permission">Activation History</span></a>
                         </li>
                     </ul>
                 </li>
