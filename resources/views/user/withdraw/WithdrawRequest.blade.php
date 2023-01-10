@@ -37,7 +37,7 @@
                                                     <div class="form-group">
                                                         <label class="form-control-label">Transaction Password <span
                                                                 class="tx-danger">*</span></label>
-                                                        <input class="form-control" type="password" name="trnpwd"
+                                                        <input class="form-control" type="password" name="transaction_password"
                                                             placeholder="*************" required>
                                                     </div>
                                                 </div>

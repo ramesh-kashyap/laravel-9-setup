@@ -27,6 +27,35 @@ class Withdraws extends Controller
 
     public function WithdrawRequest(Request $request)
     {
+        $validation =  Validator::make($request->all(), [
+            'amount' => 'required|numeric|min:0',
+            'transaction_password' => 'required',
+
+
+        ]);
+
+        if($validation->fails()) {
+            Log::info($validation->getMessageBag()->first());
+
+            return Redirect::back()->withErrors($validation->getMessageBag()->first())->withInput();
+        }
+
+        if($validation->fails()) {
+            Log::info($validation->getMessageBag()->first());
+
+            return Redirect::back()->withErrors($validation->getMessageBag()->first())->withInput();
+        }
+
+        $user=Auth::user();
+        $password= $request->transaction_password;
+
+        if (Hash::check($password, $user->tpassword))
+        {
+
+            $balance=Auth::user()->FundBalance();
+
+            $user_detail=User::where('username',$request->user_id)->orderBy('id','desc')->limit(1)->first();
+        }
 
     }
 }
