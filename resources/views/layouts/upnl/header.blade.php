@@ -172,7 +172,11 @@
                         <li><a class="d-flex align-items-center" href="DepositHistory"><i
 =======
 =======
+<<<<<<< HEAD
 >>>>>>> 7e447c8 (add new)
+=======
+>>>>>>> 7e447c838534593ee01118e00472f764e71ea38c
+>>>>>>> a6e629789e3dca5a6ba19de4304093ff8920bdc5
                         <li><a class="d-flex align-items-center" href="{{ route('user.DepositHistory') }}"><i
 >>>>>>> 21ac9f4462982d86f53b69f2e1705a3f83a38b58
                                     data-feather="circle"></i><span class="menu-item text-truncate"
