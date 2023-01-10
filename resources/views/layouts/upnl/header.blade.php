@@ -152,12 +152,9 @@
                         <li><a class="d-flex align-items-center" href="{{route('user.invest')}}"><i data-feather="circle"></i><span
                                     class="menu-item text-truncate" data-i18n="Roles">Package Activation</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" href="ActiveHistory"><i data-feather="circle"></i><span
-                                    class="menu-item text-truncate" data-i18n="Permission">Activation History</span></a>
-                        </li>
                         <li><a class="d-flex align-items-center" href="{{ route('user.DepositHistory') }}"><i
                                     data-feather="circle"></i><span class="menu-item text-truncate"
-                                    data-i18n="Permission">Your Deposits</span></a>
+                                    data-i18n="Permission">Activation History</span></a>
                         </li>
                     </ul>
                 </li>
