@@ -63,7 +63,7 @@
 
 </head>
 <style>
-    <<<<<<< HEAD=======>>>>>>>21ac9f4462982d86f53b69f2e1705a3f83a38b58 .dark-layout label {
+    .dark-layout label {
         color: #D0D2D6;
         margin-top: 19px;
     }
@@ -297,23 +297,23 @@
                             data-feather="shopping-bag"></i><span class="menu-title text-truncate"
                             data-i18n="Authentication">Generate Tickets</span></a>
                     <ul class="menu-content">
-                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span
+                        <li><a class="d-flex align-items-center" href="{{ route('user.GenerateTicket') }}"><i data-feather="circle"></i><span
                                     class="menu-item text-truncate" data-i18n="Profile">Generate Ticket</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" href="Main2Shop"><i data-feather="circle"></i><span
+                        <li><a class="d-flex align-items-center" href="{{ route('user.SupportMessage') }}"><i data-feather="circle"></i><span
                                     class="menu-item text-truncate" data-i18n="FAQ">Support Message</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" href="ShoppingFundHistory"><i
-                                    data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="FAQ">Shop
-                                        View Message</span></a>
+                        <li><a class="d-flex align-items-center" href="{{ route('user.ViewMessage') }}"><i
+                                    data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="FAQ"> View Message</span></a>
                         </li>
                     </ul>
                 </li>
 
 
-                <li class=" nav-item"><a class="d-flex align-items-center" href="Logout"><i
-                            data-feather="log-out"></i><span class="menu-title text-truncate"
-                            data-i18n="file-text">Logout</span></a>
+                <li class=" nav-item">
+                        <a class="d-flex align-items-center" href="{{ route('logout') }}" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();"><i data-feather="log-out"></i>
+                        <span class="menu-title text-truncate" data-i18n="file-text">Logout</span></a>
                 </li>
             </ul>
         </div>
