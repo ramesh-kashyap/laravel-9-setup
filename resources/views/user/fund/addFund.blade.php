@@ -17,10 +17,10 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card">
-    
+
                             <form method="POST" action="#">
-                           
-    
+
+
                                 <div class="card-header">
                                     <div class="card-title">PAY HERE - USDT(TRC20)</div>
                                 </div>
@@ -28,24 +28,23 @@
                                     <div class="row">
                                         <div class="col-md-12 col-lg-12">
                                             <div class="card-body text-center">
-    
-                                                <img style="width: 200px"
-                                                                src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=TVYxRXXg7kMqL91Ys3pLRPtivg9p5VnpjS">
+
+                                                <img style="width: 200px" src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=TVYxRXXg7kMqL91Ys3pLRPtivg9p5VnpjS">
                                                 <div class="copy-tooltip text-center">
                                                     <input type="hidden" id="wallet-address" value="TVYxRXXg7kMqL91Ys3pLRPtivg9p5VnpjS">
                                                     <br>
                                                     <h6 id="wallet-add1" class="wallet-address">TVYxRXXg7kMqL91Ys3pLRPtivg9p5VnpjS</h6>
                                                     <a  class="btn btn-success copyToClipboard" onclick="copyFunctionwallet('wallet-address')">Copy Text</a>
                                                 </div>
-                                                
-                                            
+
+
                                             </div>
-    
-    
+
+
                                         </div>
                                     </div>
                                 </div>
-                               
+
                             </form>
                         </div>
                     </div>
@@ -114,7 +113,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table">
+                                    <table class="dt-multilingual table">
                                         <thead>
                                             <tr>
                                                 <th>#</th>
@@ -139,7 +138,7 @@
                                                 <td>&#36; {{$value->amount}}</td>
                                                 <td>{{$value->txn_no}}</td>
                                                 <td>{{date("D, d M Y h:i:s a", strtotime($value->created_at));}} </td>
-                                                <td><span
+                                                <td class="btn-success btn-sm"><span
                                                         class="badge badge-{{($value->status=='Approved')?'success':'danger'}}">{{$value->status}}</span>
                                                 </td>
 
@@ -160,18 +159,24 @@
     </section>
 </div>
 
-<script src="https://code.jquery.com//jquery-3.3.1.min.js"> </script>   
+<script src="https://code.jquery.com//jquery-3.3.1.min.js"> </script>
 <script>
-       
+
 
     function copyFunctionwallet(inputID) {
 
         var copyText = document.getElementById("wallet-address");
-  
+
         copyText.select();
 
         document.execCommand("copy");
         $(".copyToClipboard").html("Copied");
 
+         /* Alert the copied text */
+         alert("copied: "+copyText.value)
+
         }
         </script>
+
+
+

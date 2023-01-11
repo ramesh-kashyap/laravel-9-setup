@@ -1,4 +1,4 @@
-<?php 
+<?php
 use App\Models\GeneralSetting;
 use App\Models\User;
 use App\Models\Income;
@@ -30,14 +30,10 @@ $fullname=$data->name;
 
 $rname = $data->username;
 $user_mid = $data->id;
-  
+
 
       $cnt = 1;
 
-              
-      
-        
-        
               $Sposnor_id = User::where('id',$user_mid)->orderBy('id','desc')->first();
               $sponsor=$Sposnor_id->sponsor;
               if (!empty($sponsor))
@@ -51,34 +47,34 @@ $user_mid = $data->id;
                 $Sposnor_status =array();
                 $sp_status="Pending";
                 $Sposnor_cnt=0;
-           
+
               }
                  $percent=0;
-              
+
               $amount = $amt/100;
-            
+
              if($sp_status=="Active")
-               {  
-            
+               {
+
                 $pp = $amount*5;
-                      
-              
+
+
               }else
               {
                 $pp=0;
-              }               
-             
-              
+              }
+
+
               $user_mid = @$Sposnor_status->id;
               //echo $user_id;
              //die;
-              $idate = date("Y-m-d"); 
+              $idate = date("Y-m-d");
               $spid = @$Sposnor_status->id;
               $user_id_fk=$sponsor;
               //print_r($user_id_fk);die;
              // echo $cnt." ".$spid." ".$pp."<br>";
               if($spid>0 && $pp>0){
-                 
+
                  $data = [
                 'user_id' => $user_mid,
                 'user_id_fk' =>$Sposnor_status->username,
@@ -89,10 +85,10 @@ $user_mid = $data->id;
                 'rname' => $rname,
                 'fullname' => $fullname,
                 'ttime' => Date("Y-m-d"),
-                
+
             ];
             $user_data =  Income::firstOrCreate(['remarks' => 'Direct Bonus','rname'=>$rname,'amt'=>$amt],$data);
-              
+
        }
 
 return true;

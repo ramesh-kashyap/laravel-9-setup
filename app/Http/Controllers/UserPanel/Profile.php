@@ -14,7 +14,7 @@ use Validator;
 
 class Profile extends Controller
 {
-   
+
     public function index()
     {
     $user=Auth::user();
@@ -44,7 +44,7 @@ class Profile extends Controller
     return $this->dashboard_layout();
 
     }
-         
+
     public function profile_update(Request $request)
     {
         try{
@@ -53,7 +53,7 @@ class Profile extends Controller
                 'name' => 'required|string',
                 'country' => 'required|string',
                 'phone' => 'required|numeric'
-              
+
             ]);
             if($validation->fails()) {
                 Log::info($validation->getMessageBag()->first());
@@ -62,17 +62,17 @@ class Profile extends Controller
             }
             $user=Auth::user();
             $id=Auth::user()->id;
-         
+
             //check if email exist
           $post_array  = $request->all();
-          
+
           $update_data['name']=$post_array['name'];
           $update_data['phone']=$post_array['phone'];
           $update_data['email']=$post_array['email'];
-          $update_data['country']=$post_array['country'];       
+          $update_data['country']=$post_array['country'];
           $user =  User::where('id',$id)->update($update_data);
 
-    
+
         $notify[] = ['success', 'Profile Updated successfully'];
         return redirect()->back()->withNotify($notify);
 
@@ -144,7 +144,7 @@ class Profile extends Controller
             $user = Auth::user();
 
             if (!\Hash::check($data['old_password'], $user->tpassword))
-                return Redirect::back()->withErrors('Current Password is incorrect');
+                return Redirect::back()->withErrors('Current Transaction  Password is incorrect');
 
                 User::where('id', $user->id)->update(array(
                 'tpassword' => \Hash::make($data['password']),
@@ -152,8 +152,13 @@ class Profile extends Controller
                 'updated_at' => new \DateTime
             ));
 
-            return Redirect::Back()->with('messages', 'Transaction password updated successfully');
-        } catch (\Exception $e) {
+           // return Redirect::Back()->with('messages', 'Transaction password updated successfully');
+
+            $notify[] = ['success', 'Transaction password updated successfully'];
+            return redirect()->back()->withNotify($notify);
+
+        }
+         catch (\Exception $e) {
             return Redirect::back()->witherrors($e->getMessage())->withInput();
         }
 
@@ -171,17 +176,17 @@ class Profile extends Controller
                 'branch_name' => 'required',
                 'ifsc_code' => 'required',
                 'account_number' => 'required',
-                       
+
             ]);
             if($validation->fails()) {
                 Log::info($validation->getMessageBag()->first());
                 return Redirect::back()->withErrors($validation->getMessageBag()->first())->withInput();
             }
-           
+
             $id=Auth::user()->id;
-              
+
              $check_exist=Bank::where('user_id', $id)->first();
-             
+
              $bank_array=array(
 
                  'user_id'=>$id,
@@ -190,22 +195,22 @@ class Profile extends Controller
                  'branch_name'=>$request->branch_name,
                 //  'pancard_no'=>$request->pancard_no,
                  'account_no'=>$request->account_number,
-                 'ifsc_code'=>$request->ifsc_code,                
+                 'ifsc_code'=>$request->ifsc_code,
              );
-      
+
              if (!$check_exist)
              {
-            
+
               $bank=Bank::create($bank_array);
             }
             else
-            {        
+            {
                 $bank= Bank::where('user_id', $id)->update($bank_array);
             }
-        
-           
 
-    
+
+
+
         $notify[] = ['success', 'Bank Updated successfully'];
         return redirect()->back()->withNotify($notify);
 
@@ -216,11 +221,11 @@ class Profile extends Controller
             print_r($e->getMessage());
             die("hi");
             return back()->withErrors('error', $e->getMessage())->withInput();
-          
+
         }
     }
 
 
-    
+
 
 }
