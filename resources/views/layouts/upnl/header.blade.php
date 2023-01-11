@@ -13,7 +13,6 @@
         href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/{{ asset('') }}upnl/app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600"
         rel="stylesheet">
-
     <link rel="stylesheet" type="text/css"
         href="{{ asset('') }}upnl/app-assets/vendors/css/vendors.min.css">
     <link rel="stylesheet" type="text/css"
@@ -63,11 +62,18 @@
 
 </head>
 <style>
-    <<<<<<< HEAD=======>>>>>>>21ac9f4462982d86f53b69f2e1705a3f83a38b58 .dark-layout label {
+    .dark-layout label {
         color: #D0D2D6;
         margin-top: 19px;
     }
-
+    .dark-layout .form-control, .dark-layout select.form-select, .dark-layout textarea.form-control {
+    background-color: #283046;
+    color: #B4B7BD;
+}
+.waves-button-input {
+    margin: 0;
+    padding: 0.8em 0.9em;
+}
 </style>
 
 <body class="vertical-layout vertical-menu-modern  navbar-floating footer-static  " data-open="click"
