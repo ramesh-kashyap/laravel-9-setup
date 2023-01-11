@@ -265,6 +265,21 @@
                                     data-feather="circle"></i><span class="menu-item text-truncate"
                                     data-i18n="FAQ">Direct Booster Profit</span></a>
                         </li>
+                        <li><a class="d-flex align-items-center"
+                            href="{{ route('user.Boost-matrix') }}"><i
+                                data-feather="circle"></i><span class="menu-item text-truncate"
+                                data-i18n="FAQ">Booster Matrix</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center"
+                        href="{{ route('user.Growth-bonus') }}"><i
+                            data-feather="circle"></i><span class="menu-item text-truncate"
+                            data-i18n="FAQ">Growth Bonus</span></a>
+                </li>
+                <li><a class="d-flex align-items-center"
+                    href="{{ route('user.Appraisal-bonus') }}"><i
+                        data-feather="circle"></i><span class="menu-item text-truncate"
+                        data-i18n="FAQ">Appraisal Bonus</span></a>
+            </li>
                     </ul>
                 </li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
