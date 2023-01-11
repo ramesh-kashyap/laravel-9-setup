@@ -19,7 +19,7 @@
                     <div class="col-md-12 col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">AutoPool Income</h4>
+                                <h4 class="card-title">Booster Income</h4>
                             </div>
                             <div class="card-body">
                                 <div class="card-datatable">
@@ -28,13 +28,10 @@
                                             <tr>
                                                 <th>SR#</th>
 
+                                                <th>ID NO</th>
                                                 <th>Amount</th>
                                                 <th>Date</th>
-                                                <th>From ID </th>
-                                                <th>Autopool Round </th>
-                                                <th>Level </th>
                                                 <th>Remarks </th>
-                                                <th>Date</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -44,12 +41,9 @@
                                                 @foreach ($level_income as $value)
                                                     <tr>
                                                         <td data-label="No"><?= $cnt += 1 ?></td>
+                                                        <td data-label="user_id_fk">{{ $value->user_id_fk }}</td>
                                                         <td data-label="comm">$ {{ $value->comm }}</td>
                                                         <td data-label="created_at">{{ $value->created_at }}</td>
-                                                        <td data-label="rname">{{ $value->rname }}</td>
-                                                        <td data-label="amt"><?php echo "Pool ".$value->amt?></td>
-                                                        <td data-label="level">{{ $value->level }}</td>
-
                                                         <td data-label="remarks">{{ $value->remarks }}</td>
 
                                                     </tr>
