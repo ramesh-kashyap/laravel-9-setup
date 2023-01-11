@@ -58,8 +58,8 @@ Route::get('/DepositHistory', [App\Http\Controllers\UserPanel\Invest::class, 'in
 
 // withdraw
 Route::get('/Withdraw', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'index'])->name('user.WithdrawRequest');
-Route::post('/Withdraw-Request', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'Withdraw_Request'])->name('user.Withdraw-Request');
-Route::get('/WithdrawHistory', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'Withdraw_History'])->name('user.WithdrawHistory');
+Route::post('/WithdrawRequest', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'WithdrawRequests'])->name('user.WithdrawRequests');
+Route::get('/WithdrawHistory', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'WithdrawHistory'])->name('user.WithdrawHistory');
 // end withdraw
 
 //team

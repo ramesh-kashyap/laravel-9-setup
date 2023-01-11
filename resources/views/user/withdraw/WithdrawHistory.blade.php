@@ -30,10 +30,7 @@
                                                 <tr>
                                                     <th class="wd-15p">#S.NO</th>
                                                     <th class="wd-15p">Amount</th>
-
-
                                                     <th class="wd-15p">Date </th>
-
                                                     <th class="wd-15p">Transaction ID</th>
                                                     <th class="wd-15p">Status</th>
                                                 </tr>
@@ -46,9 +43,8 @@
                                                     <tr>
                                                         <td><?= $cnt += 1 ?></td>
                                                         <td>{{ ($value->amount) }}</td>
-
                                                         <td>{{ $value->created_at }}</td>
-                                                        <td>{{ $value->transaction_id }}</td>
+                                                        <td>{{ $value->txn_id }}</td>
                                                         <td>{{ $value->status }}</td>
 
                                                     </tr>
