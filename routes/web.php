@@ -84,3 +84,18 @@ Route::get('/Appraisal-bonus', [App\Http\Controllers\UserPanel\Bonus::class, 'ap
 
 });
 });
+
+
+// admin 
+
+Route::prefix('admin')->group(function () {
+
+    
+Route::group(['middleware' => ['admin']], function () 
+{
+    
+
+
+});
+
+});
