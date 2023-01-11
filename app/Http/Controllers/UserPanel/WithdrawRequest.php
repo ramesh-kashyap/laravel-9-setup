@@ -25,11 +25,11 @@ class WithdrawRequest extends Controller
         return $this->dashboard_layout();
     }
 
-    public function Withdraw_Request(Request $request)
+    public function WithdrawRequests(Request $request)
     {
 
-
         try{
+
              $validation =  Validator::make($request->all(), [
             'amount' => 'required|numeric|min:0',
             'transaction_password' => 'required',
@@ -46,6 +46,7 @@ class WithdrawRequest extends Controller
         $user=Auth::user();
         $password= $request->transaction_password;
         $balance=Auth::user()->available_balance();
+
 
         if ($balance>=$request->amount)
         {
@@ -67,7 +68,7 @@ class WithdrawRequest extends Controller
                    'user_id' => $user->id,
                    'user_id_fk' => $user->username,
                    'amount' => $request->amount,
-                   'account' => $user->tron_address,
+                   'account' => $user->trx_addres,
                    'payment_mode' => 'USDT',
                    'status' => 'Pending',
                    'wdate' => Date("Y-m-d"),
@@ -76,11 +77,11 @@ class WithdrawRequest extends Controller
                ];
               $payment =  Withdraw::Create($data);
 
-              $notify[] = ['success', $user_detail->username.' User Activation  Submited successfully'];
+              $notify[] = ['success', $user->username.' User Activation  Submited successfully'];
               return redirect()->back()->withNotify($notify);
 
 
-        return redirect()->route('user.WithdrawRequest')->with('messages', 'Withdraw Request Submited successfully');
+       // return redirect()->route('user.WithdrawRequest')->with('messages', 'Withdraw Request Submited successfully');
 
          }
            else
@@ -104,19 +105,20 @@ class WithdrawRequest extends Controller
      print_r($e->getMessage());
      die("hi");
      return  redirect()->route('user.WithdrawRequest')->withErrors('error', $e->getMessage())->withInput();
- }
+       }
+
 
 
 
     }
 
-    public function Withdraw_History(Request $request){
+    public function WithdrawHistory(Request $request){
 
         $user=Auth::user();
         $limit = $request->limit ? $request->limit : 10;
          $status = $request->status ? $request->status : null;
          $search = $request->search ? $request->search : null;
-         $notes = Investment::where('user_id',$user->id);
+         $notes = Withdraw::where('user_id',$user->id);
         if($search <> null && $request->reset!="Reset"){
          $notes = $notes->where(function($q) use($search){
             $q->Where('wdate', 'LIKE', '%' . $search . '%')

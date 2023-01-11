@@ -32,9 +32,7 @@
                         name="amount" placeholder="Enter Amount" required>
                       </div>
 
-
                       <br>
-                      
 
                       <div class="col-md-12">
                         <label for="inputFirstName" class="form-label">Member ID </label>
@@ -46,11 +44,9 @@
                       <div class="col-md-12">
                         <label for="inputFirstName" class="form-label">TRANSACTION PASSWORD </label>
                         <input type="password" class="form-control" name="transaction_password"
-                                                value="" required id="password" placeholder="Transaction Password">
-                     
+                           value="" required id="password" placeholder="Transaction Password">
+
                       </div>
-
-
 
                       <div class="col-12 mt-4">
                         <a href="{{route('user.invest')}}"> <button class="btn btn-primary px-5" type="button">Back</button></a>
@@ -61,7 +57,7 @@
                 </div>
               </div>
             </div>
-           
+
           </div>
       </div>
 
@@ -75,7 +71,7 @@
           var ths = $(this);
           var res_area = $(ths).attr('data-response');
           var sponsor = $(this).val();
-          // alert(sponsor); 
+          // alert(sponsor);
           $.ajax({
               type: "POST",
               url: "{{ route('getUserName') }}",
@@ -84,7 +80,7 @@
                   "_token": "{{ csrf_token() }}",
               },
               success: function(response) {
-                  // alert(response);      
+                  // alert(response);
                   if (response != 1) {
                       // alert("hh");
                       $(".submit-btn").prop("disabled", false);

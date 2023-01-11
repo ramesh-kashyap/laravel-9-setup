@@ -58,8 +58,8 @@ Route::get('/DepositHistory', [App\Http\Controllers\UserPanel\Invest::class, 'in
 
 // withdraw
 Route::get('/Withdraw', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'index'])->name('user.WithdrawRequest');
-Route::post('/Withdraw-Request', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'Withdraw_Request'])->name('user.Withdraw-Request');
-Route::get('/WithdrawHistory', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'Withdraw_History'])->name('user.WithdrawHistory');
+Route::post('/WithdrawRequest', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'WithdrawRequests'])->name('user.WithdrawRequests');
+Route::get('/WithdrawHistory', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'WithdrawHistory'])->name('user.WithdrawHistory');
 // end withdraw
 
 //team
@@ -79,7 +79,13 @@ Route::any('/Boots-submit', [App\Http\Controllers\UserPanel\Bonus::class, 'Submi
 Route::get('/Boost-matrix', [App\Http\Controllers\UserPanel\Bonus::class, 'boost_matrix'])->name('user.Boost-matrix');
 Route::get('/Growth-bonus', [App\Http\Controllers\UserPanel\Bonus::class, 'growth_income'])->name('user.Growth-bonus');
 Route::get('/Appraisal-bonus', [App\Http\Controllers\UserPanel\Bonus::class, 'appraisal_bonus'])->name('user.Appraisal-bonus');
+//end bonus
 
+//tickets
+Route::get('/GenerateTicket',[App\Http\Controllers\UserPanel\Tickets::class,'GenerateTicket'])->name('user.GenerateTicket');
+Route::post('/SubmitTicket',[App\Http\Controllers\UserPanel\Tickets::class,'SubmitTicket'])->name('user.SubmitTicket');
+Route::get('/SupportMessage',[App\Http\Controllers\UserPanel\Tickets::class,'SupportMessage'])->name('user.SupportMessage');
+Route::get('/ViewMessage',[App\Http\Controllers\UserPanel\Tickets::class,'ViewMessage'])->name('user.ViewMessage');
 
 
 });

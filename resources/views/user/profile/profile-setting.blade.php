@@ -596,7 +596,7 @@
                                     </div>
                                     <br>
                                     <div class="">
-                                        <a href="Dashboard" class="btn btn-primary " type="button">CANCEL</a>
+                                        <a href="{{route('user.profile')}}" class="btn btn-primary " type="button">CANCEL</a>
                                         <button class="btn btn-success " name="prf56635s">SAVE</button>
                                     </div>
                             </div>

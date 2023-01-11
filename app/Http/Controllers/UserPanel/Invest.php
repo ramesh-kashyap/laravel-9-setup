@@ -28,8 +28,7 @@ class Invest extends Controller
     public function fundActivation(Request $request)
     {
 
-
-      try{
+        try{
             $validation =  Validator::make($request->all(), [
                 // 'user_id' => 'required',
                 'amount' => 'required|numeric|min:0',
@@ -39,13 +38,16 @@ class Invest extends Controller
 
             ]);
 
+
             if($validation->fails()) {
                 Log::info($validation->getMessageBag()->first());
 
                 return Redirect::back()->withErrors($validation->getMessageBag()->first())->withInput();
             }
                $user=Auth::user();
+
                $password= $request->transaction_password;
+
                if (Hash::check($password, $user->tpassword))
                {
 
@@ -53,25 +55,27 @@ class Invest extends Controller
 
               $user_detail=User::where('username',$request->user_id)->orderBy('id','desc')->limit(1)->first();
                 //   $icon_image = $request->file('icon_image');
-                  // print_r($user_detail);die;
+                 //  print_r($user_detail);die;
+
                 $invest_check=Investment::where('user_id',$user_detail->id)->orderBy('id','desc')->limit(1)->first();
 
 
                     $invoice = substr(str_shuffle("0123456789"), 0, 7);
                   $last_package=($invest_check)?$invest_check->amount:0;
 
+                 // print_r($last_package);die;
 
                   if (!empty($invest_check) && $user_detail->active_status!="Inactive")
                   {
                     return Redirect::back()->withErrors(array('User Already Activated'));
                   }
 
-                //   if ($last_package>$request->amount)
-                //   {
-                //     return Redirect::back()->withErrors(array('Please choose amount above last package &#8377; '.$request->amount));
-                //   }
+                  if ($last_package>$request->amount)
+                  {
+                    return Redirect::back()->withErrors(array('Please choose amount above last package &#8377; '.$request->amount));
+                  }
 
-                      // dd($balance);
+                      // dd($balance); die;
                     if ($balance>=$request->amount)
                      {
 
@@ -86,6 +90,7 @@ class Invest extends Controller
                         'status' => 'Active',
                         'sdate' => Date("Y-m-d"),
                         'active_from' => $user->username,
+                        'roiStartDate'=>$user->updated_at,
                         'walletType' =>1,
 
                     ];
@@ -131,6 +136,8 @@ class Invest extends Controller
             die("hi");
             return  redirect()->route('user.invest')->withErrors('error', $e->getMessage())->withInput();
               }
+
+
         }
 
         public function invest_list(Request $request){

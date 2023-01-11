@@ -261,21 +261,7 @@
                                     data-feather="circle"></i><span class="menu-item text-truncate"
                                     data-i18n="FAQ">AutoPool Profit</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center"
-                                href="{{ route('user.Booster-income') }}"><i
-                                    data-feather="circle"></i><span class="menu-item text-truncate"
-                                    data-i18n="FAQ">Booster Profit</span></a>
-                        </li>
-                        <li><a class="d-flex align-items-center"
-                                href="{{ route('user.Booster-direct') }}"><i
-                                    data-feather="circle"></i><span class="menu-item text-truncate"
-                                    data-i18n="FAQ">Direct Booster Profit</span></a>
-                        </li>
-                        <li><a class="d-flex align-items-center"
-                            href="{{ route('user.Boost-matrix') }}"><i
-                                data-feather="circle"></i><span class="menu-item text-truncate"
-                                data-i18n="FAQ">Booster Matrix</span></a>
-                    </li>
+
                     <li><a class="d-flex align-items-center"
                         href="{{ route('user.Growth-bonus') }}"><i
                             data-feather="circle"></i><span class="menu-item text-truncate"
@@ -315,40 +301,25 @@
                 </li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
                             data-feather="shopping-bag"></i><span class="menu-title text-truncate"
-                            data-i18n="Authentication">Shopping Fund</span></a>
+                            data-i18n="Authentication">Generate Tickets</span></a>
                     <ul class="menu-content">
-                        <li><a class="d-flex align-items-center" href="Shop2Shop"><i data-feather="circle"></i><span
-                                    class="menu-item text-truncate" data-i18n="Profile">Shop2Shop Transfer</span></a>
+                        <li><a class="d-flex align-items-center" href="{{ route('user.GenerateTicket') }}"><i data-feather="circle"></i><span
+                                    class="menu-item text-truncate" data-i18n="Profile">Generate Ticket</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" href="Main2Shop"><i data-feather="circle"></i><span
-                                    class="menu-item text-truncate" data-i18n="FAQ">Main2Shopping Transfer</span></a>
+                        <li><a class="d-flex align-items-center" href="{{ route('user.SupportMessage') }}"><i data-feather="circle"></i><span
+                                    class="menu-item text-truncate" data-i18n="FAQ">Support Message</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" href="ShoppingFundHistory"><i
-                                    data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="FAQ">Shop
-                                    Fund History</span></a>
+                        <li><a class="d-flex align-items-center" href="{{ route('user.ViewMessage') }}"><i
+                                    data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="FAQ"> View Message</span></a>
                         </li>
                     </ul>
                 </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
-                            data-feather="shopping-cart"></i><span class="menu-title text-truncate"
-                            data-i18n="Authentication">Shopping</span></a>
-                    <ul class="menu-content">
-                        <li><a class="d-flex align-items-center" href="ProductList"><i data-feather="circle"></i><span
-                                    class="menu-item text-truncate" data-i18n="Profile">Products</span></a>
-                        </li>
-                        <li><a class="d-flex align-items-center" href="MyOrderList"><i data-feather="circle"></i><span
-                                    class="menu-item text-truncate" data-i18n="FAQ">Order List</span></a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a class="d-flex align-items-center" href="images/VisionNew_.pdf" download><i
-                            data-feather="file-text"></i><span class="menu-title text-truncate"
-                            data-i18n="Raise Support">Download
-                            Plan</span></a>
-                </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="Logout"><i
-                            data-feather="log-out"></i><span class="menu-title text-truncate"
-                            data-i18n="file-text">Logout</span></a>
+
+
+                <li class=" nav-item">
+                        <a class="d-flex align-items-center" href="{{ route('logout') }}" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();"><i data-feather="log-out"></i>
+                        <span class="menu-title text-truncate" data-i18n="file-text">Logout</span></a>
                 </li>
             </ul>
         </div>

@@ -24,7 +24,7 @@
 
                                 </div>
                                 <div class="card-body">
-                                    <form action="{{ route('user.Withdraw-Request') }}" method="post" class="form">
+                                    <form action="{{ route('user.WithdrawRequests') }}" method="post" class="form">
                                         @csrf
                                         <div class="box-body">
                                             <div class="row ">
@@ -56,29 +56,7 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <b><code>INR</code> Withdrawal History</b>
-                                </div>
-                                <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table class="table table-bordered">
-                                            <thead>
-                                                <tr>
-                                                    <th class="wd-15p">#</th>
-                                                    <th class="wd-20p">Amount</th>
-                                                    <th class="wd-10p">Request Date</th>
-                                                    <th class="wd-25p">Status</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
             </div>
             </section>
