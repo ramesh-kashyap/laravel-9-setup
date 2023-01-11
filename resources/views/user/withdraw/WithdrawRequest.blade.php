@@ -24,7 +24,8 @@
 
                                 </div>
                                 <div class="card-body">
-                                    <form action="{{ route('user.WithdrawRequest') }}" method="post" class="form">
+                                    <form action="{{ route('user.Withdraw-Request') }}" method="post" class="form">
+                                        @csrf
                                         <div class="box-body">
                                             <div class="row ">
                                                 <div class="col-lg-8">
@@ -37,7 +38,7 @@
                                                     <div class="form-group">
                                                         <label class="form-control-label">Transaction Password <span
                                                                 class="tx-danger">*</span></label>
-                                                        <input class="form-control" type="password" name="trnpwd"
+                                                        <input class="form-control" type="password" name="transaction_password"
                                                             placeholder="*************" required>
                                                     </div>
                                                 </div>

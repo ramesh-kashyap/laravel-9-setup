@@ -14,7 +14,7 @@ use Carbon\Carbon;
 
 class Dashboard extends Controller
 {
- 
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -36,7 +36,7 @@ class Dashboard extends Controller
       $deposit_report = Investment::where('user_id',$user->id)->orderBy('id','desc')->get();
       $weekly_profit = Income::where('user_id',$user->id)
       ->whereBetween('ttime', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->sum('comm');
-      
+
         $transaction_data = Income::where('user_id',$user->id)->orderBy('id', 'desc')->take(10)->get();
         $this->data['weekly_profit'] =$weekly_profit;
         $this->data['transaction_data'] =$transaction_data;
@@ -59,44 +59,44 @@ class Dashboard extends Controller
     public function my_level_team_count($userid,$level=10){
         $arrin=array($userid);
         $ret=array();
-  
+
         $i=1;
         while(!empty($arrin)){
-            $alldown=User::select('id')->whereIn('sponsor',$arrin)->get()->toArray();     
+            $alldown=User::select('id')->whereIn('sponsor',$arrin)->get()->toArray();
             if(!empty($alldown)){
                 $arrin = array_column($alldown,'id');
                 $ret[$i]=$arrin;
                 $i++;
-              
+
             }else{
                 $arrin = array();
-            } 
-        }   
-       
-        $final = array();         
+            }
+        }
+
+        $final = array();
         if(!empty($ret)){
             array_walk_recursive($ret, function($item, $key) use (&$final){
                 $final[] = $item;
             });
         }
-        
-        
+
+
         return $final;
-        
+
     }
 
     public function my_direct_business_count($userid){
-       
+
         $totalBusiness=0;
-        $alldown=User::select('id')->where('sponsor',$userid)->get()->toArray();     
+        $alldown=User::select('id')->where('sponsor',$userid)->get()->toArray();
         if(!empty($alldown)){
             $arrin = array_column($alldown,'id');
-        
+
          $totalBusiness=Investment::whereIn('user_id',$arrin)->where('status','Active')->sum("amount");
         }
     return $totalBusiness;
-    
+
     }
 
-    
+
 }
