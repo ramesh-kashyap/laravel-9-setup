@@ -69,5 +69,11 @@ Route::get('/level-team', [App\Http\Controllers\UserPanel\Team::class, 'LevelTea
 Route::get('/AutoPoolBonus', [App\Http\Controllers\UserPanel\Team::class, 'AutoPoolBonus'])->name('user.AutoPoolBonus');
 //end team
 
+//bonus
+Route::get('/level-income', [App\Http\Controllers\UserPanel\Bonus::class, 'index'])->name('user.level-income');
+Route::get('/direct-income', [App\Http\Controllers\UserPanel\Bonus::class, 'direct_income'])->name('user.direct-income');
+Route::get('/AutoPool-income', [App\Http\Controllers\UserPanel\Bonus::class, 'autopool_income'])->name('user.AutoPool-income');
+
+
 });
 });

@@ -106,7 +106,7 @@
     <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
         <div class="navbar-header">
             <ul class="nav navbar-nav flex-row">
-                <li class="nav-item me-auto"><a class="navbar-brand" href="Dashboard"><span class="brand-logo">
+                <li class="nav-item me-auto"><a class="navbar-brand" href="{{route('user.dashboard')}}"><span class="brand-logo">
                             <img src="{{asset('')}}upnl/app-assets/images/logo/logov.png" alt="" width="180"></span>
 
                     </a></li>
@@ -203,15 +203,18 @@
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="list"></i><span
                             class="menu-title text-truncate" data-i18n="Pages">Earnings</span></a>
                     <ul class="menu-content">
-                        <li><a class="d-flex align-items-center" href="LevelBonus"><i data-feather="circle"></i><span
+                        <li><a class="d-flex align-items-center" href="{{ route('user.level-income') }}"><i data-feather="circle"></i><span
                                     class="menu-item text-truncate" data-i18n="Profile">Level Profit</span></a>
                         </li>
+                        <li><a class="d-flex align-items-center" href="{{ route('user.direct-income') }}"><i data-feather="circle"></i><span
+                            class="menu-item text-truncate" data-i18n="Profile">Direct Profit</span></a>
+                </li>
                         <li><a class="d-flex align-items-center" href="AutopoolIncome"><i
                                     data-feather="circle"></i><span class="menu-item text-truncate"
-                                    data-i18n="FAQ">AutoPool Income</span></a>
+                                    data-i18n="FAQ">AutoPool Profit</span></a>
                         </li>
                         <li><a class="d-flex align-items-center" href="DailyActivity"><i data-feather="circle"></i><span
-                                    class="menu-item text-truncate" data-i18n="FAQ">Daily Activity</span></a>
+                                    class="menu-item text-truncate" data-i18n="FAQ">Daily Profit</span></a>
                         </li>
                     </ul>
                 </li>
