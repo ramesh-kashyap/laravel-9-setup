@@ -67,7 +67,7 @@ class WithdrawRequest extends Controller
                    'user_id' => $user->id,
                    'user_id_fk' => $user->username,
                    'amount' => $request->amount,
-                   'account' => $user->tron_address,
+                   'account' => $user->trx_addres,
                    'payment_mode' => 'USDT',
                    'status' => 'Pending',
                    'wdate' => Date("Y-m-d"),
