@@ -75,6 +75,9 @@ Route::get('/direct-income', [App\Http\Controllers\UserPanel\Bonus::class, 'dire
 Route::get('/AutoPool-income', [App\Http\Controllers\UserPanel\Bonus::class, 'autopool_income'])->name('user.AutoPool-income');
 Route::get('/Booster-income', [App\Http\Controllers\UserPanel\Bonus::class, 'booster_income'])->name('user.Booster-income');
 Route::get('/Booster-direct', [App\Http\Controllers\UserPanel\Bonus::class, 'booster_direct'])->name('user.Booster-direct');
+Route::any('/Boots-submit', [App\Http\Controllers\UserPanel\Bonus::class, 'SubmitBootsIncome'])->name('user.Boots-submit');
+
+
 
 });
 });
