@@ -91,3 +91,20 @@ Route::get('/ViewMessage',[App\Http\Controllers\UserPanel\Tickets::class,'ViewMe
 
 });
 });
+
+
+// admin 
+
+Route::prefix('admin')->group(function () {
+Route::get('/admin-login', [App\Http\Controllers\Admin\AdminLogin::class, 'index'])->name('admin.admin-login'); 
+Route::post('LoginAction', [App\Http\Controllers\Admin\AdminLogin::class, 'admin_login'])->name('admin.LoginAction'); 
+Route::get('/admin-logout', [App\Http\Controllers\Admin\AdminLogin::class, 'logout'])->name('admin.admin-logout');
+Route::group(['middleware' => ['admin']], function () 
+{
+
+ Route::get('/dashboard', [App\Http\Controllers\Admin\Dashboard::class, 'index'])->name('admin.dashboard');   
+
+
+});
+
+});

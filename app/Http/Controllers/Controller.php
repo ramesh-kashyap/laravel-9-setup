@@ -16,5 +16,11 @@ class Controller extends BaseController
         return view('user.main',$this->data);
     }
 
+    protected function admin_dashboard(){
+        return view('admin.main',$this->data);
+    }
+
+
+    
 
 }

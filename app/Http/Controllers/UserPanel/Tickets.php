@@ -18,7 +18,7 @@ class Tickets extends Controller
     {
 
     $user=Auth::user();
-    $this->data['page'] = 'user.Tickets.GenerateTickets';
+    $this->data['page'] = 'user.ticket.GenerateTickets';
     return $this->dashboard_layout();
 
     }
@@ -122,7 +122,7 @@ class Tickets extends Controller
 
         $this->data['level_income'] = $notes;
         $this->data['search'] = $search;
-        $this->data['page'] = 'user.Tickets.SupportMessage';
+        $this->data['page'] = 'user.ticket.SupportMessage';
         return $this->dashboard_layout();
 
 
@@ -137,7 +137,7 @@ class Tickets extends Controller
         $profile = Ticket::where('ticket_no',$id)->get();
 
        $this->data['open_ticket_msg'] = $profile;
-       $this->data['page'] = 'user.Tickets.ViewMessage';
+       $this->data['page'] = 'user.ticket.ViewMessage';
        return $this->dashboard_layout();
 
    }
