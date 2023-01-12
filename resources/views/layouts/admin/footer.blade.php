@@ -62,14 +62,21 @@
 <!-- endbuild -->
 
 <!-- Vendors JS -->
-<script src="{{ asset('') }}admin/assets/vendor/libs/apex-charts/apexcharts.js"></script>
+{{-- <script src="{{ asset('') }}admin/assets/vendor/libs/apex-charts/apexcharts.js"></script> --}}
 
 <!-- Main JS -->
 <script src="{{ asset('') }}admin/assets/js/main.js"></script>
 
 <!-- Page JS -->
 <script src="{{ asset('') }}admin/assets/js/dashboards-crm.js"></script>
-
+{{-- <script
+src="{{ asset('') }}admin/assets/vendor/libs/flatpickr/flatpickr.js"></script>
+<script
+    src="{{ asset('') }}admin/assets/vendor/libs/moment/moment.js"></script>
+<script
+src="{{ asset('') }}admin/assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+<script
+src="{{ asset('') }}admin/assets/js/tables-datatables-advanced.js"></script> --}}
 </body>
 
 </html>

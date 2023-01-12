@@ -104,7 +104,12 @@ Route::group(['middleware' => ['admin']], function ()
 
  Route::get('/dashboard', [App\Http\Controllers\Admin\Dashboard::class, 'index'])->name('admin.dashboard');
 
+<<<<<<< HEAD
  Route::get('/totalusers', [App\Http\Controllers\Admin\UserController::class, 'alluserlist'])->name('admin.totalusers');
+=======
+ Route::get('/AllUsers', [App\Http\Controllers\Admin\UserController::class, 'alluserlist'])->name('admin.allUser');
+ Route::get('/active-users', [App\Http\Controllers\Admin\UserController::class, 'active_users'])->name('admin.active-users');
+>>>>>>> 6d0d673a7ab26bc6b6bcb8568e32233991e61eab
 
 });
 
