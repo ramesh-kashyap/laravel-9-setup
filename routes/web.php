@@ -57,9 +57,9 @@ Route::get('/DepositHistory', [App\Http\Controllers\UserPanel\Invest::class, 'in
 // end invest
 
 // withdraw
-Route::get('/Withdraw', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'index'])->name('user.WithdrawRequest');
-Route::post('/WithdrawRequest', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'WithdrawRequests'])->name('user.WithdrawRequests');
-Route::get('/WithdrawHistory', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'WithdrawHistory'])->name('user.WithdrawHistory');
+Route::get('/Withdraw', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'index'])->name('user.Withdraw');
+Route::post('/WithdrawRequest', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'WithdrawRequest'])->name('user.Withdraw-Request');
+Route::get('/WithdrawHistory', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'WithdrawHistory'])->name('user.Withdraw-History');
 // end withdraw
 
 //team
@@ -87,22 +87,24 @@ Route::post('/SubmitTicket',[App\Http\Controllers\UserPanel\Tickets::class,'Subm
 Route::get('/SupportMessage',[App\Http\Controllers\UserPanel\Tickets::class,'SupportMessage'])->name('user.SupportMessage');
 Route::get('/ViewMessage',[App\Http\Controllers\UserPanel\Tickets::class,'ViewMessage'])->name('user.ViewMessage');
 
+//end tickets
 
 });
 });
 
 
-// admin 
+// admin
 
 Route::prefix('admin')->group(function () {
-Route::get('/admin-login', [App\Http\Controllers\Admin\AdminLogin::class, 'index'])->name('admin.admin-login'); 
-Route::post('LoginAction', [App\Http\Controllers\Admin\AdminLogin::class, 'admin_login'])->name('admin.LoginAction'); 
+Route::get('/admin-login', [App\Http\Controllers\Admin\AdminLogin::class, 'index'])->name('admin.admin-login');
+Route::post('LoginAction', [App\Http\Controllers\Admin\AdminLogin::class, 'admin_login'])->name('admin.LoginAction');
 Route::get('/admin-logout', [App\Http\Controllers\Admin\AdminLogin::class, 'logout'])->name('admin.admin-logout');
-Route::group(['middleware' => ['admin']], function () 
+Route::group(['middleware' => ['admin']], function ()
 {
 
- Route::get('/dashboard', [App\Http\Controllers\Admin\Dashboard::class, 'index'])->name('admin.dashboard');   
+ Route::get('/dashboard', [App\Http\Controllers\Admin\Dashboard::class, 'index'])->name('admin.dashboard');
 
+ Route::get('/AllUsers', [App\Http\Controllers\Admin\UserController::class, 'alluserlist'])->name('admin.allUser');
 
 });
 
