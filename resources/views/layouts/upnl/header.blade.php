@@ -268,7 +268,7 @@
             </li>
                     </ul>
                 </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
+                {{-- <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
                             data-feather="check-circle"></i><span class="menu-title text-truncate"
                             data-i18n="Authentication">P2P Transfer</span></a>
                     <ul class="menu-content">
@@ -279,8 +279,8 @@
                                     class="menu-item text-truncate" data-i18n="FAQ">Internal Transfer</span></a>
                         </li>
                     </ul>
-                </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="list"></i><span
+                </li> --}}
+                {{-- <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="list"></i><span
                             class="menu-title text-truncate" data-i18n="Authentication">Reports</span></a>
                     <ul class="menu-content">
                         <li><a class="d-flex align-items-center" href="TransFundHistory"><i
@@ -292,7 +292,7 @@
                                     data-i18n="FAQ">Recieve Reports</span></a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
                             data-feather="shopping-bag"></i><span class="menu-title text-truncate"
                             data-i18n="Authentication">Generate Tickets</span></a>
