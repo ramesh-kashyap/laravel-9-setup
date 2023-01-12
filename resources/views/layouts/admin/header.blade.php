@@ -7,7 +7,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Dashboard - {{siteName()}} </title>
+    <title>Dashboard - {{ siteName() }} </title>
 
     <meta name="description" content="Start your development with a Dashboard for Bootstrap 5" />
     <meta name="keywords" content="dashboard, bootstrap 5 dashboard, bootstrap 5 design, bootstrap 5">
@@ -16,7 +16,7 @@
 
     <!-- Google Tag Manager (Default ThemeSelection: GTM-5DDHKGP, PixInvent: GTM-5J3LMKC) -->
     <script>
-        (function(w, d, s, l, i) {
+        (function (w, d, s, l, i) {
             w[l] = w[l] || [];
             w[l].push({
                 'gtm.start': new Date().getTime(),
@@ -30,6 +30,7 @@
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-5J3LMKC');
+
     </script>
     <!-- End Google Tag Manager -->
 
@@ -57,10 +58,13 @@
     <link rel="stylesheet" href="{{ asset('') }}admin/assets/css/demo.css" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="{{ asset('') }}admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet"
+        href="{{ asset('') }}admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
     <link rel="stylesheet" href="{{ asset('') }}admin/assets/vendor/libs/node-waves/node-waves.css" />
-    <link rel="stylesheet" href="{{ asset('') }}admin/assets/vendor/libs/typeahead-js/typeahead.css" />
-    <link rel="stylesheet" href="{{ asset('') }}admin/assets/vendor/libs/apex-charts/apex-charts.css" />
+    <link rel="stylesheet"
+        href="{{ asset('') }}admin/assets/vendor/libs/typeahead-js/typeahead.css" />
+    <link rel="stylesheet"
+        href="{{ asset('') }}admin/assets/vendor/libs/apex-charts/apex-charts.css" />
 
     <!-- Page CSS -->
 
@@ -72,11 +76,13 @@
 
 <style>
     .layout-navbar .navbar-dropdown .badge-notifications {
-    top: 0.5rem;
-    padding: 0.3rem 0.5rem;
-    margin-left: -22px;
-}
+        top: 0.5rem;
+        padding: 0.3rem 0.5rem;
+        margin-left: -22px;
+    }
+
 </style>
+
 <body>
 
 
@@ -88,21 +94,13 @@
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar  ">
         <div class="layout-container">
-
-
-
-
-
-
-
             <!-- Menu -->
 
             <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
 
 
                 <div class="app-brand demo ">
-                    <a href="{{route('admin.dashboard')}}"
-                        class="app-brand-link">
+                    <a href="{{ route('admin.dashboard') }}" class="app-brand-link">
                         <span class="app-brand-logo demo">
                             <svg width="32" height="22" viewBox="0 0 32 22" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -120,7 +118,7 @@
                                     fill="#7367F0" />
                             </svg>
                         </span>
-                        <span class="app-brand-text demo menu-text fw-bold">{{siteName()}}</span>
+                        <span class="app-brand-text demo menu-text fw-bold">{{ siteName() }}</span>
                     </a>
 
                     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
@@ -136,1031 +134,141 @@
                 <ul class="menu-inner py-1">
 
                     <li class="menu-item">
-                        <a href="#"
-                            class="menu-link" style="font-size: 18px;
+                        <a href="#" class="menu-link" style="font-size: 18px;
                             font-weight: 700;
                             margin-left: 23px;
                         ">
-                        
-                            <div data-i18n="Hi, {{Auth::guard('admin')->user()->name}}">Hi, {{Auth::guard('admin')->user()->name}} </div>
+
+                            <div data-i18n="Hi, {{ Auth::guard('admin')->user()->name }}">Hi,
+                                {{ Auth::guard('admin')->user()->name }} </div>
                         </a>
                     </li>
-                    
+
 
                     <li class="menu-item">
-                        <a href="{{route('admin.dashboard')}}"
-                            class="menu-link">
+                        <a href="{{ route('admin.dashboard') }}" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-smart-home"></i>
                             <div data-i18n="Dashboard">Dashboard</div>
                         </a>
                     </li>
 
-                    
+
 
 
                     <!-- Dashboards -->
-                 
-
-                    <!-- Layouts -->
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons ti ti-layout-sidebar"></i>
-                            <div data-i18n="Layouts">Layouts</div>
-                        </a>
-
-                        <ul class="menu-sub">
-
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/layouts-collapsed-menu.html"
-                                    class="menu-link">
-                                    <div data-i18n="Collapsed menu">Collapsed menu</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/layouts-content-navbar.html"
-                                    class="menu-link">
-                                    <div data-i18n="Content navbar">Content navbar</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/layouts-content-navbar-with-sidebar.html"
-                                    class="menu-link">
-                                    <div data-i18n="Content nav + Sidebar">Content nav + Sidebar</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/horizontal-menu-template" class="menu-link"
-                                    target="_blank">
-                                    <div data-i18n="Horizontal">Horizontal</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/layouts-without-menu.html"
-                                    class="menu-link">
-                                    <div data-i18n="Without menu">Without menu</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/layouts-without-navbar.html"
-                                    class="menu-link">
-                                    <div data-i18n="Without navbar">Without navbar</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/layouts-fluid.html"
-                                    class="menu-link">
-                                    <div data-i18n="Fluid">Fluid</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/layouts-container.html"
-                                    class="menu-link">
-                                    <div data-i18n="Container">Container</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/layouts-blank.html"
-                                    class="menu-link">
-                                    <div data-i18n="Blank">Blank</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
 
                     <!-- Apps & Pages -->
                     <li class="menu-header small text-uppercase">
                         <span class="menu-header-text">Apps &amp; Pages</span>
                     </li>
+
+                    <!-- Users -->
                     <li class="menu-item">
-                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/app-email.html"
-                            class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-mail"></i>
-                            <div data-i18n="Email">Email</div>
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons ti ti-layout-sidebar"></i>
+                            <div data-i18n="users">Users</div>
                         </a>
+
+                        <ul class="menu-sub">
+
+                            <li class="menu-item">
+                                <a href="{{ route('admin.allUser') }}" class="menu-link">
+                                    <div data-i18n="allusers">AllUsers</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/layouts-content-navbar.html"
+                                    class="menu-link">
+                                    <div data-i18n="active users">Active Users</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/layouts-content-navbar-with-sidebar.html"
+                                    class="menu-link">
+                                    <div data-i18n="edit users list">Edit Users List</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="{{ asset('') }}admin/html/horizontal-menu-template"
+                                    class="menu-link" target="_blank">
+                                    <div data-i18n="block users list">Block Users List</div>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
-                    <li class="menu-item">
-                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/app-chat.html"
-                            class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-messages"></i>
-                            <div data-i18n="Chat">Chat</div>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/app-calendar.html"
-                            class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-calendar"></i>
-                            <div data-i18n="Calendar">Calendar</div>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/app-kanban.html"
-                            class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-layout-kanban"></i>
-                            <div data-i18n="Kanban">Kanban</div>
-                        </a>
-                    </li>
+
+
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class='menu-icon tf-icons ti ti-file-dollar'></i>
-                            <div data-i18n="Invoice">Invoice</div>
-                            <div class="badge bg-label-danger rounded-pill ms-auto">4</div>
+                            <div data-i18n="bonus">Bonus</div>
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
                                 <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/app-invoice-list.html"
                                     class="menu-link">
-                                    <div data-i18n="List">List</div>
+                                    <div data-i18n="List">Growth Bonus</div>
                                 </a>
                             </li>
                             <li class="menu-item">
                                 <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/app-invoice-preview.html"
                                     class="menu-link">
-                                    <div data-i18n="Preview">Preview</div>
+                                    <div data-i18n="Preview">Level Bonus</div>
                                 </a>
                             </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/app-invoice-edit.html"
-                                    class="menu-link">
-                                    <div data-i18n="Edit">Edit</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/app-invoice-add.html"
-                                    class="menu-link">
-                                    <div data-i18n="Add">Add</div>
-                                </a>
-                            </li>
+
                         </ul>
                     </li>
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons ti ti-users"></i>
-                            <div data-i18n="Users">Users</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/app-user-list.html"
-                                    class="menu-link">
-                                    <div data-i18n="List">List</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                    <div data-i18n="View">View</div>
-                                </a>
-                                <ul class="menu-sub">
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/app-user-view-account.html"
-                                            class="menu-link">
-                                            <div data-i18n="Account">Account</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/app-user-view-security.html"
-                                            class="menu-link">
-                                            <div data-i18n="Security">Security</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/app-user-view-billing.html"
-                                            class="menu-link">
-                                            <div data-i18n="Billing & Plans">Billing & Plans</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/app-user-view-notifications.html"
-                                            class="menu-link">
-                                            <div data-i18n="Notifications">Notifications</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/app-user-view-connections.html"
-                                            class="menu-link">
-                                            <div data-i18n="Connections">Connections</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
+
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class='menu-icon tf-icons ti ti-settings'></i>
-                            <div data-i18n="Roles & Permissions">Roles & Permissions</div>
+                            <div data-i18n="Withdraw">Withdraw</div>
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
                                 <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/app-access-roles.html"
                                     class="menu-link">
-                                    <div data-i18n="Roles">Roles</div>
+                                    <div data-i18n="withdraw request">Withdraw Request</div>
                                 </a>
                             </li>
                             <li class="menu-item">
                                 <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/app-access-permission.html"
                                     class="menu-link">
-                                    <div data-i18n="Permission">Permission</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons ti ti-file"></i>
-                            <div data-i18n="Pages">Pages</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                    <div data-i18n="User Profile">User Profile</div>
-                                </a>
-                                <ul class="menu-sub">
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/pages-profile-user.html"
-                                            class="menu-link">
-                                            <div data-i18n="Profile">Profile</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/pages-profile-teams.html"
-                                            class="menu-link">
-                                            <div data-i18n="Teams">Teams</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/pages-profile-projects.html"
-                                            class="menu-link">
-                                            <div data-i18n="Projects">Projects</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/pages-profile-connections.html"
-                                            class="menu-link">
-                                            <div data-i18n="Connections">Connections</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item">
-                                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                    <div data-i18n="Account Settings">Account Settings</div>
-                                </a>
-                                <ul class="menu-sub">
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/pages-account-settings-account.html"
-                                            class="menu-link">
-                                            <div data-i18n="Account">Account</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/pages-account-settings-security.html"
-                                            class="menu-link">
-                                            <div data-i18n="Security">Security</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/pages-account-settings-billing.html"
-                                            class="menu-link">
-                                            <div data-i18n="Billing & Plans">Billing & Plans</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/pages-account-settings-notifications.html"
-                                            class="menu-link">
-                                            <div data-i18n="Notifications">Notifications</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/pages-account-settings-connections.html"
-                                            class="menu-link">
-                                            <div data-i18n="Connections">Connections</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/pages-faq.html"
-                                    class="menu-link">
-                                    <div data-i18n="FAQ">FAQ</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                    <div data-i18n="Help Center">Help Center</div>
-                                </a>
-                                <ul class="menu-sub">
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/pages-help-center-landing.html"
-                                            class="menu-link">
-                                            <div data-i18n="Landing">Landing</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/pages-help-center-categories.html"
-                                            class="menu-link">
-                                            <div data-i18n="Categories">Categories</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/pages-help-center-article.html"
-                                            class="menu-link">
-                                            <div data-i18n="Article">Article</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/pages-pricing.html"
-                                    class="menu-link">
-                                    <div data-i18n="Pricing">Pricing</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                    <div data-i18n="Misc">Misc</div>
-                                </a>
-                                <ul class="menu-sub">
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/pages-misc-error.html"
-                                            class="menu-link" target="_blank">
-                                            <div data-i18n="Error">Error</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/pages-misc-under-maintenance.html"
-                                            class="menu-link" target="_blank">
-                                            <div data-i18n="Under Maintenance">Under Maintenance</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/pages-misc-comingsoon.html"
-                                            class="menu-link" target="_blank">
-                                            <div data-i18n="Coming Soon">Coming Soon</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/pages-misc-not-authorized.html"
-                                            class="menu-link" target="_blank">
-                                            <div data-i18n="Not Authorized">Not Authorized</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons ti ti-lock"></i>
-                            <div data-i18n="Authentications">Authentications</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                    <div data-i18n="Login">Login</div>
-                                </a>
-                                <ul class="menu-sub">
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/auth-login-basic.html"
-                                            class="menu-link" target="_blank">
-                                            <div data-i18n="Basic">Basic</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/auth-login-cover.html"
-                                            class="menu-link" target="_blank">
-                                            <div data-i18n="Cover">Cover</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item">
-                                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                    <div data-i18n="Register">Register</div>
-                                </a>
-                                <ul class="menu-sub">
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/auth-register-basic.html"
-                                            class="menu-link" target="_blank">
-                                            <div data-i18n="Basic">Basic</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/auth-register-cover.html"
-                                            class="menu-link" target="_blank">
-                                            <div data-i18n="Cover">Cover</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/auth-register-multisteps.html"
-                                            class="menu-link" target="_blank">
-                                            <div data-i18n="Multi-steps">Multi-steps</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item">
-                                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                    <div data-i18n="Verify Email">Verify Email</div>
-                                </a>
-                                <ul class="menu-sub">
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/auth-verify-email-basic.html"
-                                            class="menu-link" target="_blank">
-                                            <div data-i18n="Basic">Basic</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/auth-verify-email-cover.html"
-                                            class="menu-link" target="_blank">
-                                            <div data-i18n="Cover">Cover</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item">
-                                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                    <div data-i18n="Reset Password">Reset Password</div>
-                                </a>
-                                <ul class="menu-sub">
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/auth-reset-password-basic.html"
-                                            class="menu-link" target="_blank">
-                                            <div data-i18n="Basic">Basic</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/auth-reset-password-cover.html"
-                                            class="menu-link" target="_blank">
-                                            <div data-i18n="Cover">Cover</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item">
-                                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                    <div data-i18n="Forgot Password">Forgot Password</div>
-                                </a>
-                                <ul class="menu-sub">
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/auth-forgot-password-basic.html"
-                                            class="menu-link" target="_blank">
-                                            <div data-i18n="Basic">Basic</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/auth-forgot-password-cover.html"
-                                            class="menu-link" target="_blank">
-                                            <div data-i18n="Cover">Cover</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item">
-                                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                    <div data-i18n="Two Steps">Two Steps</div>
-                                </a>
-                                <ul class="menu-sub">
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/auth-two-steps-basic.html"
-                                            class="menu-link" target="_blank">
-                                            <div data-i18n="Basic">Basic</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/auth-two-steps-cover.html"
-                                            class="menu-link" target="_blank">
-                                            <div data-i18n="Cover">Cover</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons ti ti-forms"></i>
-                            <div data-i18n="Wizard Examples">Wizard Examples</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/wizard-ex-checkout.html"
-                                    class="menu-link">
-                                    <div data-i18n="Checkout">Checkout</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/wizard-ex-property-listing.html"
-                                    class="menu-link">
-                                    <div data-i18n="Property Listing">Property Listing</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/wizard-ex-create-deal.html"
-                                    class="menu-link">
-                                    <div data-i18n="Create Deal">Create Deal</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item">
-                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/modal-examples.html"
-                            class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-square"></i>
-                            <div data-i18n="Modal Examples">Modal Examples</div>
-                        </a>
-                    </li>
-
-                    <!-- Components -->
-                    <li class="menu-header small text-uppercase">
-                        <span class="menu-header-text">Components</span>
-                    </li>
-                    <!-- Cards -->
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons ti ti-id"></i>
-                            <div data-i18n="Cards">Cards</div>
-                            <div class="badge bg-label-primary rounded-pill ms-auto">6</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/cards-basic.html"
-                                    class="menu-link">
-                                    <div data-i18n="Basic">Basic</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/cards-advance.html"
-                                    class="menu-link">
-                                    <div data-i18n="Advance">Advance</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/cards-statistics.html"
-                                    class="menu-link">
-                                    <div data-i18n="Statistics">Statistics</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/cards-analytics.html"
-                                    class="menu-link">
-                                    <div data-i18n="Analytics">Analytics</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/cards-actions.html"
-                                    class="menu-link">
-                                    <div data-i18n="Actions">Actions</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- User interface -->
-                    <li class="menu-item">
-                        <a href="javascript:void(0)" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons ti ti-color-swatch"></i>
-                            <div data-i18n="User interface">User interface</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/ui-accordion.html"
-                                    class="menu-link">
-                                    <div data-i18n="Accordion">Accordion</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/ui-alerts.html"
-                                    class="menu-link">
-                                    <div data-i18n="Alerts">Alerts</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/ui-badges.html"
-                                    class="menu-link">
-                                    <div data-i18n="Badges">Badges</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/ui-buttons.html"
-                                    class="menu-link">
-                                    <div data-i18n="Buttons">Buttons</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/ui-carousel.html"
-                                    class="menu-link">
-                                    <div data-i18n="Carousel">Carousel</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/ui-collapse.html"
-                                    class="menu-link">
-                                    <div data-i18n="Collapse">Collapse</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/ui-dropdowns.html"
-                                    class="menu-link">
-                                    <div data-i18n="Dropdowns">Dropdowns</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/ui-footer.html"
-                                    class="menu-link">
-                                    <div data-i18n="Footer">Footer</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/ui-list-groups.html"
-                                    class="menu-link">
-                                    <div data-i18n="List Groups">List groups</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/ui-modals.html"
-                                    class="menu-link">
-                                    <div data-i18n="Modals">Modals</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/ui-navbar.html"
-                                    class="menu-link">
-                                    <div data-i18n="Navbar">Navbar</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/ui-offcanvas.html"
-                                    class="menu-link">
-                                    <div data-i18n="Offcanvas">Offcanvas</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/ui-pagination-breadcrumbs.html"
-                                    class="menu-link">
-                                    <div data-i18n="Pagination & Breadcrumbs">Pagination &amp; Breadcrumbs</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/ui-progress.html"
-                                    class="menu-link">
-                                    <div data-i18n="Progress">Progress</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/ui-spinners.html"
-                                    class="menu-link">
-                                    <div data-i18n="Spinners">Spinners</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/ui-tabs-pills.html"
-                                    class="menu-link">
-                                    <div data-i18n="Tabs & Pills">Tabs &amp; Pills</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/ui-toasts.html"
-                                    class="menu-link">
-                                    <div data-i18n="Toasts">Toasts</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/ui-tooltips-popovers.html"
-                                    class="menu-link">
-                                    <div data-i18n="Tooltips & Popovers">Tooltips &amp; popovers</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/ui-typography.html"
-                                    class="menu-link">
-                                    <div data-i18n="Typography">Typography</div>
+                                    <div data-i18n="withdraw history">Withdraw History</div>
                                 </a>
                             </li>
                         </ul>
                     </li>
 
-                    <!-- Extended components -->
-                    <li class="menu-item">
-                        <a href="javascript:void(0)" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons ti ti-components"></i>
-                            <div data-i18n="Extended UI">Extended UI</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/extended-ui-avatar.html"
-                                    class="menu-link">
-                                    <div data-i18n="Avatar">Avatar</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/extended-ui-blockui.html"
-                                    class="menu-link">
-                                    <div data-i18n="BlockUI">BlockUI</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/extended-ui-drag-and-drop.html"
-                                    class="menu-link">
-                                    <div data-i18n="Drag & Drop">Drag &amp; Drop</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/extended-ui-media-player.html"
-                                    class="menu-link">
-                                    <div data-i18n="Media Player">Media Player</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/extended-ui-perfect-scrollbar.html"
-                                    class="menu-link">
-                                    <div data-i18n="Perfect Scrollbar">Perfect scrollbar</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/extended-ui-star-ratings.html"
-                                    class="menu-link">
-                                    <div data-i18n="Star Ratings">Star Ratings</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/extended-ui-sweetalert2.html"
-                                    class="menu-link">
-                                    <div data-i18n="SweetAlert2">SweetAlert2</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/extended-ui-text-divider.html"
-                                    class="menu-link">
-                                    <div data-i18n="Text Divider">Text Divider</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                    <div data-i18n="Timeline">Timeline</div>
-                                </a>
-                                <ul class="menu-sub">
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/extended-ui-timeline-basic.html"
-                                            class="menu-link">
-                                            <div data-i18n="Basic">Basic</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/extended-ui-timeline-fullscreen.html"
-                                            class="menu-link">
-                                            <div data-i18n="Fullscreen">Fullscreen</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/extended-ui-tour.html"
-                                    class="menu-link">
-                                    <div data-i18n="Tour">Tour</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/extended-ui-treeview.html"
-                                    class="menu-link">
-                                    <div data-i18n="Treeview">Treeview</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/extended-ui-misc.html"
-                                    class="menu-link">
-                                    <div data-i18n="Miscellaneous">Miscellaneous</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <!-- Icons -->
-                    <li class="menu-item">
-                        <a href="javascript:void(0)" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons ti ti-brand-tabler"></i>
-                            <div data-i18n="Icons">Icons</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/icons-tabler.html"
-                                    class="menu-link">
-                                    <div data-i18n="Tabler">Tabler</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/icons-font-awesome.html"
-                                    class="menu-link">
-                                    <div data-i18n="Fontawesome">Fontawesome</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <!-- Forms & Tables -->
-                    <li class="menu-header small text-uppercase">
-                        <span class="menu-header-text">Forms &amp; Tables</span>
-                    </li>
-                    <!-- Forms -->
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons ti ti-toggle-left"></i>
-                            <div data-i18n="Form Elements">Form Elements</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/forms-basic-inputs.html"
-                                    class="menu-link">
-                                    <div data-i18n="Basic Inputs">Basic Inputs</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/forms-input-groups.html"
-                                    class="menu-link">
-                                    <div data-i18n="Input groups">Input groups</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/forms-custom-options.html"
-                                    class="menu-link">
-                                    <div data-i18n="Custom Options">Custom Options</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/forms-editors.html"
-                                    class="menu-link">
-                                    <div data-i18n="Editors">Editors</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/forms-file-upload.html"
-                                    class="menu-link">
-                                    <div data-i18n="File Upload">File Upload</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/forms-pickers.html"
-                                    class="menu-link">
-                                    <div data-i18n="Pickers">Pickers</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/forms-selects.html"
-                                    class="menu-link">
-                                    <div data-i18n="Select & Tags">Select &amp; Tags</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/forms-sliders.html"
-                                    class="menu-link">
-                                    <div data-i18n="Sliders">Sliders</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/forms-switches.html"
-                                    class="menu-link">
-                                    <div data-i18n="Switches">Switches</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/forms-extras.html"
-                                    class="menu-link">
-                                    <div data-i18n="Extras">Extras</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons ti ti-layout-navbar"></i>
-                            <div data-i18n="Form Layouts">Form Layouts</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/form-layouts-vertical.html"
-                                    class="menu-link">
-                                    <div data-i18n="Vertical Form">Vertical Form</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/form-layouts-horizontal.html"
-                                    class="menu-link">
-                                    <div data-i18n="Horizontal Form">Horizontal Form</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/form-layouts-sticky.html"
-                                    class="menu-link">
-                                    <div data-i18n="Sticky Actions">Sticky Actions</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons ti ti-text-wrap-disabled"></i>
-                            <div data-i18n="Form Wizard">Form Wizard</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/form-wizard-numbered.html"
-                                    class="menu-link">
-                                    <div data-i18n="Numbered">Numbered</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/form-wizard-icons.html"
-                                    class="menu-link">
-                                    <div data-i18n="Icons">Icons</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item">
-                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/form-validation.html"
-                            class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-checkbox"></i>
-                            <div data-i18n="Form Validation">Form Validation</div>
-                        </a>
-                    </li>
-                    <!-- Tables -->
                     <li class="menu-item">
                         <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/tables-basic.html"
                             class="menu-link">
                             <i class="menu-icon tf-icons ti ti-table"></i>
-                            <div data-i18n="Tables">Tables</div>
+                            <div data-i18n="Tables">Change Admin Password</div>
                         </a>
                     </li>
+
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons ti ti-layout-grid"></i>
-                            <div data-i18n="Datatables">Datatables</div>
+                            <i class="menu-icon tf-icons ti ti-file"></i>
+                            <div data-i18n="Support management">Support management</div>
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/tables-datatables-basic.html"
-                                    class="menu-link">
-                                    <div data-i18n="Basic">Basic</div>
+                                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                                    <div data-i18n="Support query">Support query</div>
                                 </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/tables-datatables-advanced.html"
-                                    class="menu-link">
-                                    <div data-i18n="Advanced">Advanced</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/tables-datatables-extensions.html"
-                                    class="menu-link">
-                                    <div data-i18n="Extensions">Extensions</div>
-                                </a>
+
                             </li>
                         </ul>
                     </li>
 
-                    <!-- Charts & Maps -->
-                    <li class="menu-header small text-uppercase">
-                        <span class="menu-header-text">Charts &amp; Maps</span>
-                    </li>
                     <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons ti ti-chart-pie"></i>
-                            <div data-i18n="Charts">Charts</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/charts-apex.html"
-                                    class="menu-link">
-                                    <div data-i18n="Apex Charts">Apex Charts</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/charts-chartjs.html"
-                                    class="menu-link">
-                                    <div data-i18n="ChartJS">ChartJS</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item">
-                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/maps-leaflet.html"
+                        <a href="{{ asset('') }}admin/documentation/" target="_blank"
                             class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-map"></i>
-                            <div data-i18n="Leaflet Maps">Leaflet Maps</div>
-                        </a>
-                    </li>
-
-                    <!-- Misc -->
-                    <li class="menu-header small text-uppercase">
-                        <span class="menu-header-text">Misc</span>
-                    </li>
-                    <li class="menu-item">
-                        <a href="https://pixinvent.ticksy.com/" target="_blank" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-lifebuoy"></i>
-                            <div data-i18n="Support">Support</div>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="{{ asset('') }}admin/documentation/" target="_blank" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-file-description"></i>
-                            <div data-i18n="Documentation">Documentation</div>
+                            <div data-i18n="logout">Logout</div>
                         </a>
                     </li>
                 </ul>
@@ -1169,30 +277,13 @@
 
             </aside>
             <!-- / Menu -->
-
-
-
             <!-- Layout container -->
             <div class="layout-page">
-
-
-
-
 
                 <!-- Navbar -->
 
                 <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
                     id="layout-navbar">
-
-
-
-
-
-
-
-
-
-
 
                     <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0   d-xl-none ">
                         <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
@@ -1209,33 +300,24 @@
                             <div class="nav-item navbar-search-wrapper mb-0">
                                 <a class="nav-item nav-link search-toggler d-flex align-items-center px-0"
                                     href="javascript:void(0);">
-                                   
+
                                     <span class="d-none d-md-inline-block text-muted">Welcome to Admin Dashboard</span>
                                 </a>
                             </div>
                         </div>
                         <!-- /Search -->
 
-
-
-
-
                         <ul class="navbar-nav flex-row align-items-center ms-auto">
-
-                           
-
-
-
-
 
                             <!-- Notification -->
                             <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-1">
                                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
                                     data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-                                   
-                                    <span class="badge bg-danger rounded-pill badge-notifications">Hi, {{Auth::guard('admin')->user()->name}}</span>
+
+                                    <span class="badge bg-danger rounded-pill badge-notifications">Hi,
+                                        {{ Auth::guard('admin')->user()->name }}</span>
                                 </a>
-                             
+
                             </li>
                             <!--/ Notification -->
 
@@ -1255,8 +337,8 @@
                                             <div class="d-flex">
                                                 <div class="flex-shrink-0 me-3">
                                                     <div class="avatar avatar-online">
-                                                        <img src="{{ asset('') }}admin/assets/img/avatars/1.png" alt
-                                                            class="h-auto rounded-circle">
+                                                        <img src="{{ asset('') }}admin/assets/img/avatars/1.png"
+                                                            alt class="h-auto rounded-circle">
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1">
