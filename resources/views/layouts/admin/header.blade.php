@@ -49,7 +49,6 @@
     <link rel="stylesheet" href="{{ asset('') }}admin/assets/vendor/fonts/fontawesome.css" />
     <link rel="stylesheet" href="{{ asset('') }}admin/assets/vendor/fonts/tabler-icons.css" />
     <link rel="stylesheet" href="{{ asset('') }}admin/assets/vendor/fonts/flag-icons.css" />
-
     <!-- Core CSS -->
     <link rel="stylesheet" href="{{ asset('') }}admin/assets/vendor/css/rtl/core.css"
         class="template-customizer-core-css" />
@@ -69,7 +68,7 @@
     <!-- Page CSS -->
     <link rel="stylesheet" href="{{asset('')}}admin/assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css">
     <link rel="stylesheet" href="{{asset('')}}admin/assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css">
-    
+
     <link rel="stylesheet"
     href="{{ asset('') }}admin/assets/vendor/libs/flatpickr/flatpickr.css" />
     <!-- Helpers -->
@@ -187,13 +186,13 @@
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/layouts-content-navbar-with-sidebar.html"
+                                <a href="{{ route('admin.edit-users') }}"
                                     class="menu-link">
                                     <div data-i18n="edit users list">edit users list</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/horizontal-menu-template"
+                                <a href="{{ route('admin.block-users') }}"
                                     class="menu-link" target="_blank">
                                     <div data-i18n="block users list">block users list</div>
                                 </a>

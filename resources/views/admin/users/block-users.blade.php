@@ -16,7 +16,7 @@
             <h5 class="card-header">Active Users</h5>
 
             <div class="card-datatable text-nowrap">
-              <form class="form-repeater" style="margin-left: 14px;"  method="GET" action="{{route('admin.active-users')}}">
+              <form class="form-repeater" style="margin-left: 14px;"  method="GET" action="{{route('admin.block-users')}}">
                 <div data-repeater-list="group-a">
                     <div data-repeater-item="">
                         <div class="row">
@@ -40,7 +40,7 @@
                                 <button class="btn btn-primary waves-effect waves-light search-button">
                                   Submit
                                 </button>
-                                <a href="{{ route('admin.active-users') }}" class="btn btn-danger waves-effect waves-light search-button">
+                                <a href="{{ route('admin.block-users') }}" class="btn btn-danger waves-effect waves-light search-button">
                                   Reset
                                 </a>
                             </div>
@@ -56,37 +56,39 @@
                         <tr>
                             <th>S NO.</th>
                             <th>User Name</th>
-                            <th>User Id</th>
-                            <th>Email ID</th>
+                           <th>User Id</th>
+                           <th>Email ID</th>
 
                             <th>Mobile No.</th>
                             <!--<th>Rank</th>-->
                             <th>Joining Date</th>
                             <th>Activation Date</th>
-                            <th>Status</th>
+                             <th>Status</th>
+                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php if(is_array($active_user) || is_object($active_user)){ ?>
 
-                        <?php $cnt = $active_user->perPage() * ($active_user->currentPage() - 1); ?>
-                        @foreach ($active_user as $value)
-                            <tr>
-                                <td><?= $cnt += 1 ?></td>
-                                <td>{{ $value->name }}</td>
-                                <td>{{ $value->username }}</td>
-                                <td>{{ $value->email }}</td>
-                                <td>{{ $value->phone }}</td>
-                                <td>{{ $value->created_at }}</td>
-                                <td>{{ $value->adate }}</td>
-                                <td><span
-                                        class="badge bg-{{ $value->active_status == 'Active' ? 'success' : 'danger' }}">{{ $value->active_status }}</span>
-                                </td>
+                            <?php $cnt =  $active_user->perPage() * ($active_user->currentPage() - 1);?>
+                             @foreach($active_user as $value)
+                              <tr>
+                                  <td><?= $cnt += 1?></td>
+                                  <td>{{$value->name}}</td>
+                                  <td>{{$value->username}}</td>
+                                  <td>{{$value->email}}</td>
+                                  <td>{{$value->phone}}</td>
+                                  <td>{{$value->created_at}}</td>
+                                  <td>{{$value->adate}}</td>
+                                  <td >{{$value->active_status}}</td>
 
-                            </tr>
-                        @endforeach
+                                  <td ><a href="{{route('admin.block-submit')}}?id={{$value->id}}&status=Block" class="badge green" style="    background: red;">Block </a>
+                                  <a href="{{route('admin.block-submit')}}?id={{$value->id}}&status=Active" class="badge green" style="    background: green;">Unblock </a></td>
 
-                        <?php }?>
+                              </tr>
+                              @endforeach
+
+                         <?php }?>
                     </tbody>
                 </table>
 

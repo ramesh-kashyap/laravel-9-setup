@@ -104,13 +104,14 @@ Route::group(['middleware' => ['admin']], function ()
 
  Route::get('/dashboard', [App\Http\Controllers\Admin\Dashboard::class, 'index'])->name('admin.dashboard');
 
-<<<<<<< HEAD
  Route::get('/totalusers', [App\Http\Controllers\Admin\UserController::class, 'alluserlist'])->name('admin.totalusers');
-=======
- Route::get('/AllUsers', [App\Http\Controllers\Admin\UserController::class, 'alluserlist'])->name('admin.allUser');
  Route::get('/active-users', [App\Http\Controllers\Admin\UserController::class, 'active_users'])->name('admin.active-users');
->>>>>>> 6d0d673a7ab26bc6b6bcb8568e32233991e61eab
+ Route::get('/edit-users', [App\Http\Controllers\Admin\UserController::class, 'edit_users'])->name('admin.edit-users');
+ Route::get('edit_users_link', [App\Http\Controllers\Admin\UserController::class, 'edit_users_link'])->name('admin.edit_users_link');
+ Route::any('update-user-profile', [App\Http\Controllers\Admin\UserController::class, 'users_profile_update'])->name('update-user-profile');
 
+ Route::get('/block-users', [App\Http\Controllers\Admin\UserController::class, 'block_users'])->name('admin.block-users');
+ Route::get('block-submit', [App\Http\Controllers\Admin\UserController::class, 'block_submit'])->name('admin.block-submit');
 });
 
 });
