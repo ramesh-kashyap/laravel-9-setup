@@ -5,20 +5,12 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Crypt;
 use App\Models\Income;
 use App\Models\Investment;
-use App\Models\Extra_user;
-use App\Models\Rank_bonus;
 use App\Models\Bank;
 use App\Models\Withdraw;
-use App\Models\GeneratePin;
-use App\Models\Ticket;
-use App\Models\WalletPin;
 use App\Models\BuyFund;
-use App\Models\UsedPin;
-use App\Models\Level_acheive;
-use App\Models\Feedback;
-use App\Models\Spiner;
 use Auth;
 use DB;
 use Log;
@@ -111,28 +103,34 @@ class UserController extends Controller
             });
 
           }
-                $notes = $notes->paginate($limit)
-                    ->appends([
-                        'limit' => $limit
-                    ]);
+    $notes = $notes->paginate($limit)
+        ->appends([
+            'limit' => $limit
+        ]);
 
-                    $this->data['edit_users'] =  $notes;
-                    $this->data['search'] = $search;
-                    $this->data['page'] = 'admin.users.edit-users';
-                    return $this->admin_dashboard();
+        $this->data['edit_users'] =  $notes;
+        $this->data['search'] = $search;
+        $this->data['page'] = 'admin.users.edit-users';
+        return $this->admin_dashboard();
 
 
     }
 
-    public function edit_users_link(Request $request)
+    public function edit_users_view($id)
     {
 
-       $id= $request->id ; // or any params
-
+    try {
+        $id = Crypt::decrypt($id);
+        } catch (\Illuminate\Contracts\Encryption\DecryptException $e) {
+        return back()->withErrors(array('Invalid User!'));
+    } 
+  
     $profile = User::where('id',$id)->first();
      $bank = Bank::where('user_id',$id)->first();
-    // print_r($data);die(); ÷
-    return view('admin.users.users_profile_view')->with(compact('profile','bank'));
+    $this->data['bank'] =  $bank;
+    $this->data['profile'] =  $profile;
+    $this->data['page'] = 'admin.users.users_profile_view';
+    return $this->admin_dashboard();
 
    }
 

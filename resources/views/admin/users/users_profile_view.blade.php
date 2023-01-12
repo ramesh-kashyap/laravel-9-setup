@@ -1,100 +1,164 @@
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        User Profile
-        <small>Dashboard</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> User Profile</a></li>
-        <li class="active">dashboard</li>
-        </ol>
-    </section>
 
-    <!-- Main content -->
-    <section class="content container-fluid">
-     <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+    <!-- Content -->
 
-          <!-- Profile Image -->
-          <div class="box box-primary">
-
-                 <form method="POST" action="{{route('update-user-profile')}}" class="form-update">
-            <div class="box-body box-profile">
-              <img class="profile-user-img img-responsive img-circle" src="{{ asset('public/admin/assets/avatar5.png') }}" alt="User profile picture">
-               <input type="hidden" name="id" value="<?= $profile->id; ?>">
-              <h3 class="profile-username text-center"><?= $profile->username; ?></h3>
-
-                    @if(session()->has('message'))
-                                        <div class="alert alert-success">
-                                        <strong style="color:#006633;">
-                                        {{ session()->get('message') }}
-                                        </strong>
-                                        </div>
-                                        @endif
-
-                                             @if ($errors->any())
-                                            <div class="alert alert-danger">
-                                            <ul>
-                                            @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                            @endforeach
-                                            </ul>
-                                            </div>
-                                            @endif
-
-                                              @csrf
-
-              <ul class="list-group list-group-unbordered">
-                <li class="list-group-item">
-                  <b>Name</b> <a class="pull-right"><lebel class="lvl"><?= $profile->name; ?></lebel><input type="text" name="name" value="<?= $profile->name; ?>" class="inp_cng text-center form-control_profile" style="display: none;"></a>
-                </li>
-                <li class="list-group-item">
-                  <b>Email</b> <a class="pull-right"><lebel class="lvl"><?= $profile->email; ?></lebel><input type="text" name="email" value="<?= $profile->email; ?>" class="inp_cng text-center form-control_profile" style="display: none;"></a>
-                </li>
-                <li class="list-group-item">
-                  <b>Mobile Number</b> <a class="pull-right"><lebel class="lvl"><?= $profile->phone; ?></lebel><input type="text" name="phone" value="<?= $profile->phone; ?>" class="inp_cng text-center form-control_profile" style="display: none;"></a>
-                </li>
+    <div class="container-xxl flex-grow-1 container-p-y">
 
 
-                 <li class="list-group-item">
-                  <b>Password</b> <a class="pull-right"><lebel class="lvl address_lvl"> Change Password</lebel><input type="text" name="password" value="" class="inp_cng text-center form-control_profile" style="display: none;"></a>
-                </li>
-                 <li class="list-group-item">
-                  <b>Account Holder</b><a class="pull-right"><lebel class="lvl address_lvl"><?php if(isset($bank->account_holder)) echo $bank->account_holder; ?></lebel><input type="text" name="account_holder" value="<?php if(isset($bank->account_holder)) echo $bank->account_holder; ?>" class="inp_cng text-center form-control_profile" style="display: none;"></a>
-                </li>
-                <li class="list-group-item">
-                  <b>Bank Name</b><a class="pull-right"><lebel class="lvl address_lvl"><?php if(isset($bank->bank_name)) echo $bank->bank_name; ?></lebel><input type="text" name="bank_name" value="<?php if(isset($bank->bank_name)) echo $bank->bank_name; ?>" class="inp_cng text-center form-control_profile" style="display: none;"></a>
-                </li>
-             <li class="list-group-item">
-                  <b>Branch Name</b><a class="pull-right"><lebel class="lvl address_lvl"><?php if(isset($bank->branch_name)) echo $bank->branch_name; ?></lebel><input type="text" name="branch_name" value="<?php if(isset($bank->branch_name)) echo $bank->branch_name; ?>" class="inp_cng text-center form-control_profile" style="display: none;"></a>
-                </li>
-            <li class="list-group-item">
-                  <b>Account No</b><a class="pull-right"><lebel class="lvl address_lvl"><?php if(isset($bank->account_no)) echo $bank->account_no; ?></lebel><input type="text" name="account_no" value="<?php if(isset($bank->account_no)) echo $bank->account_no; ?>" class="inp_cng text-center form-control_profile" style="display: none;"></a>
-                </li>
-            <li class="list-group-item">
-                  <b>Ifsc Code</b><a class="pull-right"><lebel class="lvl address_lvl"><?php if(isset($bank->ifsc_code)) echo $bank->ifsc_code; ?></lebel><input type="text" name="ifsc_code" value="<?php if(isset($bank->ifsc_code)) echo $bank->ifsc_code; ?>" class="inp_cng text-center form-control_profile" style="display: none;"></a>
-                </li>
+        <h4 class="fw-bold py-3 mb-4">
+            <span class="text-muted fw-light">Account Settings /</span> Account
+        </h4>
 
-
-              </ul>
-             <div class="row inp_cng" style="display: none;">
-               <div class="col-md-6">
-                  <button type="button" class="btn btn-danger btn-block" id="show_normal"><b>Cancel</b></button>
-               </div>
-                <div class="col-md-6">
-                  <button type="submit" class="btn btn-primary btn-block"><b>Save Change</b></button>
-               </div>
-             </div>
-
-              <button type="button" class="btn btn-primary btn-block lvl" id="show_form"><b>Update</b></button>
+        <div class="row">
+            <div class="col-md-12">
+               
+                <div class="card mb-4">
+                    <h5 class="card-header">Profile Details</h5>
+                    <!-- Account -->
+                    <div class="card-body">
+                        <div class="d-flex align-items-start align-items-sm-center gap-4">
+                            <img src="{{asset('')}}admin/assets/img/avatars/14.png"
+                                alt="user-avatar" class="d-block w-px-100 h-px-100 rounded" id="uploadedAvatar" />
+                            <div class="button-wrapper">
+                                <label for="upload" class="btn btn-primary me-2 mb-3" tabindex="0">
+                                    <span class="d-none d-sm-block">Hi, {{($profile)?$profile->name:''}}</span>
+                                    <i class="ti ti-upload d-block d-sm-none"></i>
+                                   
+                                </label>
+                         
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-0">
+                    <div class="card-body">
+                        <form id="formAccountSettings" method="POST" onsubmit="return false">
+                            <div class="row">
+                                <div class="mb-3 col-md-6">
+                                    <label for="firstName" class="form-label">Name</label>
+                                    <input class="form-control"  type="text" id="firstName" name="name"
+                                        value="{{($profile)?$profile->name:'0'}}" autofocus />
+                                </div>
+                              
+                                <div class="mb-3 col-md-6">
+                                    <label for="email" class="form-label">E-mail</label>
+                                    <input class="form-control" type="email" name="email"
+                                        value="{{($profile)?$profile->email:''}}" placeholder="Email ID" />
+                                </div>
+                                
+                                <div class="mb-3 col-md-6">
+                                    <label class="form-label" for="phoneNumber">Phone Number</label>
+                                    <div class="input-group input-group-merge">
+                                        <span class="input-group-text">IN (+1)</span>
+                                        <input type="text" value="{{($profile)?$profile->phone:''}}" id="phoneNumber" name="phoneNumber" class="form-control"
+                                            placeholder="202 555 0111" />
+                                    </div>
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label for="address" class="form-label">Address</label>
+                                    <input type="text" class="form-control" id="address" name="address"
+                                        placeholder="Address" />
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label for="state" class="form-label">State</label>
+                                    <input class="form-control" type="text" id="state" name="state"
+                                        placeholder="California" />
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label for="zipCode" class="form-label">Zip Code</label>
+                                    <input type="text" class="form-control" id="zipCode" name="zipCode"
+                                        placeholder="231465" maxlength="6" />
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label class="form-label" for="country">Country</label>
+                                    <select id="country" class="select2 form-select">
+                                        <option value="">Select</option>
+                                        <option value="Australia">Australia</option>
+                                        <option value="Bangladesh">Bangladesh</option>
+                                        <option value="Belarus">Belarus</option>
+                                        <option value="Brazil">Brazil</option>
+                                        <option value="Canada">Canada</option>
+                                        <option value="China">China</option>
+                                        <option value="France">France</option>
+                                        <option value="Germany">Germany</option>
+                                        <option value="India">India</option>
+                                        <option value="Indonesia">Indonesia</option>
+                                        <option value="Israel">Israel</option>
+                                        <option value="Italy">Italy</option>
+                                        <option value="Japan">Japan</option>
+                                        <option value="Korea">Korea, Republic of</option>
+                                        <option value="Mexico">Mexico</option>
+                                        <option value="Philippines">Philippines</option>
+                                        <option value="Russia">Russian Federation</option>
+                                        <option value="South Africa">South Africa</option>
+                                        <option value="Thailand">Thailand</option>
+                                        <option value="Turkey">Turkey</option>
+                                        <option value="Ukraine">Ukraine</option>
+                                        <option value="United Arab Emirates">United Arab Emirates</option>
+                                        <option value="United Kingdom">United Kingdom</option>
+                                        <option value="United States">United States</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label for="language" class="form-label">Language</label>
+                                    <select id="language" class="select2 form-select">
+                                        <option value="">Select Language</option>
+                                        <option value="en">English</option>
+                                        <option value="fr">French</option>
+                                        <option value="de">German</option>
+                                        <option value="pt">Portuguese</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label for="timeZones" class="form-label">Timezone</label>
+                                    <select id="timeZones" class="select2 form-select">
+                                        <option value="">Select Timezone</option>
+                                        <option value="-12">(GMT-12:00) International Date Line West</option>
+                                        <option value="-11">(GMT-11:00) Midway Island, Samoa</option>
+                                        <option value="-10">(GMT-10:00) Hawaii</option>
+                                        <option value="-9">(GMT-09:00) Alaska</option>
+                                        <option value="-8">(GMT-08:00) Pacific Time (US & Canada)</option>
+                                        <option value="-8">(GMT-08:00) Tijuana, Baja California</option>
+                                        <option value="-7">(GMT-07:00) Arizona</option>
+                                        <option value="-7">(GMT-07:00) Chihuahua, La Paz, Mazatlan</option>
+                                        <option value="-7">(GMT-07:00) Mountain Time (US & Canada)</option>
+                                        <option value="-6">(GMT-06:00) Central America</option>
+                                        <option value="-6">(GMT-06:00) Central Time (US & Canada)</option>
+                                        <option value="-6">(GMT-06:00) Guadalajara, Mexico City, Monterrey</option>
+                                        <option value="-6">(GMT-06:00) Saskatchewan</option>
+                                        <option value="-5">(GMT-05:00) Bogota, Lima, Quito, Rio Branco</option>
+                                        <option value="-5">(GMT-05:00) Eastern Time (US & Canada)</option>
+                                        <option value="-5">(GMT-05:00) Indiana (East)</option>
+                                        <option value="-4">(GMT-04:00) Atlantic Time (Canada)</option>
+                                        <option value="-4">(GMT-04:00) Caracas, La Paz</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label for="currency" class="form-label">Currency</label>
+                                    <select id="currency" class="select2 form-select">
+                                        <option value="">Select Currency</option>
+                                        <option value="usd">USD</option>
+                                        <option value="euro">Euro</option>
+                                        <option value="pound">Pound</option>
+                                        <option value="bitcoin">Bitcoin</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mt-2">
+                                <button type="submit" class="btn btn-primary me-2">Save changes</button>
+                                <button type="reset" class="btn btn-label-secondary">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /Account -->
+                </div>
+                
             </div>
-            <!-- /.box-body -->
-         </form>
-          </div>
-          <!-- /.box -->
         </div>
-      </div>
-    </section>
-    <!-- /.content -->
-  </div>
+
+
+
+    </div>
+    <!-- / Content -->
+
+
+

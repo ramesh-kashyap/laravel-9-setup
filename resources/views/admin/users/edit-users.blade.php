@@ -6,14 +6,14 @@
 
 
         <h4 class="fw-bold py-3 mb-4">
-            <span class="text-muted fw-light">Users /</span> Active users
+            <span class="text-muted fw-light">Users /</span> Edit Users
         </h4>
 
 
 
         <!-- Ajax Sourced Server-side -->
         <div class="card">
-            <h5 class="card-header">Active Users</h5>
+            <h5 class="card-header">Edit Users</h5>
 
             <div class="card-datatable text-nowrap">
               <form class="form-repeater" style="margin-left: 14px;"  method="GET" action="{{route('admin.edit-users')}}">
@@ -81,7 +81,7 @@
                                   <td>{{$value->adate}}</td>
                                   <td >{{$value->active_status}}</td>
 
-                                  <td ><a href="{{route('admin.edit_users_link')}}?id={{$value->id}}" class="badge green" style="    background: green;">Edit User</a></td>
+                                  <td ><a href="{{ route('admin.edit-user-view', ['id'=> Crypt::encrypt($value->id)]) }}" class="badge green" style="    background: green;">Edit User</a></td>
 
                               </tr>
                               @endforeach
@@ -91,6 +91,8 @@
                 </table>
 
                 <br>
+
+                {{ $edit_users->withQueryString()->links() }}
 
               </div>
             </div>
