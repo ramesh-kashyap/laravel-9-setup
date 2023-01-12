@@ -166,32 +166,32 @@
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons ti ti-layout-sidebar"></i>
-                            <div data-i18n="users">Users</div>
+                            <div data-i18n="users">users</div>
                         </a>
 
                         <ul class="menu-sub">
 
                             <li class="menu-item">
-                                <a href="{{ route('admin.allUser') }}" class="menu-link">
-                                    <div data-i18n="allusers">AllUsers</div>
+                                <a href="{{ route('admin.totalusers') }}" class="menu-link">
+                                    <div data-i18n="allusers">alluserlist</div>
                                 </a>
                             </li>
                             <li class="menu-item">
                                 <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/layouts-content-navbar.html"
                                     class="menu-link">
-                                    <div data-i18n="active users">Active Users</div>
+                                    <div data-i18n="active users">active users</div>
                                 </a>
                             </li>
                             <li class="menu-item">
                                 <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/layouts-content-navbar-with-sidebar.html"
                                     class="menu-link">
-                                    <div data-i18n="edit users list">Edit Users List</div>
+                                    <div data-i18n="edit users list">edit users list</div>
                                 </a>
                             </li>
                             <li class="menu-item">
                                 <a href="{{ asset('') }}admin/html/horizontal-menu-template"
                                     class="menu-link" target="_blank">
-                                    <div data-i18n="block users list">Block Users List</div>
+                                    <div data-i18n="block users list">block users list</div>
                                 </a>
                             </li>
                         </ul>
@@ -201,19 +201,19 @@
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class='menu-icon tf-icons ti ti-file-dollar'></i>
-                            <div data-i18n="bonus">Bonus</div>
+                            <div data-i18n="bonus">bonus</div>
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
                                 <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/app-invoice-list.html"
                                     class="menu-link">
-                                    <div data-i18n="List">Growth Bonus</div>
+                                    <div data-i18n="List">growth bonus</div>
                                 </a>
                             </li>
                             <li class="menu-item">
                                 <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/app-invoice-preview.html"
                                     class="menu-link">
-                                    <div data-i18n="Preview">Level Bonus</div>
+                                    <div data-i18n="Preview">level bonus</div>
                                 </a>
                             </li>
 
@@ -223,19 +223,19 @@
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class='menu-icon tf-icons ti ti-settings'></i>
-                            <div data-i18n="Withdraw">Withdraw</div>
+                            <div data-i18n="Withdraw">withdraw</div>
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
                                 <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/app-access-roles.html"
                                     class="menu-link">
-                                    <div data-i18n="withdraw request">Withdraw Request</div>
+                                    <div data-i18n="withdraw request">withdraw request</div>
                                 </a>
                             </li>
                             <li class="menu-item">
                                 <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/app-access-permission.html"
                                     class="menu-link">
-                                    <div data-i18n="withdraw history">Withdraw History</div>
+                                    <div data-i18n="withdraw history">withdraw history</div>
                                 </a>
                             </li>
                         </ul>
@@ -245,19 +245,19 @@
                         <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/tables-basic.html"
                             class="menu-link">
                             <i class="menu-icon tf-icons ti ti-table"></i>
-                            <div data-i18n="Tables">Change Admin Password</div>
+                            <div data-i18n="Tables">change admin password</div>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons ti ti-file"></i>
-                            <div data-i18n="Support management">Support management</div>
+                            <div data-i18n="Support management">support management</div>
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
                                 <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                    <div data-i18n="Support query">Support query</div>
+                                    <div data-i18n="Support query">support query</div>
                                 </a>
 
                             </li>
@@ -268,7 +268,7 @@
                         <a href="{{ asset('') }}admin/documentation/" target="_blank"
                             class="menu-link">
                             <i class="menu-icon tf-icons ti ti-file-description"></i>
-                            <div data-i18n="logout">Logout</div>
+                            <div data-i18n="logout">logout</div>
                         </a>
                     </li>
                 </ul>

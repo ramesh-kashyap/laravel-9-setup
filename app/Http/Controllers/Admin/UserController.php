@@ -58,6 +58,6 @@ class UserController extends Controller
 
       }
 
-     return view('admin.User.allUser')->with(['active_user'=>$notes])->with('search', $search);
+     return view('admin.User.totalusers')->with(['active_user'=>$notes])->with('search', $search);
     }
 }

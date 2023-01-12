@@ -92,7 +92,7 @@
             <div class="card-header border-bottom">
                 <h5 class="card-title mb-3">Search Filter</h5>
                 <div class="card-body">
-                <form action="{{ route('admin.allUser') }}" method="GET">
+                <form action="{{ route('admin.totalusers') }}" method="GET">
                     <div class="row">
                         <div class="col-xl-4">
                             <div class="form-group mb-3">
@@ -112,14 +112,14 @@
                         </div>
                         <div class="col-xl-2">
                             <div class="form-group mb-3">
-                                <input type="submit" name="submit"
-                                    class="btn btn-secondary add-new btn-primary"
-                                    value="Search" />
+                                <button type="submit" name="submit"
+                                    class="btn btn-outline-theme btn-lg d-block w-100 btn-primary"
+                                    value="Search" >Search</button>
                             </div>
                         </div>
                         <div class="col-xl-2">
                             <div class="form-group mb-3">
-                                <a href="{{ route('admin.allUser') }}" name="reset"
+                                <a href="{{ route('admin.totalusers') }}" name="reset"
                                     class="btn btn-outline-theme btn-lg d-block w-100 btn-primary"
                                     value="Reset">Reset</a>
                             </div>
@@ -135,19 +135,16 @@
                     <thead>
                         <tr>
                             <th>S NO.</th>
-                            <th>User Name</th>
+                            <th>Name</th>
                             <th>User Id</th>
                             <th>Email ID</th>
-
                             <th>Mobile No.</th>
                             <th>Password</th>
                             <th>Transaction Password</th>
-
                             <th>Joining Date</th>
-                            <th>Activation Date</th>
+                            <th>Activation Status</th>
                             <th>Package</th>
                             <th>Sponsor ID</th>
-
                             <th>Status</th>
                         </tr>
                     </thead>
@@ -169,7 +166,7 @@
                            <td>{{$value->created_at}}</td>
                            <td>{{$value->adate}}</td>
                            <td>&#8377; {{$value->package}}</td>
-                           <td> {{($value->sponsorDetail)?$value->sponsorDetail->username:0}}</td>
+                           <td> {{$value->sponsor}}</td>
                            <td><span class="{{($value->active_status=='Active')?'badge green':'badge red'}}">{{$value->active_status}}</span></td>
 
                        </tr>
