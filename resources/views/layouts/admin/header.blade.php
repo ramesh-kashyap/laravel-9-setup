@@ -67,7 +67,11 @@
         href="{{ asset('') }}admin/assets/vendor/libs/apex-charts/apex-charts.css" />
 
     <!-- Page CSS -->
-
+    <link rel="stylesheet" href="{{asset('')}}admin/assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css">
+    <link rel="stylesheet" href="{{asset('')}}admin/assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css">
+    
+    <link rel="stylesheet"
+    href="{{ asset('') }}admin/assets/vendor/libs/flatpickr/flatpickr.css" />
     <!-- Helpers -->
     <script src="{{ asset('') }}admin/assets/vendor/js/helpers.js"></script>
 
@@ -177,7 +181,7 @@
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/layouts-content-navbar.html"
+                                <a href="{{route('admin.active-users')}}"
                                     class="menu-link">
                                     <div data-i18n="active users">Active Users</div>
                                 </a>

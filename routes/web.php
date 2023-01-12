@@ -105,6 +105,7 @@ Route::group(['middleware' => ['admin']], function ()
  Route::get('/dashboard', [App\Http\Controllers\Admin\Dashboard::class, 'index'])->name('admin.dashboard');
 
  Route::get('/AllUsers', [App\Http\Controllers\Admin\UserController::class, 'alluserlist'])->name('admin.allUser');
+ Route::get('/active-users', [App\Http\Controllers\Admin\UserController::class, 'active_users'])->name('admin.active-users');
 
 });
 

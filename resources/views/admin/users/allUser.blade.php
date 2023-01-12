@@ -1,6 +1,3 @@
-@include('layouts.admin.header')
-
-<!-- Content wrapper -->
 <div class="content-wrapper">
 
     <!-- Content -->
@@ -190,9 +187,3 @@
 
     </div>
     <!-- / Content -->
-
-
-
-
-
-    @include('layouts.admin.footer')
