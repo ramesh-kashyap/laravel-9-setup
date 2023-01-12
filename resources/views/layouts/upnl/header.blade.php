@@ -127,6 +127,7 @@
                                 width="180"></span>
 
                     </a></li>
+
                 <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pe-0" data-bs-toggle="collapse"><i
                             class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i><i
                             class="d-none d-xl-block collapse-toggle-icon font-medium-4  text-primary"
@@ -195,15 +196,15 @@
                             data-i18n="eCommerce">Withdrawals</span></a>
                     <ul class="menu-content">
                         <li><a class="d-flex align-items-center"
-                                href="{{ route('user.WithdrawRequest') }}"><i
-                                    data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Shop">INR
+                                href="{{ route('user.Withdraw') }}"><i
+                                    data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Shop">
                                     Withdrawal</span></a>
                         </li>
                         {{-- <li><a class="d-flex align-items-center" href="PayoutCrypto"><i data-feather="circle"></i><span
                                     class="menu-item text-truncate" data-i18n="Details">Crypto Withdrawal</span></a>
                         </li> --}}
                         <li><a class="d-flex align-items-center"
-                                href="{{ route('user.WithdrawHistory') }}"><i
+                                href="{{ route('user.Withdraw-History') }}"><i
                                     data-feather="circle"></i><span class="menu-item text-truncate"
                                     data-i18n="Wish List">Withdrawal History</span></a>
                         </li>
@@ -303,9 +304,9 @@
                         <li><a class="d-flex align-items-center" href="{{ route('user.SupportMessage') }}"><i data-feather="circle"></i><span
                                     class="menu-item text-truncate" data-i18n="FAQ">Support Message</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" href="{{ route('user.ViewMessage') }}"><i
+                        {{-- <li><a class="d-flex align-items-center" href="{{ route('user.ViewMessage') }}"><i
                                     data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="FAQ"> View Message</span></a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
 

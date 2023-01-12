@@ -25,7 +25,7 @@ class WithdrawRequest extends Controller
         return $this->dashboard_layout();
     }
 
-    public function WithdrawRequests(Request $request)
+    public function WithdrawRequest(Request $request)
     {
 
         try{
@@ -77,7 +77,7 @@ class WithdrawRequest extends Controller
                ];
               $payment =  Withdraw::Create($data);
 
-              $notify[] = ['success', $user->username.' User Activation  Submited successfully'];
+              $notify[] = ['success', $user->username.' User Withdraws Submited successfully'];
               return redirect()->back()->withNotify($notify);
 
 

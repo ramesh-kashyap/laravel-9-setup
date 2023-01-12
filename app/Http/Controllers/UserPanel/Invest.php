@@ -61,7 +61,7 @@ class Invest extends Controller
 
 
                     $invoice = substr(str_shuffle("0123456789"), 0, 7);
-                  $last_package=($invest_check)?$invest_check->amount:0;
+                    $last_package=($invest_check)?$invest_check->amount:0;
 
                  // print_r($last_package);die;
 

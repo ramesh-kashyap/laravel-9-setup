@@ -24,7 +24,7 @@
 
                                 </div>
                                 <div class="card-body">
-                                    <form action="{{ route('user.WithdrawRequests') }}" method="post" class="form">
+                                    <form action="{{ route('user.Withdraw-Request') }}" method="post" class="form">
                                         @csrf
                                         <div class="box-body">
                                             <div class="row ">

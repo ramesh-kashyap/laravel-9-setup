@@ -57,9 +57,9 @@ Route::get('/DepositHistory', [App\Http\Controllers\UserPanel\Invest::class, 'in
 // end invest
 
 // withdraw
-Route::get('/Withdraw', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'index'])->name('user.WithdrawRequest');
-Route::post('/WithdrawRequest', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'WithdrawRequests'])->name('user.WithdrawRequests');
-Route::get('/WithdrawHistory', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'WithdrawHistory'])->name('user.WithdrawHistory');
+Route::get('/Withdraw', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'index'])->name('user.Withdraw');
+Route::post('/WithdrawRequest', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'WithdrawRequest'])->name('user.Withdraw-Request');
+Route::get('/WithdrawHistory', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'WithdrawHistory'])->name('user.Withdraw-History');
 // end withdraw
 
 //team
@@ -87,6 +87,7 @@ Route::post('/SubmitTicket',[App\Http\Controllers\UserPanel\Tickets::class,'Subm
 Route::get('/SupportMessage',[App\Http\Controllers\UserPanel\Tickets::class,'SupportMessage'])->name('user.SupportMessage');
 Route::get('/ViewMessage',[App\Http\Controllers\UserPanel\Tickets::class,'ViewMessage'])->name('user.ViewMessage');
 
+//end tickets
 
 });
 });
