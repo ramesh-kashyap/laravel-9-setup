@@ -200,6 +200,49 @@
                         </ul>
                     </li>
 
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class='menu-icon tf-icons ti ti-file-dollar'></i>
+                            <div data-i18n="bonus">deposit management</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item">
+                                <a href="{{ route('admin.deposit-request') }}"
+                                    class="menu-link">
+                                    <div data-i18n="List">Pending Deposit</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="{{ route('admin.deposit-list') }}"
+                                    class="menu-link">
+                                    <div data-i18n="Preview">Deposit List</div>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons ti ti-file"></i>
+                            <div data-i18n="bonus">fund management</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item">
+                                <a href="{{ route('admin.add-fund-list') }}"
+                                    class="menu-link">
+                                    <div data-i18n="List">Pending fund</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="{{ route('admin.deposit-list') }}"
+                                    class="menu-link">
+                                    <div data-i18n="Preview">Deposit List</div>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
 
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">

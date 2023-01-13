@@ -104,14 +104,24 @@ Route::group(['middleware' => ['admin']], function ()
 
  Route::get('/dashboard', [App\Http\Controllers\Admin\Dashboard::class, 'index'])->name('admin.dashboard');
 
+ // usercontroller
  Route::get('/totalusers', [App\Http\Controllers\Admin\UserController::class, 'alluserlist'])->name('admin.totalusers');
  Route::get('/active-users', [App\Http\Controllers\Admin\UserController::class, 'active_users'])->name('admin.active-users');
  Route::get('/edit-users', [App\Http\Controllers\Admin\UserController::class, 'edit_users'])->name('admin.edit-users');
  Route::get('edit_users_link', [App\Http\Controllers\Admin\UserController::class, 'edit_users_link'])->name('admin.edit_users_link');
  Route::any('update-user-profile', [App\Http\Controllers\Admin\UserController::class, 'users_profile_update'])->name('update-user-profile');
-
  Route::get('/block-users', [App\Http\Controllers\Admin\UserController::class, 'block_users'])->name('admin.block-users');
  Route::get('block-submit', [App\Http\Controllers\Admin\UserController::class, 'block_submit'])->name('admin.block-submit');
+
+ //end userController
+
+//DepositManagmentController
+ Route::get('/depodit-request', [App\Http\Controllers\Admin\DepositManagmentController::class, 'deposit_request'])->name('admin.deposit-request');
+ Route::get('/depodit-list', [App\Http\Controllers\Admin\DepositManagmentController::class, 'deposit_list'])->name('admin.deposit-list');
+ Route::get('deposit_request_done', [App\Http\Controllers\Admin\DepositManagmentController::class, 'deposit_request_done'])->name('admin.deposit_request_done');
+// end DepositManagmentController
+//fundController
+ Route::get('Add-fund-list', [App\Http\Controllers\Admin\FundController::class, 'add_fund_report'])->name('admin.add-fund-list');
 });
 
 });
