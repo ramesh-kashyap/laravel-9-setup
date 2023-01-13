@@ -165,6 +165,14 @@
                         <span class="menu-header-text">Apps &amp; Pages</span>
                     </li>
 
+                    <li class="menu-item">
+                        <a href="{{ route('admin.active-user') }}"
+                            class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-table"></i>
+                            <div data-i18n="Tables">user Activation</div>
+                        </a>
+                    </li>
+
                     <!-- Users -->
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">

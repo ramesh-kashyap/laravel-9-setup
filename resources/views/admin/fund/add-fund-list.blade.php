@@ -6,14 +6,14 @@
 
 
         <h4 class="fw-bold py-3 mb-4">
-            <span class="text-muted fw-light">Users /</span> Active users
+            <span class="text-muted fw-light">Users /</span> Edit Users
         </h4>
 
 
 
         <!-- Ajax Sourced Server-side -->
         <div class="card">
-            <h5 class="card-header">Active Users</h5>
+            <h5 class="card-header">Edit Users</h5>
 
             <div class="card-datatable text-nowrap">
                 <form class="form-repeater" style="margin-left: 14px;" method="GET"
@@ -58,46 +58,50 @@
                         <thead>
                             <tr>
                                 <th>S NO.</th>
+
+                                <th>Name</th>
                                 <th>User ID</th>
                                 <th>Amount</th>
                                 <th>Transaction Date.</th>
                                 <th>Transaction ID.</th>
                                 <th>Status</th>
                                 <th>Payment Mode</th>
+                                <th>Action</th>
+
                             </tr>
                         </thead>
                         <tbody>
-                            <?php if(is_array($direct_incomes) || is_object($direct_incomes)){ ?>
+                            <?php if(is_array($add_fund_report) || is_object($add_fund_report)){ ?>
 
-                                <?php $cnt =$direct_incomes->perPage() * ($direct_incomes->currentPage() - 1); ?>
-                                 @foreach($direct_incomes as $value)
-                                  <tr>
-                                      <td><?= $cnt += 1?></td>
+                            <?php $cnt =$add_fund_report->perPage() * ($add_fund_report->currentPage() - 1); ?>
+                            @foreach($add_fund_report as $value)
+                                <tr>
+                                    <td><?= $cnt += 1?></td>
 
-                                      <td>{{$value->user_id_fk}}</td>
+                                    <td>{{ ($value->user)?$value->user->name:"" }}</td>
+                                    <td>{{ $value->user_id_fk }}</td>
+                                    <td> {{ $value->amount }}</td>
+                                    <td>{{ $value->created_at }}</td>
+                                    <td>{{ $value->txn_no }}</td>
 
-                                      <td> {{$value->amount}}</td>
+                                    <td>{{ $value->status }}</td>
+                                    <td>{{ $value->type }}</td>
 
-                                      <td>{{$value->created_at}}</td>
-                                      <td>{{$value->txn_no}}</td>
+                                    <td><a href="{{asset('fund_request_done?id=')}}{{$value->id}}&user_Id={{$value->user_id}}&withdraw_status=success" class='btn btn-success'>Success</a> <a href="{{asset('fund_request_done?id=')}}{{$value->id}}&user_Id={{$value->user_id}}&withdraw_status=blocked" class='btn btn-danger'>Reject</a></td>
 
-                                      <td>{{$value->status}}</td>
-                                      <td>{{$value->type}}</td>
+                                </tr>
+                            @endforeach
 
-
-
-                                  </tr>
-                                  @endforeach
-
-                             <?php }?>
-
-
-                                </tbody>
-                              </table>
-                                          <br>
+                            <?php }?>
 
 
-                                 {{ $direct_incomes->withQueryString()->links() }}
+                        </tbody>
+                    </table>
+                    <br>
+
+
+                    {{ $add_fund_report->withQueryString()->links() }}
+
                 </div>
             </div>
         </div>

@@ -104,6 +104,10 @@ Route::group(['middleware' => ['admin']], function ()
 
  Route::get('/dashboard', [App\Http\Controllers\Admin\Dashboard::class, 'index'])->name('admin.dashboard');
 
+ // active users controller
+ Route::get('/active-user', [App\Http\Controllers\Admin\ActiveuserController::class, 'active_user'])->name('admin.active-user');
+ Route::post('activate-admin', [App\Http\Controllers\Admin\ActiveuserController::class, 'activate_admin_post'])->name('admin.activate-admin');
+
  // usercontroller
  Route::get('/totalusers', [App\Http\Controllers\Admin\UserController::class, 'alluserlist'])->name('admin.totalusers');
  Route::get('/active-users', [App\Http\Controllers\Admin\UserController::class, 'active_users'])->name('admin.active-users');
@@ -121,8 +125,11 @@ Route::group(['middleware' => ['admin']], function ()
  Route::get('/depodit-list', [App\Http\Controllers\Admin\DepositManagmentController::class, 'deposit_list'])->name('admin.deposit-list');
  Route::get('deposit_request_done', [App\Http\Controllers\Admin\DepositManagmentController::class, 'deposit_request_done'])->name('admin.deposit_request_done');
 // end DepositManagmentController
+
 //fundController
  Route::get('Add-fund-list', [App\Http\Controllers\Admin\FundController::class, 'add_fund_report'])->name('admin.add-fund-list');
+ Route::get('fund_request_done', [App\Http\Controllers\Admin\FundController::class, 'fund_request_done'])->name('fund_request_done');
+ Route::get('Add-fund-Report', [App\Http\Controllers\Admin\FundController::class, 'add_fund_report'])->name('Add-fund-Report');
 });
 
 });
