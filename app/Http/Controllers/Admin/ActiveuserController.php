@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 use App\Models\User;
 use App\Models\Income;
 use App\Models\Investment;
 use App\Models\Extra_user;
+use App\Models\Bank;
 use Auth;
 use DB;
 use Log;
@@ -16,10 +18,14 @@ use Redirect;
 
 class ActiveuserController extends Controller
 {
-    public function active_user()
+    public function active_user(Request $request)
     {
-
-     return view('admin.activationUsers.activate_user_view');
+     $profile = User::where('id',$request->id)->first();
+     $bank = Bank::where('user_id',$request->user_id)->first();
+    $this->data['bank'] =  $bank;
+    $this->data['profile'] =  $profile;
+    $this->data['page'] = 'admin.activationUsers.activate_user_view';
+    return $this->admin_dashboard();
 
     }
 

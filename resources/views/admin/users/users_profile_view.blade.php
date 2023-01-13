@@ -11,7 +11,7 @@
 
         <div class="row">
             <div class="col-md-12">
-               
+
                 <div class="card mb-4">
                     <h5 class="card-header">Profile Details</h5>
                     <!-- Account -->
@@ -23,28 +23,43 @@
                                 <label for="upload" class="btn btn-primary me-2 mb-3" tabindex="0">
                                     <span class="d-none d-sm-block">Hi, {{($profile)?$profile->name:''}}</span>
                                     <i class="ti ti-upload d-block d-sm-none"></i>
-                                   
+
                                 </label>
-                         
+
                             </div>
                         </div>
                     </div>
                     <hr class="my-0">
                     <div class="card-body">
-                        <form id="formAccountSettings" method="POST" onsubmit="return false">
+                        <form id="formAccountSettings" action="{{ route('admin.update-user-profile') }}" method="POST">
+
+                            {{ csrf_field() }}
                             <div class="row">
+
+                                <div class="mb-3 col-md-6">
+                                    <label for="firstName" class="form-label">Sponsor ID</label>
+                                    <input class="form-control" type="text" name=""  value="{{ $profile->sponsor_detail ? $profile->sponsor_detail->username : '0' }}"
+                                    readonly>
+                                </div>
+
+                                <div class="mb-3 col-md-6">
+                                    <label for="firstName" class="form-label">User ID</label>
+                                    <input class="form-control" type="text" name="memberID"
+                                    value="{{ $profile ? $profile->username : '' }}" readonly>
+                                </div>
+
                                 <div class="mb-3 col-md-6">
                                     <label for="firstName" class="form-label">Name</label>
                                     <input class="form-control"  type="text" id="firstName" name="name"
                                         value="{{($profile)?$profile->name:'0'}}" autofocus />
                                 </div>
-                              
+
                                 <div class="mb-3 col-md-6">
                                     <label for="email" class="form-label">E-mail</label>
                                     <input class="form-control" type="email" name="email"
                                         value="{{($profile)?$profile->email:''}}" placeholder="Email ID" />
                                 </div>
-                                
+
                                 <div class="mb-3 col-md-6">
                                     <label class="form-label" for="phoneNumber">Phone Number</label>
                                     <div class="input-group input-group-merge">
@@ -53,21 +68,9 @@
                                             placeholder="202 555 0111" />
                                     </div>
                                 </div>
-                                <div class="mb-3 col-md-6">
-                                    <label for="address" class="form-label">Address</label>
-                                    <input type="text" class="form-control" id="address" name="address"
-                                        placeholder="Address" />
-                                </div>
-                                <div class="mb-3 col-md-6">
-                                    <label for="state" class="form-label">State</label>
-                                    <input class="form-control" type="text" id="state" name="state"
-                                        placeholder="California" />
-                                </div>
-                                <div class="mb-3 col-md-6">
-                                    <label for="zipCode" class="form-label">Zip Code</label>
-                                    <input type="text" class="form-control" id="zipCode" name="zipCode"
-                                        placeholder="231465" maxlength="6" />
-                                </div>
+
+
+
                                 <div class="mb-3 col-md-6">
                                     <label class="form-label" for="country">Country</label>
                                     <select id="country" class="select2 form-select">
@@ -98,50 +101,7 @@
                                         <option value="United States">United States</option>
                                     </select>
                                 </div>
-                                <div class="mb-3 col-md-6">
-                                    <label for="language" class="form-label">Language</label>
-                                    <select id="language" class="select2 form-select">
-                                        <option value="">Select Language</option>
-                                        <option value="en">English</option>
-                                        <option value="fr">French</option>
-                                        <option value="de">German</option>
-                                        <option value="pt">Portuguese</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3 col-md-6">
-                                    <label for="timeZones" class="form-label">Timezone</label>
-                                    <select id="timeZones" class="select2 form-select">
-                                        <option value="">Select Timezone</option>
-                                        <option value="-12">(GMT-12:00) International Date Line West</option>
-                                        <option value="-11">(GMT-11:00) Midway Island, Samoa</option>
-                                        <option value="-10">(GMT-10:00) Hawaii</option>
-                                        <option value="-9">(GMT-09:00) Alaska</option>
-                                        <option value="-8">(GMT-08:00) Pacific Time (US & Canada)</option>
-                                        <option value="-8">(GMT-08:00) Tijuana, Baja California</option>
-                                        <option value="-7">(GMT-07:00) Arizona</option>
-                                        <option value="-7">(GMT-07:00) Chihuahua, La Paz, Mazatlan</option>
-                                        <option value="-7">(GMT-07:00) Mountain Time (US & Canada)</option>
-                                        <option value="-6">(GMT-06:00) Central America</option>
-                                        <option value="-6">(GMT-06:00) Central Time (US & Canada)</option>
-                                        <option value="-6">(GMT-06:00) Guadalajara, Mexico City, Monterrey</option>
-                                        <option value="-6">(GMT-06:00) Saskatchewan</option>
-                                        <option value="-5">(GMT-05:00) Bogota, Lima, Quito, Rio Branco</option>
-                                        <option value="-5">(GMT-05:00) Eastern Time (US & Canada)</option>
-                                        <option value="-5">(GMT-05:00) Indiana (East)</option>
-                                        <option value="-4">(GMT-04:00) Atlantic Time (Canada)</option>
-                                        <option value="-4">(GMT-04:00) Caracas, La Paz</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3 col-md-6">
-                                    <label for="currency" class="form-label">Currency</label>
-                                    <select id="currency" class="select2 form-select">
-                                        <option value="">Select Currency</option>
-                                        <option value="usd">USD</option>
-                                        <option value="euro">Euro</option>
-                                        <option value="pound">Pound</option>
-                                        <option value="bitcoin">Bitcoin</option>
-                                    </select>
-                                </div>
+
                             </div>
                             <div class="mt-2">
                                 <button type="submit" class="btn btn-primary me-2">Save changes</button>
@@ -151,7 +111,7 @@
                     </div>
                     <!-- /Account -->
                 </div>
-                
+
             </div>
         </div>
 

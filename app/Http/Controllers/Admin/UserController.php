@@ -41,7 +41,7 @@ class UserController extends Controller
             });
 
           }
-                $notes = $notes->paginate($limit)
+                $notes = $notes->orderBy('id', 'DESC')->paginate($limit)
                     ->appends([
                         'limit' => $limit
                     ]);
@@ -123,8 +123,8 @@ class UserController extends Controller
         $id = Crypt::decrypt($id);
         } catch (\Illuminate\Contracts\Encryption\DecryptException $e) {
         return back()->withErrors(array('Invalid User!'));
-    } 
-  
+    }
+
     $profile = User::where('id',$id)->first();
      $bank = Bank::where('user_id',$id)->first();
     $this->data['bank'] =  $bank;

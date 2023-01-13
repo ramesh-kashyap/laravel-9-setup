@@ -1,5 +1,5 @@
 
-@include('layouts.admin.header')
+
 
 <div class="content-wrapper">
 
@@ -84,6 +84,6 @@
 
     </div>
     <!-- / Content -->
-    @include('layouts.admin.footer')
+
 
 

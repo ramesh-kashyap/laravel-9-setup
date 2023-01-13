@@ -6,18 +6,18 @@
 
 
         <h4 class="fw-bold py-3 mb-4">
-            <span class="text-muted fw-light">Users /</span> Total users
+            <span class="text-muted fw-light">Users /</span> Roi Bnus
         </h4>
 
 
 
         <!-- Ajax Sourced Server-side -->
         <div class="card">
-            <h5 class="card-header">Total Users</h5>
+            <h5 class="card-header">Roi Bonus</h5>
 
             <div class="card-datatable text-nowrap">
                 <form class="form-repeater" style="margin-left: 14px;" method="GET"
-                    action="{{ route('admin.totalusers') }}">
+                    action="{{ route('admin.roi-bonus') }}">
                     <div data-repeater-list="group-a">
                         <div data-repeater-item="">
                             <div class="row">
@@ -42,7 +42,7 @@
                                     <button class="btn btn-primary waves-effect waves-light search-button">
                                         Submit
                                     </button>
-                                    <a href="{{ route('admin.totalusers') }}"
+                                    <a href="{{ route('admin.roi-bonus') }}"
                                         class="btn btn-danger waves-effect waves-light search-button">
                                         Reset
                                     </a>
@@ -58,51 +58,42 @@
                         <thead>
                             <tr>
                                 <th>S NO.</th>
-                                <th>User Name</th>
-                                <th>User Id</th>
-                                <th>Email ID</th>
-                                <th>Mobile No.</th>
-                                <th>Password</th>
-                                <th>Txn Password</th>
-                                <th>Joining Date</th>
-                                <th>Activation Date</th>
+                                <th>Name</th>
+                                <th>User ID</th>
                                 <th>Package</th>
-                                <th>Sponsor ID</th>
-                                <th>Status</th>
+                                <th>Commission</th>
+                                <th>Transaction Date.</th>
+                                <th>Remarks</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php if(is_array($alluserlist) || is_object($alluserlist)){ ?>
+                            <?php if(is_array($direct_incomes) || is_object($direct_incomes)){ ?>
 
-                            <?php $cnt = $alluserlist->perPage() * ($alluserlist->currentPage() - 1); ?>
-                            @foreach ($alluserlist as $value)
-                                <tr>
-                                    <td><?= $cnt += 1 ?></td>
-                                    <td>{{ $value->name }}</td>
-                                    <td>{{ $value->username }}</td>
-                                    <td>{{ $value->email }}</td>
-                                    <td>{{ $value->phone }}</td>
-                                    <td>{{ $value->PSR }}</td>
-                                    <td>{{ $value->TPSR }}</td>
+                                <?php $cnt =$direct_incomes->perPage() * ($direct_incomes->currentPage() - 1); ?>
+                                 @foreach($direct_incomes as $value)
+                                  <tr>
+                                      <td><?= $cnt += 1?></td>
+                                      <td>{{($value->user)?$value->user->name:''}}</td>
+                                      <td>{{$value->user_id_fk}}</td>
+                                      <td> &#8377;  {{$value->amt}} </td>
+                                      <td> &#8377;  {{$value->comm}} </td>
+                                      <td>{{$value->created_at}}</td>
 
-                                    <td>{{ $value->created_at }}</td>
-                                    <td>{{ $value->adate }}</td>
-                                    <td>&#8377; {{$value->package}}</td>
-                                    <td> {{ $value->sponsor_detail ? $value->sponsor_detail->username : 0 }}</td>
-                                    <td><span
-                                            class="badge bg-{{ $value->active_status == 'Active' ? 'success' : 'danger' }}">{{ $value->active_status }}</span>
-                                    </td>
+                                      <td>{{$value->remarks}}</td>
 
-                                </tr>
-                            @endforeach
 
-                            <?php }?>
-                    </table>
 
-                    <br>
+                                  </tr>
+                                  @endforeach
 
-                    {{ $alluserlist->withQueryString()->links() }}
+                             <?php }?>
 
+
+                                </tbody>
+                              </table>
+                                          <br>
+
+                                {{ $direct_incomes->withQueryString()->links() }}
 
                 </div>
             </div>

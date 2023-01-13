@@ -243,9 +243,9 @@
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{ route('admin.deposit-list') }}"
+                                <a href="#"
                                     class="menu-link">
-                                    <div data-i18n="Preview">Deposit List</div>
+                                    <div data-i18n="Preview">fund List</div>
                                 </a>
                             </li>
 
@@ -259,13 +259,13 @@
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/app-invoice-list.html"
+                                <a href="{{ route('admin.roi-bonus') }}"
                                     class="menu-link">
                                     <div data-i18n="List">growth bonus</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/app-invoice-preview.html"
+                                <a href="{{ route('admin.level-bonus') }}"
                                     class="menu-link">
                                     <div data-i18n="Preview">level bonus</div>
                                 </a>

@@ -81,7 +81,7 @@
                                   <td>{{$value->adate}}</td>
                                   <td >{{$value->active_status}}</td>
 
-                                  <td ><a href="{{ route('admin.edit-user-view', ['id'=> Crypt::encrypt($value->id)]) }}" class="badge green" style="    background: green;">Edit User</a></td>
+                                  <td ><a href="{{ route('admin.edit-user-view', ['id'=> Crypt::encrypt($value->id)]) }}" class="badge green" style="background: green;">Edit User</a></td>
 
                               </tr>
                               @endforeach
