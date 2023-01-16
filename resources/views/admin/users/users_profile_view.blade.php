@@ -71,7 +71,7 @@
 
 
 
-                                <div class="mb-3 col-md-6">
+                                {{-- <div class="mb-3 col-md-6">
                                     <label class="form-label" for="country">Country</label>
                                     <select id="country" class="select2 form-select">
                                         <option value="">Select</option>
@@ -100,7 +100,7 @@
                                         <option value="United Kingdom">United Kingdom</option>
                                         <option value="United States">United States</option>
                                     </select>
-                                </div>
+                                </div> --}}
 
                             </div>
                             <div class="mt-2">

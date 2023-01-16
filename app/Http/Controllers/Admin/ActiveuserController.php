@@ -20,10 +20,10 @@ class ActiveuserController extends Controller
 {
     public function active_user(Request $request)
     {
-     $profile = User::where('id',$request->id)->first();
+     $profiles = User::where('id',$request->id)->first();
      $bank = Bank::where('user_id',$request->user_id)->first();
     $this->data['bank'] =  $bank;
-    $this->data['profile'] =  $profile;
+    $this->data['profiles'] =  $profiles;
     $this->data['page'] = 'admin.activationUsers.activate_user_view';
     return $this->admin_dashboard();
 
@@ -37,16 +37,14 @@ class ActiveuserController extends Controller
             $validation =  Validator::make($request->all(), [
                 'user_id' => 'required|exists:users,username',
                 'amount' => 'required',
-
-
             ]);
 
             if($validation->fails()) {
                 Log::info($validation->getMessageBag()->first());
 
                 return Redirect::back()->withErrors($validation->getMessageBag()->first())->withInput();
-            }
 
+            }
 
                 $user=User::where('username',$request->user_id)->orderBy('id','desc')->first();
                 $invest_check=Investment::where('user_id',$user->id)->where('status','!=','Decline')->orderBy('id','desc')->limit(1)->first();
@@ -92,19 +90,14 @@ class ActiveuserController extends Controller
 
                    $payment =  Investment::insert($data);
 
-                      $notify[] = ['success', $user->username.' User Activation  Submited successfully'];
-                      return redirect()->back()->withNotify($notify);
+
               }
 
-
+              $notify[] = ['success', $user->username.' User Activation  Submited successfully'];
+              return redirect()->back()->withNotify($notify);
           }
            catch(\Exception $e){
-            Log::info('error here');
-            Log::info($e->getMessage());
-            print_r($e->getMessage());
-            die("hi");
-
-            return  redirect()->route('admin.active-user')->withErrors('error', $e->getMessage())->withInput();
+            return Redirect::back()->witherrors($e->getMessage())->withInput();
         }
 
     }

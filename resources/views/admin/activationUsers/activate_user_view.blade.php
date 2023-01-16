@@ -25,7 +25,7 @@
                                 id="uploadedAvatar" />
                             <div class="button-wrapper">
                                 <label for="upload" class="btn btn-primary me-2 mb-3" tabindex="0">
-                                    <span class="d-none d-sm-block">Hi, Kapil</span>
+                                    <span class="d-none d-sm-block">Hi,  {{($profiles)?$profiles->name:''}}</span>
                                     <i class="ti ti-upload d-block d-sm-none"></i>
 
                                 </label>
@@ -36,7 +36,7 @@
                     <hr class="my-0">
                     <div class="card-body">
                         <form id="formAccountSettings"  action="{{route('admin.activate-admin')}}" method="POST" onsubmit="return amtValue()">
-                            @csrf
+                            {{ csrf_field() }}
                             <div class="row">
                                 <div class="mb-3 col-md-6">
                                     <label for="username_res" class="form-label">Name</label>

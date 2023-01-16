@@ -6,14 +6,14 @@
 
 
         <h4 class="fw-bold py-3 mb-4">
-            <span class="text-muted fw-light">Users /</span> Active users
+            <span class="text-muted fw-light">Users /</span> Block users
         </h4>
 
 
 
         <!-- Ajax Sourced Server-side -->
         <div class="card">
-            <h5 class="card-header">Active Users</h5>
+            <h5 class="card-header">Search Users</h5>
 
             <div class="card-datatable text-nowrap">
               <form class="form-repeater" style="margin-left: 14px;"  method="GET" action="{{route('admin.block-users')}}">

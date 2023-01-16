@@ -141,7 +141,6 @@ class UserController extends Controller
            $validation =  Validator::make($request->all(), [
                'email' => 'required',
                'name' => 'required',
-
                'phone' => 'required|numeric'
 
            ]);
@@ -154,8 +153,10 @@ class UserController extends Controller
 
 
            //check if email exist
-         $post_array  = $request->all();
+          $post_array  = $request->all();
+
            $id=$post_array['id'];
+
          $update_data['name']=$post_array['name'];
          $update_data['phone']=$post_array['phone'];
          if(!empty($post_array['password']))

@@ -169,7 +169,7 @@
                         <a href="{{ route('admin.active-user') }}"
                             class="menu-link">
                             <i class="menu-icon tf-icons ti ti-table"></i>
-                            <div data-i18n="Tables">user Activation</div>
+                            <div data-i18n="Tables">user activation</div>
                         </a>
                     </li>
 
@@ -201,7 +201,7 @@
                             </li>
                             <li class="menu-item">
                                 <a href="{{ route('admin.block-users') }}"
-                                    class="menu-link" target="_blank">
+                                    class="menu-link" >
                                     <div data-i18n="block users list">block users list</div>
                                 </a>
                             </li>

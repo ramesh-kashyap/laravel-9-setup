@@ -210,50 +210,53 @@
                                     <div class="table-responsive">
                                         <table class="table table-bordered">
                                             <tbody>
+
+
                                                 <tr>
                                                     <td>
                                                         <span class="fw-bold">Sponsor ID</span>
                                                     </td>
-                                                    <td>V2021378</td>
+                                                    <td>{{Auth::user()->sponsor}}</td>
                                                 </tr>
                                                 <tr>
                                                     <td>
                                                         <span class="fw-bold">User ID</span>
                                                     </td>
-                                                    <td>V202916952</td>
+                                                    <td>{{Auth::user()->username}}</td>
                                                 </tr>
                                                 <tr>
                                                     <td>
                                                         <span class="fw-bold">User Name</span>
                                                     </td>
-                                                    <td>Kuchh bhii</td>
+                                                    <td>{{Auth::user()->name}}</td>
                                                 </tr>
                                                 <tr>
                                                     <td>
                                                         <span class="fw-bold">Registration Date</span>
                                                     </td>
-                                                    <td>2022-12-20 21:51:52</td>
+                                                    <td>{{Auth::user()->created_at}}</td>
                                                 </tr>
                                                 <tr>
                                                     <td>
                                                         <span class="fw-bold">Activation Date</span>
                                                     </td>
-                                                    <td>2022-12-20 21:40:52</td>
+                                                    <td>{{Auth::user()->adate}}</td>
                                                 </tr>
                                                 <tr>
                                                     <td>
                                                         <span class="fw-bold">Mobile No.</span>
                                                     </td>
-                                                    <td>9306763289</td>
+                                                    <td>{{Auth::user()->phone}}</td>
                                                 </tr>
                                                 <tr>
                                                     <td>
                                                         <span class="fw-bold">Email</span>
                                                     </td>
-                                                    <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                                                            data-cfemail="f98b98949c8a9192988a91809889c1c1c9c8b99e94989095d79a9694">[email&#160;protected]</a>
+                                                    <td>{{Auth::user()->email}}
                                                     </td>
                                                 </tr>
+
+
                                             </tbody>
                                         </table>
                                     </div>
@@ -287,4 +290,3 @@
         </div>
     </div>
 
-    

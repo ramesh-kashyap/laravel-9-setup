@@ -35,4 +35,42 @@ class DepositManagmentController extends Controller
                     $this->data['page'] = 'admin.depositManagment.deposit-request';
                     return $this->admin_dashboard();
     }
+
+    public function deposit_list(Request $request)
+    {
+
+       $limit = $request->limit ? $request->limit : 10;
+        $status = $request->status ? $request->status : null;
+        $search = $request->search ? $request->search : null;
+        $notes = Investment::orderBy('id', 'DESC')->paginate($limit)
+                ->appends([
+                    'limit' => $limit
+                ]);
+
+       if($search <> null && $request->reset!="Reset"){
+        $notes = Investment::where(function($q) use($search){
+          $q->Where('amount', 'LIKE', '%' . $search . '%')
+          ->orWhere('user_id_fk', 'LIKE', '%' . $search . '%')
+          ->orWhere('sdate', 'LIKE', '%' . $search . '%')
+          ->orWhere('status', 'LIKE', '%' . $search . '%')
+          ->orWhere('transaction_id', 'LIKE', '%' . $search . '%');
+
+        })->orderBy('id', 'DESC')->paginate($limit)
+                ->appends([
+                    'limit' => $limit
+                ]);
+
+      }
+
+
+      $this->data['deposit_list'] =  $notes;
+      $this->data['search'] = $search;
+      $this->data['page'] = 'admin.depositManagment.deposit-list';
+      return $this->admin_dashboard();
+
+    }
+
+
+
+
 }
