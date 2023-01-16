@@ -327,7 +327,7 @@
 
 
                     <li class="menu-item">
-                        <a href="{{ asset('') }}admin/documentation/" target="_blank"
+                        <a href="{{ route('admin.admin-logout') }}"
                             class="menu-link">
                             <i class="menu-icon tf-icons ti ti-file-description"></i>
                             <div data-i18n="logout">logout</div>
@@ -467,8 +467,7 @@
                                     </li>
                                     <li>
                                         <a class="dropdown-item"
-                                            href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/auth-login-cover.html"
-                                            target="_blank">
+                                            href="{{ route('admin.admin-logout') }}" >
                                             <i class="ti ti-logout me-2 ti-sm"></i>
                                             <span class="align-middle">Log Out</span>
                                         </a>

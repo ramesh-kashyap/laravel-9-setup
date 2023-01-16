@@ -11,7 +11,7 @@ use Log;
 class AdminLogin extends Controller
 {
     public function index()
-    {  
+    {
     return view('admin.admin-login');
     }
 
@@ -21,7 +21,8 @@ class AdminLogin extends Controller
     {
          Auth::guard('admin')->logout();
          $notify[] = ['success', 'Admin Logout successfully'];
-        return redirect('admin.admin-login')->withNotify($notify);
+         return redirect()->route('admin.admin-login')->withNotify($notify);
+
 
     }
 
@@ -35,7 +36,7 @@ class AdminLogin extends Controller
                 'password' => ['required'],
 
             ]);
-        
+
             $request['dynamic_column'] = 'username';
             $request['dynamic_value'] = $request['username'];
             $admin = Admin::return_by_dynamic($request);
@@ -43,11 +44,11 @@ class AdminLogin extends Controller
             if(!empty($admin) && isset($admin))
             {
                 if (\Hash::Check($request['password'], $admin->password)){
-                    
+
                     Auth::guard('admin')->login($admin);
                     $user = Auth::guard('admin')->user();
                     // dd("hhhhh");die();
-                    return redirect()->route('admin.dashboard');                 
+                    return redirect()->route('admin.dashboard');
                 }
                 else
                 {
@@ -62,7 +63,7 @@ class AdminLogin extends Controller
                 // echo "credentials are invalid"; die;
                // return back()->with('error', 'Credentials are wrong');
             }
-        
+
         }catch(\Exception $e){
             Log::info('error here');
             Log::info($e->getMessage());
@@ -70,7 +71,7 @@ class AdminLogin extends Controller
             die("hi");
             return redirect()->route('admin.admin-login')->withErrors(array('Credentials are wrong !'));
         }
-        
+
     }
 
 }
