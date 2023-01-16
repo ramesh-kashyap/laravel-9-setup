@@ -281,13 +281,13 @@
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/app-access-roles.html"
+                                <a href="{{ route('admin.withdraw-request-users') }}"
                                     class="menu-link">
                                     <div data-i18n="withdraw request">withdraw request</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/app-access-permission.html"
+                                <a href="{{ route('admin.withdraw-history-users') }}"
                                     class="menu-link">
                                     <div data-i18n="withdraw history">withdraw history</div>
                                 </a>
@@ -296,7 +296,7 @@
                     </li>
 
                     <li class="menu-item">
-                        <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/tables-basic.html"
+                        <a href="{{ route('admin.change-admin-password') }}"
                             class="menu-link">
                             <i class="menu-icon tf-icons ti ti-table"></i>
                             <div data-i18n="Tables">change admin password</div>
@@ -310,13 +310,21 @@
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                                <a href="{{ route('admin.support-query') }}"
+                                    class="menu-link">
                                     <div data-i18n="Support query">support query</div>
                                 </a>
-
                             </li>
+
                         </ul>
                     </li>
+
+
+
+
+
+
+
 
                     <li class="menu-item">
                         <a href="{{ asset('') }}admin/documentation/" target="_blank"

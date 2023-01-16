@@ -133,10 +133,30 @@ Route::group(['middleware' => ['admin']], function ()
 
 //end fundController
 
-//bonusController
+//bonus
 Route::get('roi-bonus', [App\Http\Controllers\Admin\BonusController::class, 'roi_bonus'])->name('admin.roi-bonus');
 Route::get('level-bonus', [App\Http\Controllers\Admin\BonusController::class, 'level_bonus'])->name('admin.level-bonus');
+//end bonus
 
+//withdraw
+
+Route::get('withdraw-request-users', [App\Http\Controllers\Admin\WithdrawController::class, 'withdraw_request_user'])->name('admin.withdraw-request-users');
+Route::get('withdraw_request_done', [App\Http\Controllers\Admin\WithdrawController::class, 'withdraw_request_done'])->name('admin.withdraw_request_done');
+Route::get('withdraw-history-users', [App\Http\Controllers\Admin\WithdrawController::class, 'withdraw_history_user'])->name('admin.withdraw-history-users');
+//end withdraw
+
+//changeAdminPassword
+Route::get('change-admin-password', [App\Http\Controllers\Admin\ChangeAdminPasswordController::class, 'change_admin_password'])->name('admin.change-admin-password');
+Route::post('change-password-post', [App\Http\Controllers\Admin\ChangeAdminPasswordController::class, 'change_password_post'])->name('admin.change-password-post');
+//end ChangeAdminPassword
+
+//ticketController
+Route::get('support-query', [App\Http\Controllers\Admin\TicketController::class, 'support_query'])->name('admin.support-query');
+Route::get('get_support_msg', [App\Http\Controllers\Admin\TicketController::class, 'get_support_msg'])->name('admin.get_support_msg');
+Route::any('admin_ticket_submit', [App\Http\Controllers\Admin\TicketController::class, 'admin_ticket_submit'])->name('admin.admin_ticket_submit');
+Route::any('close_ticket_', [App\Http\Controllers\Admin\TicketController::class, 'close_ticket_'])->name('admin.close_ticket_');
+Route::get('reply_support_msg', [App\Http\Controllers\Admin\TicketController::class, 'reply_support_msg'])->name('admin.reply_support_msg');
+//end tickeController
 });
 
 });
