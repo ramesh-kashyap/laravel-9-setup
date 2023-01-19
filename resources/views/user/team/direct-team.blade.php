@@ -27,7 +27,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="my-auto">
-                                                    <h4 class="fw-bolder mb-0">5</h4>
+                                                    <h4 class="fw-bolder mb-0">{{ DB::table("users")->count(); }}</h4>
                                                     <p class="card-text font-small-3 mb-0">Total Direct</p>
                                                 </div>
                                             </div>
@@ -40,7 +40,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="my-auto">
-                                                    <h4 class="fw-bolder mb-0">5</h4>
+                                                    <h4 class="fw-bolder mb-0">{{ DB::table("users")->where('active_status','=','active')->count(); }}</h4>
                                                     <p class="card-text font-small-3 mb-0">Active Direct</p>
                                                 </div>
                                             </div>
@@ -53,7 +53,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="my-auto">
-                                                    <h4 class="fw-bolder mb-0">0</h4>
+                                                    <h4 class="fw-bolder mb-0">{{ DB::table("users")->where('active_status','!=','active')->count(); }}</h4>
                                                     <p class="card-text font-small-3 mb-0">Inactive Direct</p>
                                                 </div>
                                             </div>
@@ -101,12 +101,12 @@
                                                         value="Reset">Reset</a>
                                                 </div>
                                             </div>
-        
-        
+
+
                                         </div>
                                     </form>
-                                    
-                                    <div class="card-datatable">
+
+                                    <div class="card-datatable" style="overflow-x: auto">
                                         <table class="dt-multilingual table">
                                             <thead>
                                                 <tr class="text-success">

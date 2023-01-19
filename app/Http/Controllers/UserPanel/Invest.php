@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Investment;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use Log;
 use Redirect;
 use Hash;
@@ -151,9 +152,7 @@ try{
  if($search <> null && $request->reset!="Reset"){
   $notes = $notes->where(function($q) use($search){
     $q->Where('user_id_fk', 'LIKE', '%' . $search . '%')
-    ->orWhere('txn_no', 'LIKE', '%' . $search . '%')
     ->orWhere('status', 'LIKE', '%' . $search . '%')
-    ->orWhere('type', 'LIKE', '%' . $search . '%')
     ->orWhere('amount', 'LIKE', '%' . $search . '%');
   });
 
@@ -165,7 +164,6 @@ $this->data['search'] =$search;
 $this->data['deposit_list'] =$notes;
 $this->data['page'] = 'user.invest.DepositHistory';
 return $this->dashboard_layout();
-
 
         }
 

@@ -20,7 +20,7 @@
               <div class="card">
                 <div class="card-header">
                   <h4 class="card-title">Package Activation </h4>
-                  <code>Activation Balance : <b>{{currency()}}  {{ number_format(Auth::user()->FundBalance(), 2) }} </b></code>
+                  <code>Activation Balance : <b>{{currency()}} {{ number_format(Auth::user()->FundBalance(), 2) }} </b></code>
                 </div>
                 <div class="card-body">
                   <form class="g-3" action="{{ route('user.fundActivation') }}" method="post">

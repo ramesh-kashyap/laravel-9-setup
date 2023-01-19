@@ -22,6 +22,42 @@
                                     <h4 class="card-title">All Team</h4>
                                 </div>
                                 <div class="card-body">
+                                    <form action="{{ route('user.my-reEntry') }}" method="GET">
+                                        <div class="row">
+                                            <div class="col-xl-4">
+                                                <div class="form-group mb-3">
+                                                    <input type="text" Placeholder="Search Users" name="search"
+                                                        class="form-control" value="{{ @$search }}">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-2">
+                                                <div class="form-group mb-3">
+                                                    <select name="limit" class="form-control">
+                                                        <option value="10">10</option>
+                                                        <option value="25">25</option>
+                                                        <option value="50">50</option>
+                                                        <option value="100">100</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-2">
+                                                <div class="form-group mb-3">
+                                                    <input type="submit" name="submit"
+                                                        class="btn btn-outline-theme btn-lg d-block w-100 btn-primary"
+                                                        value="Search" />
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-2">
+                                                <div class="form-group mb-3">
+                                                    <a href="{{ route('user.my-reEntry') }}" name="reset"
+                                                        class="btn btn-outline-theme btn-lg d-block w-100 btn-primary"
+                                                        value="Reset">Reset</a>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </form>
                                     <div class="card-datatable">
                                         <table class="dt-multilingual table">
                                             <thead>
