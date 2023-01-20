@@ -162,16 +162,9 @@
                     </li>
 
                     <li class="menu-item">
-<<<<<<< HEAD
-                        <a href="{{ route('admin.active-user') }}"
-                            class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-table"></i>
-                            <div data-i18n="Tables">user activation</div>
-=======
                         <a href="{{ route('admin.active-user') }}" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-layout-grid"></i>
                             <div data-i18n="Tables">Activate User</div>
->>>>>>> 847c1c9a2005ae68b1c052961cecdcffbbb60a4a
                         </a>
                     </li>
                     <li class="menu-item">
@@ -192,7 +185,7 @@
                                     <div data-i18n="active users">Pending Users</div>
                                 </a>
                             </li>
-                           
+
                         </ul>
                     </li>
 
@@ -211,33 +204,15 @@
                                     <div data-i18n="allusers">All User List</div>
                                 </a>
                             </li>
-                          
+
                             <li class="menu-item">
                                 <a href="{{ route('admin.edit-users') }}" class="menu-link">
                                     <div data-i18n="edit users list">Edit User List</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-<<<<<<< HEAD
-                                <a href="{{route('admin.active-users')}}"
-                                    class="menu-link">
-                                    <div data-i18n="active users">active users</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ route('admin.edit-users') }}"
-                                    class="menu-link">
-                                    <div data-i18n="edit users list">edit users list</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ route('admin.block-users') }}"
-                                    class="menu-link" >
-                                    <div data-i18n="block users list">block users list</div>
-=======
                                 <a href="{{ route('admin.block-users') }}" class="menu-link" >
                                     <div data-i18n="block users list">Block User List</div>
->>>>>>> 847c1c9a2005ae68b1c052961cecdcffbbb60a4a
                                 </a>
                             </li>
                         </ul>
@@ -351,14 +326,8 @@
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-<<<<<<< HEAD
-                                <a href="{{ route('admin.support-query') }}"
-                                    class="menu-link">
-                                    <div data-i18n="Support query">support query</div>
-=======
                                 <a href="javascript:void(0);" class="menu-link menu-toggle">
                                     <div data-i18n="Support query">Support Query</div>
->>>>>>> 847c1c9a2005ae68b1c052961cecdcffbbb60a4a
                                 </a>
                             </li>
 
@@ -373,16 +342,9 @@
 
 
                     <li class="menu-item">
-<<<<<<< HEAD
-                        <a href="{{ route('admin.admin-logout') }}"
-                            class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-file-description"></i>
-                            <div data-i18n="logout">logout</div>
-=======
                         <a href="{{route('admin.admin-logout')}}"  class="menu-link">
                             <i class="ti ti-logout me-2 ti-sm"></i>
                             <div data-i18n="logout">Logout</div>
->>>>>>> 847c1c9a2005ae68b1c052961cecdcffbbb60a4a
                         </a>
                     </li>
                 </ul>
@@ -519,11 +481,7 @@
                                     </li>
                                     <li>
                                         <a class="dropdown-item"
-<<<<<<< HEAD
-                                            href="{{ route('admin.admin-logout') }}" >
-=======
                                             href="{{route('admin.admin-logout')}}">
->>>>>>> 847c1c9a2005ae68b1c052961cecdcffbbb60a4a
                                             <i class="ti ti-logout me-2 ti-sm"></i>
                                             <span class="align-middle">Log Out</span>
                                         </a>
