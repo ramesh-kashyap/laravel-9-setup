@@ -25,15 +25,15 @@ class DepositManagmentController extends Controller
             });
 
           }
-                $notes = $notes->paginate($limit)
-                    ->appends([
-                        'limit' => $limit
-                    ]);
+    $notes = $notes->paginate($limit)
+        ->appends([
+            'limit' => $limit
+        ]);
 
-                    $this->data['deposit_list'] =  $notes;
-                    $this->data['search'] = $search;
-                    $this->data['page'] = 'admin.depositManagment.deposit-request';
-                    return $this->admin_dashboard();
+        $this->data['deposit_list'] =  $notes;
+        $this->data['search'] = $search;
+        $this->data['page'] = 'admin.depositManagment.deposit-request';
+        return $this->admin_dashboard();
     }
 
 

@@ -16,7 +16,7 @@
 
     <!-- Google Tag Manager (Default ThemeSelection: GTM-5DDHKGP, PixInvent: GTM-5J3LMKC) -->
     <script>
-        (function (w, d, s, l, i) {
+        (function(w, d, s, l, i) {
             w[l] = w[l] || [];
             w[l].push({
                 'gtm.start': new Date().getTime(),
@@ -30,7 +30,6 @@
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-5J3LMKC');
-
     </script>
     <!-- End Google Tag Manager -->
 
@@ -57,20 +56,17 @@
     <link rel="stylesheet" href="{{ asset('') }}admin/assets/css/demo.css" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet"
-        href="{{ asset('') }}admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="{{ asset('') }}admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
     <link rel="stylesheet" href="{{ asset('') }}admin/assets/vendor/libs/node-waves/node-waves.css" />
-    <link rel="stylesheet"
-        href="{{ asset('') }}admin/assets/vendor/libs/typeahead-js/typeahead.css" />
-    <link rel="stylesheet"
-        href="{{ asset('') }}admin/assets/vendor/libs/apex-charts/apex-charts.css" />
+    <link rel="stylesheet" href="{{ asset('') }}admin/assets/vendor/libs/typeahead-js/typeahead.css" />
+    <link rel="stylesheet" href="{{ asset('') }}admin/assets/vendor/libs/apex-charts/apex-charts.css" />
 
     <!-- Page CSS -->
-    <link rel="stylesheet" href="{{asset('')}}admin/assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css">
-    <link rel="stylesheet" href="{{asset('')}}admin/assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css">
-
+    <link rel="stylesheet" href="{{ asset('') }}admin/assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css">
     <link rel="stylesheet"
-    href="{{ asset('') }}admin/assets/vendor/libs/flatpickr/flatpickr.css" />
+        href="{{ asset('') }}admin/assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css">
+
+    <link rel="stylesheet" href="{{ asset('') }}admin/assets/vendor/libs/flatpickr/flatpickr.css" />
     <!-- Helpers -->
     <script src="{{ asset('') }}admin/assets/vendor/js/helpers.js"></script>
 
@@ -83,7 +79,6 @@
         padding: 0.3rem 0.5rem;
         margin-left: -22px;
     }
-
 </style>
 
 <body>
@@ -137,7 +132,8 @@
                 <ul class="menu-inner py-1">
 
                     <li class="menu-item">
-                        <a href="#" class="menu-link" style="font-size: 18px;
+                        <a href="#" class="menu-link"
+                            style="font-size: 18px;
                             font-weight: 700;
                             margin-left: 23px;
                         ">
@@ -150,7 +146,7 @@
 
                     <li class="menu-item">
                         <a href="{{ route('admin.dashboard') }}" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-smart-home"></i>
+                            <i class="menu-icon tf-icons ti ti-layout-grid"></i>
                             <div data-i18n="Dashboard">Dashboard</div>
                         </a>
                     </li>
@@ -166,28 +162,63 @@
                     </li>
 
                     <li class="menu-item">
+<<<<<<< HEAD
                         <a href="{{ route('admin.active-user') }}"
                             class="menu-link">
                             <i class="menu-icon tf-icons ti ti-table"></i>
                             <div data-i18n="Tables">user activation</div>
+=======
+                        <a href="{{ route('admin.active-user') }}" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-layout-grid"></i>
+                            <div data-i18n="Tables">Activate User</div>
+>>>>>>> 847c1c9a2005ae68b1c052961cecdcffbbb60a4a
                         </a>
                     </li>
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons ti ti-layout-grid"></i>
+                            <div data-i18n="users">Activation</div>
+                        </a>
+
+                        <ul class="menu-sub">
+
+                            <li class="menu-item">
+                                <a href="{{ route('admin.active-users') }}" class="menu-link">
+                                    <div data-i18n="allusers">Active User</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="{{ route('admin.active-users') }}" class="menu-link">
+                                    <div data-i18n="active users">Pending Users</div>
+                                </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+
 
                     <!-- Users -->
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons ti ti-layout-sidebar"></i>
-                            <div data-i18n="users">users</div>
+                            <i class="menu-icon tf-icons ti ti-layout-grid"></i>
+                            <div data-i18n="users">User Management</div>
                         </a>
 
                         <ul class="menu-sub">
 
                             <li class="menu-item">
                                 <a href="{{ route('admin.totalusers') }}" class="menu-link">
-                                    <div data-i18n="allusers">alluserlist</div>
+                                    <div data-i18n="allusers">All User List</div>
+                                </a>
+                            </li>
+                          
+                            <li class="menu-item">
+                                <a href="{{ route('admin.edit-users') }}" class="menu-link">
+                                    <div data-i18n="edit users list">Edit User List</div>
                                 </a>
                             </li>
                             <li class="menu-item">
+<<<<<<< HEAD
                                 <a href="{{route('admin.active-users')}}"
                                     class="menu-link">
                                     <div data-i18n="active users">active users</div>
@@ -203,6 +234,10 @@
                                 <a href="{{ route('admin.block-users') }}"
                                     class="menu-link" >
                                     <div data-i18n="block users list">block users list</div>
+=======
+                                <a href="{{ route('admin.block-users') }}" class="menu-link" >
+                                    <div data-i18n="block users list">Block User List</div>
+>>>>>>> 847c1c9a2005ae68b1c052961cecdcffbbb60a4a
                                 </a>
                             </li>
                         </ul>
@@ -210,20 +245,24 @@
 
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class='menu-icon tf-icons ti ti-file-dollar'></i>
-                            <div data-i18n="bonus">deposit management</div>
+                            <i class='menu-icon tf-icons ti ti-layout-grid'></i>
+                            <div data-i18n="bonus">Deposit Management</div>
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="{{ route('admin.deposit-request') }}"
-                                    class="menu-link">
+                                <a href="{{ route('admin.deposit-request') }}" class="menu-link">
                                     <div data-i18n="List">Pending Deposit</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{ route('admin.deposit-list') }}"
-                                    class="menu-link">
-                                    <div data-i18n="Preview">Deposit List</div>
+                                <a href="{{ route('admin.deposit-list') }}" class="menu-link">
+                                    <div data-i18n="Preview">Rejected Deposit</div>
+                                </a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="{{ route('admin.deposit-list') }}" class="menu-link">
+                                    <div data-i18n="Preview">Approved Deposit</div>
                                 </a>
                             </li>
 
@@ -232,20 +271,18 @@
 
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons ti ti-file"></i>
-                            <div data-i18n="bonus">fund management</div>
+                            <i class="menu-icon tf-icons ti ti-layout-grid"></i>
+                            <div data-i18n="bonus">Fund Management</div>
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="{{ route('admin.add-fund-list') }}"
-                                    class="menu-link">
-                                    <div data-i18n="List">Pending fund</div>
+                                <a href="{{ route('admin.add-fund-list') }}" class="menu-link">
+                                    <div data-i18n="List">Fund Request</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="#"
-                                    class="menu-link">
-                                    <div data-i18n="Preview">fund List</div>
+                                <a href="#" class="menu-link">
+                                    <div data-i18n="Preview">Fund Report</div>
                                 </a>
                             </li>
 
@@ -254,20 +291,18 @@
 
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class='menu-icon tf-icons ti ti-file-dollar'></i>
-                            <div data-i18n="bonus">bonus</div>
+                            <i class='menu-icon tf-icons ti ti-layout-grid'></i>
+                            <div data-i18n="bonus">Bonus</div>
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="{{ route('admin.roi-bonus') }}"
-                                    class="menu-link">
-                                    <div data-i18n="List">growth bonus</div>
+                                <a href="{{ route('admin.roi-bonus') }}" class="menu-link">
+                                    <div data-i18n="List">Growth Bonus</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{ route('admin.level-bonus') }}"
-                                    class="menu-link">
-                                    <div data-i18n="Preview">level bonus</div>
+                                <a href="{{ route('admin.level-bonus') }}" class="menu-link">
+                                    <div data-i18n="Preview">Level Bonus</div>
                                 </a>
                             </li>
 
@@ -276,20 +311,26 @@
 
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class='menu-icon tf-icons ti ti-settings'></i>
-                            <div data-i18n="Withdraw">withdraw</div>
+                            <i class='menu-icon tf-icons ti ti-layout-grid'></i>
+                            <div data-i18n="Withdraw">Withdrawal </div>
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
                                 <a href="{{ route('admin.withdraw-request-users') }}"
                                     class="menu-link">
-                                    <div data-i18n="withdraw request">withdraw request</div>
+                                    <div data-i18n="withdraw request">Pending Withdrawal</div>
                                 </a>
                             </li>
                             <li class="menu-item">
                                 <a href="{{ route('admin.withdraw-history-users') }}"
                                     class="menu-link">
-                                    <div data-i18n="withdraw history">withdraw history</div>
+                                    <div data-i18n="withdraw history">Rejected Withdrawal</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/app-access-permission.html"
+                                    class="menu-link">
+                                    <div data-i18n="withdraw history">Approved Withdrawal</div>
                                 </a>
                             </li>
                         </ul>
@@ -298,21 +339,26 @@
                     <li class="menu-item">
                         <a href="{{ route('admin.change-admin-password') }}"
                             class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-table"></i>
-                            <div data-i18n="Tables">change admin password</div>
+                            <i class="menu-icon tf-icons ti ti-layout-grid"></i>
+                            <div data-i18n="Tables">Settings</div>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons ti ti-file"></i>
-                            <div data-i18n="Support management">support management</div>
+                            <i class="menu-icon tf-icons ti ti-layout-grid"></i>
+                            <div data-i18n="Support management">Support </div>
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
+<<<<<<< HEAD
                                 <a href="{{ route('admin.support-query') }}"
                                     class="menu-link">
                                     <div data-i18n="Support query">support query</div>
+=======
+                                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                                    <div data-i18n="Support query">Support Query</div>
+>>>>>>> 847c1c9a2005ae68b1c052961cecdcffbbb60a4a
                                 </a>
                             </li>
 
@@ -327,10 +373,16 @@
 
 
                     <li class="menu-item">
+<<<<<<< HEAD
                         <a href="{{ route('admin.admin-logout') }}"
                             class="menu-link">
                             <i class="menu-icon tf-icons ti ti-file-description"></i>
                             <div data-i18n="logout">logout</div>
+=======
+                        <a href="{{route('admin.admin-logout')}}"  class="menu-link">
+                            <i class="ti ti-logout me-2 ti-sm"></i>
+                            <div data-i18n="logout">Logout</div>
+>>>>>>> 847c1c9a2005ae68b1c052961cecdcffbbb60a4a
                         </a>
                     </li>
                 </ul>
@@ -467,7 +519,11 @@
                                     </li>
                                     <li>
                                         <a class="dropdown-item"
+<<<<<<< HEAD
                                             href="{{ route('admin.admin-logout') }}" >
+=======
+                                            href="{{route('admin.admin-logout')}}">
+>>>>>>> 847c1c9a2005ae68b1c052961cecdcffbbb60a4a
                                             <i class="ti ti-logout me-2 ti-sm"></i>
                                             <span class="align-middle">Log Out</span>
                                         </a>
