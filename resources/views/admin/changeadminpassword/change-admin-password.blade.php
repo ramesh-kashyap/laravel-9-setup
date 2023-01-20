@@ -17,26 +17,32 @@
 
                 <div class="card mb-4">
                     <h5 class="card-header">Change Password</h5>
-
+                    @if(session()->has('message'))
+                    <div class="alert alert-success">
+                    <strong style="color:#006633;">
+                    {{ session()->get('message') }}
+                    </strong>
+                    </div>
+                    @endif
                     <hr class="my-0">
                     <div class="card-body">
                         <form id="formAccountSettings"  action="{{route('admin.change-password-post')}}" method="POST" onsubmit="return amtValue()">
                             @csrf
                             <div class="row">
                                 <div class="mb-3 col-md-6">
-                                    <label for="old_password" class="form-label">Old Password</label>
-                                        <input class="form-control" id="old_password" placeholder="Old Password" type="text" name="old_password" value="">
+                                    <label for="old_password" class="form-control-label">Old Password</label>
+                                        <input class="form-control" id="old_password" placeholder="Old Password" type="password" name="old_password" value="">
 
                                 </div>
 
                                 <div class="mb-3 col-md-6">
-                                    <label for="password" class="form-label">New Password</label>
-                                    <input class="form-control" id="password" placeholder="New Password" type="text" name="password" value="" >
+                                    <label for="password" class="form-control-label">New Password</label>
+                                    <input class="form-control" id="password" placeholder="New Password" type="password" name="password" value="" >
                                 </div>
 
                                 <div class="mb-3 col-md-6">
-                                    <label for="confirm_password" class="form-label">Cofirm Password</label>
-                                    <input class="form-control" id="confirm_password" placeholder="confirm Password" type="text" name="password_confirmation" value="" >
+                                    <label for="confirm_password" class="form-control-label">Cofirm Password</label>
+                                    <input class="form-control" id="confirm_password" placeholder="confirm Password" type="password" name="password_confirmation" value="" >
                                 </div>
                             </div>
                             <div class="mt-2">

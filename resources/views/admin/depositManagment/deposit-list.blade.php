@@ -82,8 +82,7 @@
                                     <td>{{ $value->transaction_id }}</td>
                                     <td>{{ $value->payment_mode }}</td>
 
-                                    <td><span
-                                            class="{{ ($value->status=='Active')?'badge green':'badge red' }}">{{ $value->status }}</span>
+                                    <td><span class="badge bg-{{ $value->status == 'Active' ? 'success' : 'danger' }}">{{ $value->status }}</span>
                                     </td>
 
                                 </tr>

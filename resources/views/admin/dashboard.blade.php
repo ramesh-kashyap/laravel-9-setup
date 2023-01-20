@@ -1,3 +1,13 @@
+<?php
+use App\Models\User;
+use App\Models\Investment;
+use App\Models\Income;
+use App\Models\Withdraw;
+
+
+?>
+
+
 <!-- Content wrapper -->
 <div class="content-wrapper">
 
@@ -34,9 +44,13 @@
                             <small class="d-block mb-1 text-muted">Total User</small>
                             <p class="card-text text-success"><img style="width:56px;" src="{{asset('admin/assets/img/user.png')}}" alt=""></p>
                         </div>
-                        <h4 class="card-title mb-1">20</h4>
+                        <h4 class="card-title mb-1">{{User::countAlluser()}}</h4>
                     </div>
-                  
+                    <div class="icon">
+                        <i class="ion ion-person-add"></i>
+                      </div>
+                      <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+
                 </div>
             </div>
 
@@ -48,9 +62,14 @@
                             <small class="d-block mb-1 text-muted">Active User</small>
                             <p class="card-text text-success"><img style="width:56px;" src="{{asset('admin/assets/img/user.png')}}" alt=""></p>
                         </div>
-                        <h4 class="card-title mb-1">5678</h4>
+                        <h4 class="card-title mb-1">{{User::countActiveuser()}}</h4>
                     </div>
-                  
+                    <div class="icon">
+                        <i class="ion ion-person-add"></i>
+                      </div>
+                      <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+
+
                 </div>
             </div>
 
@@ -62,9 +81,14 @@
                             <small class="d-block mb-1 text-muted">Pending User</small>
                             <p class="card-text text-success"><img style="width:56px;" src="{{asset('admin/assets/img/user.png')}}" alt=""></p>
                         </div>
-                        <h4 class="card-title mb-1">$42.5k</h4>
+                        <h4 class="card-title mb-1">{{User::countPendinguser()}}</h4>
                     </div>
-                  
+                    <div class="icon">
+                        <i class="ion ion-person-add"></i>
+                      </div>
+                      <a href="#" class="card-title mb-1">More info <i class="fa fa-arrow-circle-right"></i></a>
+
+
                 </div>
             </div>
 
@@ -73,12 +97,17 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex justify-content-between">
-                            <small class="d-block mb-1 text-muted">Today Registration</small>
+                            <div><small class="d-block mb-1 text-muted">Today Registration</small></div>
                             <p class="card-text text-success"><img style="width:56px;" src="{{asset('admin/assets/img/user.png')}}" alt=""></p>
                         </div>
-                        <h4 class="card-title mb-1">42.5k</h4>
+                        <h4 class="card-title mb-1">{{User::countTodaysuser()}}</h4>
+
                     </div>
-                  
+                    <div class="icon">
+                        <i class="ion ion-person-add"></i>
+                        <a href="#" class="card-title mb-1">More info <i class="fa fa-arrow-circle-right"></i></a>
+                      </div>
+
                 </div>
             </div>
 
@@ -91,9 +120,14 @@
                             <small class="d-block mb-1 text-muted">Today Activated</small>
                             <p class="card-text text-success"><img style="width:56px;" src="{{asset('admin/assets/img/user.png')}}" alt=""></p>
                         </div>
-                        <h4 class="card-title mb-1">42.5k</h4>
+                        <h4 class="card-title mb-1">{{Investment::countTodaysactiveted()}}</h4>
                     </div>
-                  
+                    <div class="icon">
+                        <i class="ion ion-person-add"></i>
+                      </div>
+                      <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+
+
                 </div>
             </div>
 
@@ -105,9 +139,13 @@
                             <small class="d-block mb-1 text-muted">Total Business</small>
                             <p class="card-text text-success"><img style="width: 36px;" src="{{asset('admin/assets/img/bonus.png')}}" alt=""></p>
                         </div>
-                        <h4 class="card-title mb-1">{{currency()}}42.5k</h4>
+                        <h4 class="card-title mb-1">{{currency()}} {{Investment::counttotal_business()}}</h4>
                     </div>
-                  
+                    <div class="icon">
+                        <i class="ion ion-person-add"></i>
+                      </div>
+                      <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+
                 </div>
             </div>
 
@@ -119,9 +157,13 @@
                             <small class="d-block mb-1 text-muted">Total Level Bonus</small>
                             <p class="card-text text-success"><img style="width: 36px;" src="{{asset('admin/assets/img/5110795.png')}}" alt=""></p>
                         </div>
-                        <h4 class="card-title mb-1">{{currency()}}42.5k</h4>
+                        <h4 class="card-title mb-1">{{currency()}} {{round(Income::count_level_bonus(),2)}}</h4>
                     </div>
-                  
+                    <div class="icon">
+                        <i class="ion ion-person-add"></i>
+                      </div>
+                      <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+
                 </div>
             </div>
 
@@ -133,9 +175,13 @@
                             <small class="d-block mb-1 text-muted">Total Roi Bonus</small>
                             <p class="card-text text-success"><img style="width: 36px;" src="{{asset('admin/assets/img/5110795.png')}}" alt=""></p>
                         </div>
-                        <h4 class="card-title mb-1">{{currency()}}42.5k</h4>
+                        <h4 class="card-title mb-1">{{currency()}} {{Income::Count_roi_bonus()}}</h4>
                     </div>
-                  
+                    <div class="icon">
+                        <i class="ion ion-person-add"></i>
+                      </div>
+                      <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+
                 </div>
             </div>
 
@@ -147,9 +193,13 @@
                             <small class="d-block mb-1 text-muted">Pending Withdrawal</small>
                             <p class="card-text text-success"><img style="width: 36px;" src="{{asset('admin/assets/img/bonus.png')}}" alt=""></p>
                         </div>
-                        <h4 class="card-title mb-1">{{currency()}}42.5k</h4>
+                        <h4 class="card-title mb-1">{{currency()}} {{Withdraw::CounttotalPendingWithdaw()}}</h4>
                     </div>
-                  
+                    <div class="icon">
+                        <i class="ion ion-person-add"></i>
+                      </div>
+                      <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+
                 </div>
             </div>
 
@@ -161,13 +211,17 @@
                             <small class="d-block mb-1 text-muted">Approved Withdrawal</small>
                             <p class="card-text text-success"><img style="width: 36px;" src="{{asset('admin/assets/img/bonus.png')}}" alt=""></p>
                         </div>
-                        <h4 class="card-title mb-1">{{currency()}}42.5k</h4>
+                        <h4 class="card-title mb-1">{{currency()}}  {{Withdraw::CounttotalWithdaw()}}</h4>
                     </div>
-                  
+                    <div class="icon">
+                        <i class="ion ion-person-add"></i>
+                      </div>
+                      <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+
                 </div>
             </div>
 
-          
+
 
         </div>
 

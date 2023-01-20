@@ -15,6 +15,7 @@
         <div class="card">
             <h5 class="card-header">Total Users</h5>
 
+
             <div class="card-datatable text-nowrap">
                 <form class="form-repeater" style="margin-left: 14px;" method="GET"
                     action="{{ route('admin.support-query') }}">

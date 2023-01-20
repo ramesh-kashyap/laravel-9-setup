@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Admin;
 use DB;
 use Log;
 use Validator;
@@ -50,7 +51,10 @@ class ChangeAdminPasswordController extends Controller
                 'updated_at' => new \DateTime
             ));
 
-            return Redirect::Back()->with('message', 'password updated successfully');
+
+          $notify[] = ['success', 'password updated successfully'];
+          return redirect()->back()->withNotify($notify);
+
         } catch (\Exception $e) {
             return Redirect::back()->witherrors($e->getMessage())->withInput();
         }

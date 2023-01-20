@@ -51,7 +51,7 @@
                                 <div class="mb-3 col-md-6">
                                     <label for="firstName" class="form-label">Name</label>
                                     <input class="form-control"  type="text" id="firstName" name="name"
-                                        value="{{($profile)?$profile->name:'0'}}" autofocus />
+                                        value="{{($profile)?$profile->name:'0'}}"  />
                                 </div>
 
                                 <div class="mb-3 col-md-6">

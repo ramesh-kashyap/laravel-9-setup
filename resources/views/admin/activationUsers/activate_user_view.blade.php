@@ -12,6 +12,14 @@
             <span class="text-muted fw-light">User Activation /</span> Account
         </h4>
 
+        @if(session()->has('message'))
+        <div class="alert alert-success">
+        <strong style="color:#006633;">
+        {{ session()->get('message') }}
+        </strong>
+        </div>
+        @endif
+
         <div class="row">
             <div class="col-md-12">
 

@@ -9,7 +9,7 @@
 
 
         <h4 class="fw-bold py-3 mb-4">
-            <span class="text-muted fw-light">User Activation /</span> Account
+            <span class="text-muted fw-light">Reply /</span> Admin Reply
         </h4>
 
         <div class="row">
@@ -34,6 +34,13 @@
                         </div>
                     </div>
                     <hr class="my-0">
+                    @if(session()->has('message'))
+                    <div class="alert alert-success">
+                    <strong style="color:#006633;">
+                    {{ session()->get('message') }}
+                    </strong>
+                    </div>
+                    @endif
                     <div class="card-body">
                         <form id="formAccountSettings"  action="{{route('admin.admin_ticket_submit')}}" method="POST" onsubmit="return amtValue()">
                             @csrf

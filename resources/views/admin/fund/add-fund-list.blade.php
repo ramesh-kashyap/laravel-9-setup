@@ -84,7 +84,7 @@
                                     <td>{{ $value->created_at }}</td>
                                     <td>{{ $value->txn_no }}</td>
 
-                                    <td>{{ $value->status }}</td>
+                                    <td ><span class="badge bg-{{ $value->status == 'Approved' ? 'success' : 'danger' }}">{{ $value->status }}</span></td>
                                     <td>{{ $value->type }}</td>
 
                                     <td><a href="{{asset('fund_request_done?id=')}}{{$value->id}}&user_Id={{$value->user_id}}&withdraw_status=success" class='btn btn-success'>Success</a> <a href="{{asset('fund_request_done?id=')}}{{$value->id}}&user_Id={{$value->user_id}}&withdraw_status=blocked" class='btn btn-danger'>Reject</a></td>

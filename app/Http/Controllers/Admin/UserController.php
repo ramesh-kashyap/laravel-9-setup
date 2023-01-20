@@ -178,7 +178,10 @@ class UserController extends Controller
               Bank::updateOrCreate(['user_id'=>$id],$bank_array);
          }
 
-       return redirect()->back()->with('message', 'Updated successfully');
+     //  return redirect()->back()->with('message', 'Updated successfully');
+
+       $notify[] = ['success', 'User Activation  Submited successfully'];
+       return redirect()->back()->withNotify($notify);
 
          }
           catch(\Exception $e){

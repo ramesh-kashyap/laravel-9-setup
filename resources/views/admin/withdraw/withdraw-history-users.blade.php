@@ -83,11 +83,7 @@
                                       <td>{{$value->payment_mode}}</td>
                                       <td>{{$value->txn_id}}</td>
                                       <td>{{$value->paid_date}}</td>
-                                      <td>{{$value->status}}</td>
-
-
-
-
+                                      <td><span class="badge bg-{{ $value->status == 'Approved' ? 'success' : 'danger' }}">{{ $value->status }}</span></td>
                                   </tr>
                                   @endforeach
 

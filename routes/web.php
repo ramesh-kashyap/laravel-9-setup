@@ -123,7 +123,7 @@ Route::group(['middleware' => ['admin']], function ()
 //DepositManagmentController
  Route::get('/depodit-request', [App\Http\Controllers\Admin\DepositManagmentController::class, 'deposit_request'])->name('admin.deposit-request');
  Route::get('/depodit-list', [App\Http\Controllers\Admin\DepositManagmentController::class, 'deposit_list'])->name('admin.deposit-list');
- Route::get('deposit_request_done', [App\Http\Controllers\Admin\DepositManagmentController::class, 'deposit_request_done'])->name('admin.deposit_request_done');
+ Route::any('deposit_request_done', [App\Http\Controllers\Admin\DepositManagmentController::class, 'deposit_request_done'])->name('admin.deposit_request_done');
 // end DepositManagmentController
 
 //fundController

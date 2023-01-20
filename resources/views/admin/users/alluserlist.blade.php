@@ -89,8 +89,7 @@
                                     <td>{{ $value->adate }}</td>
                                     <td>&#8377; {{$value->package}}</td>
                                     <td> {{ $value->sponsor_detail ? $value->sponsor_detail->username : 0 }}</td>
-                                    <td><span
-                                            class="badge bg-{{ $value->active_status == 'Active' ? 'success' : 'danger' }}">{{ $value->active_status }}</span>
+                                    <td><span class="badge bg-{{ $value->active_status == 'Active' ? 'success' : 'danger' }}">{{ $value->active_status }}</span>
                                     </td>
 
                                 </tr>

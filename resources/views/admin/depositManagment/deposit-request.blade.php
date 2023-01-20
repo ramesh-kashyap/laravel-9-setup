@@ -62,9 +62,7 @@
                                 <th>User Id</th>
                                 <th>Amount</th>
                                 <th>Transaction Date.</th>
-
                                 <th>Transaction ID</th>
-
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
@@ -83,7 +81,8 @@
                                       <td>{{$value->created_at}}</td>
                                       <td>{{$value->transaction_id}}</td>
 
-                                      <td ><span class="{{($value->status=='Active')?'badge green':'badge red'}}">{{$value->status}}</span></td>
+
+                                      <td ><span class="badge bg-{{ $value->status == 'Active' ? 'success' : 'danger' }}">{{ $value->status }}</span></td>
                                          <td><a href="{{asset('admin.deposit_request_done?id=')}}{{$value->id}}&user_Id={{$value->user_id}}&withdraw_status=success" class='btn btn-success'>Success</a> <a href="{{asset('deposit_request_done?id=')}}{{$value->id}}&user_Id={{$value->user_id}}&withdraw_status=blocked" class='btn btn-danger'>Reject</a></td>
                                   </tr>
                                   @endforeach

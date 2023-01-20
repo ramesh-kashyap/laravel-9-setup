@@ -33,7 +33,7 @@ class ActiveuserController extends Controller
     {
 
 
-      try{
+   try{
             $validation =  Validator::make($request->all(), [
                 'user_id' => 'required|exists:users,username',
                 'amount' => 'required',
@@ -43,13 +43,11 @@ class ActiveuserController extends Controller
                 Log::info($validation->getMessageBag()->first());
 
                 return Redirect::back()->withErrors($validation->getMessageBag()->first())->withInput();
-
             }
 
                 $user=User::where('username',$request->user_id)->orderBy('id','desc')->first();
                 $invest_check=Investment::where('user_id',$user->id)->where('status','!=','Decline')->orderBy('id','desc')->limit(1)->first();
                 $totalDeposit=Investment::where('user_id',$user->id)->where('status','Active')->orderBy('id','desc')->count();
-
 
                   $invoice = substr(str_shuffle("0123456789"), 0, 7);
                   $today= date("Y-m-d");
@@ -84,21 +82,31 @@ class ActiveuserController extends Controller
                     User::where('id',$user->id)->update($user_update);
 
                    }
+
+
                    User::where('id',$user->id)->update(['package' => $request->amount,'active_status'=>'Active']);
 
-                   // add_level_income($user->id,$request->amount);
+                    //add_direct_income($user->id,$request->amount);
 
                    $payment =  Investment::insert($data);
 
 
               }
+            //   return redirect()->route('admin.active-user')->with('messages', ' User Activation  Submited successfully');
 
-              $notify[] = ['success', $user->username.' User Activation  Submited successfully'];
+
+
+              $notify[] = ['success', 'User Activation  Submited successfully'];
               return redirect()->back()->withNotify($notify);
-          }
-           catch(\Exception $e){
-            return Redirect::back()->witherrors($e->getMessage())->withInput();
-        }
+
+                }
+                 catch(\Exception $e){
+                  Log::info('error here');
+                  Log::info($e->getMessage());
+                  print_r($e->getMessage());
+                dd($e->getMessage());
+                  return back()->withErrors('error', $e->getMessage())->withInput();
+              }
 
     }
 }
