@@ -181,7 +181,7 @@
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{ route('admin.active-users') }}" class="menu-link">
+                                <a href="{{ route('admin.pending-users') }}" class="menu-link">
                                     <div data-i18n="active users">Pending Users</div>
                                 </a>
                             </li>
@@ -230,13 +230,13 @@
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{ route('admin.deposit-list') }}" class="menu-link">
+                                <a href="{{ route('admin.deposit-decline') }}" class="menu-link">
                                     <div data-i18n="Preview">Rejected Deposit</div>
                                 </a>
                             </li>
 
                             <li class="menu-item">
-                                <a href="{{ route('admin.deposit-list') }}" class="menu-link">
+                                <a href="{{ route('admin.deposit-approved') }}" class="menu-link">
                                     <div data-i18n="Preview">Approved Deposit</div>
                                 </a>
                             </li>

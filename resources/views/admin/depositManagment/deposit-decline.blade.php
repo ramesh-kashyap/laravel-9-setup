@@ -6,7 +6,7 @@
 
 
         <h4 class="fw-bold py-3 mb-4">
-            <span class="text-muted fw-light">Deposit /</span> Deposit List
+            <span class="text-muted fw-light">Deposit /</span> Deposit decline
         </h4>
 
 
@@ -17,7 +17,7 @@
 
             <div class="card-datatable text-nowrap">
                 <form class="form-repeater" style="margin-left: 14px;" method="GET"
-                    action="{{ route('admin.deposit-request') }}">
+                    action="{{ route('admin.deposit-decline') }}">
                     <div data-repeater-list="group-a">
                         <div data-repeater-item="">
                             <div class="row">
@@ -42,7 +42,7 @@
                                     <button class="btn btn-primary waves-effect waves-light search-button">
                                         Submit
                                     </button>
-                                    <a href="{{ route('admin.deposit-request') }}"
+                                    <a href="{{ route('admin.deposit-decline') }}"
                                         class="btn btn-danger waves-effect waves-light search-button">
                                         Reset
                                     </a>
@@ -82,7 +82,7 @@
                                     <td>{{ $value->transaction_id }}</td>
                                     <td>{{ $value->payment_mode }}</td>
 
-                                    <td><span class="badge bg-{{ $value->status == 'Active' ? 'success' : 'danger' }}">{{ $value->status }}</span>
+                                    <td><span class="badge bg-{{ $value->status == 'Decline' ? 'success' : 'danger' }}">{{ $value->status }}</span>
                                     </td>
 
                                 </tr>

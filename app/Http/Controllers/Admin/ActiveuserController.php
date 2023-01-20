@@ -29,6 +29,36 @@ class ActiveuserController extends Controller
 
     }
 
+    public function pending_users(Request $request)
+    {
+        $limit = $request->limit ? $request->limit : 10;
+        $status = $request->status ? $request->status : null;
+        $search = $request->search ? $request->search : null;
+        $notes = User::where('active_status','Pending')->orderBy('id', 'DESC');
+
+       if($search <> null && $request->reset!="Reset"){
+        $notes = $notes->where(function($q) use($search){
+          $q->Where('name', 'LIKE', '%' . $search . '%')
+          ->orWhere('username', 'LIKE', '%' . $search . '%')
+          ->orWhere('email', 'LIKE', '%' . $search . '%')
+          ->orWhere('phone', 'LIKE', '%' . $search . '%')
+          ->orWhere('jdate', 'LIKE', '%' . $search . '%')
+          ->orWhere('active_status', 'LIKE', '%' . $search . '%');
+        });
+
+      }
+            $notes = $notes->paginate($limit)
+                ->appends([
+                    'limit' => $limit
+                ]);
+
+     $this->data['active_user'] =  $notes;
+     $this->data['search'] = $search;
+     $this->data['page'] = 'admin.activationUsers.pending-user';
+     return $this->admin_dashboard();
+
+    }
+
     public function activate_admin_post(Request $request)
     {
 

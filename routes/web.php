@@ -106,6 +106,7 @@ Route::group(['middleware' => ['admin']], function ()
 
  // active users controller
  Route::get('/active-user', [App\Http\Controllers\Admin\ActiveuserController::class, 'active_user'])->name('admin.active-user');
+ Route::get('/pending-users', [App\Http\Controllers\Admin\ActiveuserController::class, 'pending_users'])->name('admin.pending-users');
  Route::post('activate-admin', [App\Http\Controllers\Admin\ActiveuserController::class, 'activate_admin_post'])->name('admin.activate-admin');
 
  // usercontroller
@@ -122,7 +123,8 @@ Route::group(['middleware' => ['admin']], function ()
 
 //DepositManagmentController
  Route::get('/depodit-request', [App\Http\Controllers\Admin\DepositManagmentController::class, 'deposit_request'])->name('admin.deposit-request');
- Route::get('/depodit-list', [App\Http\Controllers\Admin\DepositManagmentController::class, 'deposit_list'])->name('admin.deposit-list');
+ Route::get('/depodit-list-decline', [App\Http\Controllers\Admin\DepositManagmentController::class, 'deposit_list_decline'])->name('admin.deposit-decline');
+ Route::get('/depodit-list-approved', [App\Http\Controllers\Admin\DepositManagmentController::class, 'deposit_approved_list'])->name('admin.c');
  Route::any('deposit_request_done', [App\Http\Controllers\Admin\DepositManagmentController::class, 'deposit_request_done'])->name('admin.deposit_request_done');
 // end DepositManagmentController
 

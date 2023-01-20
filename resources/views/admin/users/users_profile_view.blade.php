@@ -37,35 +37,35 @@
                             <div class="row">
 
                                 <div class="mb-3 col-md-6">
-                                    <label for="firstName" class="form-label">Sponsor ID</label>
+                                    <label class="form-label">Sponsor ID</label>
                                     <input class="form-control" type="text" name=""  value="{{ $profile->sponsor_detail ? $profile->sponsor_detail->username : '0' }}"
                                     readonly>
                                 </div>
 
                                 <div class="mb-3 col-md-6">
-                                    <label for="firstName" class="form-label">User ID</label>
+                                    <label  class="form-label">User ID</label>
                                     <input class="form-control" type="text" name="memberID"
                                     value="{{ $profile ? $profile->username : '' }}" readonly>
                                 </div>
 
                                 <div class="mb-3 col-md-6">
-                                    <label for="firstName" class="form-label">Name</label>
-                                    <input class="form-control"  type="text" id="firstName" name="name"
+                                    <label  class="form-label">Name</label>
+                                    <input class="form-control"  type="text"  name="name"
                                         value="{{($profile)?$profile->name:'0'}}"  />
                                 </div>
 
                                 <div class="mb-3 col-md-6">
-                                    <label for="email" class="form-label">E-mail</label>
+                                    <label  class="form-label">E-mail</label>
                                     <input class="form-control" type="email" name="email"
-                                        value="{{($profile)?$profile->email:''}}" placeholder="Email ID" />
+                                        value="{{($profile)?$profile->email:''}}" />
                                 </div>
 
                                 <div class="mb-3 col-md-6">
-                                    <label class="form-label" for="phoneNumber">Phone Number</label>
+                                    <label class="form-label" >Phone Number</label>
                                     <div class="input-group input-group-merge">
                                         <span class="input-group-text">IN (+1)</span>
-                                        <input type="text" value="{{($profile)?$profile->phone:''}}" id="phoneNumber" name="phoneNumber" class="form-control"
-                                            placeholder="202 555 0111" />
+                                        <input type="text" value="{{($profile)?$profile->phone:''}}" name="phone" class="form-control"
+                                            />
                                     </div>
                                 </div>
 

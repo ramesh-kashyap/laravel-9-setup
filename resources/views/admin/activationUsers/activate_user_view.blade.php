@@ -24,40 +24,27 @@
             <div class="col-md-12">
 
                 <div class="card mb-4">
-                    <h5 class="card-header">Profile Details</h5>
+                    <h5 class="card-header">User Details</h5>
                     <!-- Account -->
-                    <div class="card-body">
-                        <div class="d-flex align-items-start align-items-sm-center gap-4">
-                            <img src="http://127.0.0.1:8000/admin/assets/img/avatars/14.png"
-                                alt="user-avatar" class="d-block w-px-100 h-px-100 rounded"
-                                id="uploadedAvatar" />
-                            <div class="button-wrapper">
-                                <label for="upload" class="btn btn-primary me-2 mb-3" tabindex="0">
-                                    <span class="d-none d-sm-block">Hi,  {{($profiles)?$profiles->name:''}}</span>
-                                    <i class="ti ti-upload d-block d-sm-none"></i>
 
-                                </label>
-
-                            </div>
-                        </div>
-                    </div>
                     <hr class="my-0">
                     <div class="card-body">
                         <form id="formAccountSettings"  action="{{route('admin.activate-admin')}}" method="POST" onsubmit="return amtValue()">
                             {{ csrf_field() }}
                             <div class="row">
-                                <div class="mb-3 col-md-6">
+                                <div class="mb-3 col-md-7">
                                     <label for="username_res" class="form-label">Name</label>
                                         <input class="form-control" id="username_res" placeholder="Name" type="text" name="name" value="">
 
                                 </div>
 
-                                <div class="mb-3 col-md-6">
+
+                                <div class="mb-3 col-md-7">
                                     <label for="userid" class="form-label">User ID</label>
                                     <input class="form-control check_sponsor_exist" data-response="username_res" required id="inputEmail3" placeholder="Username" type="text" name="user_id" value="" >
                                 </div>
 
-                                <div class="mb-3 col-md-6">
+                                <div class="mb-3 col-md-7">
                                     <label class="form-label" for="amount">Amount</label>
 
                                             <select class=" select2 form-control" name="amount" id="amount" >

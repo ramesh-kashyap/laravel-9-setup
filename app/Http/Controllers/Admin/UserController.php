@@ -85,6 +85,9 @@ class UserController extends Controller
 
     }
 
+
+
+
     public function edit_users(Request $request)
     {
         $limit = $request->limit ? $request->limit : 10;
@@ -137,6 +140,8 @@ class UserController extends Controller
    public function users_profile_update(Request $request)
 
    {
+
+
        try{
            $validation =  Validator::make($request->all(), [
                'email' => 'required',
@@ -163,7 +168,7 @@ class UserController extends Controller
          {
            $update_data['password']= \Hash::make($post_array['password']);
          }
-       //   $update_data['trx_addres']=$post_array['trx_addres'];
+          $update_data['trx_addres']=$post_array['trx_addres'];
          $update_data['email']=$post_array['email'];
           $bank_array['account_holder']=$post_array['account_holder'];
           $bank_array['bank_name']=$post_array['bank_name'];
