@@ -9,30 +9,14 @@
 
 
         <h4 class="fw-bold py-3 mb-4">
-            <span class="text-muted fw-light">Reply /</span> Admin Reply
+            <span class="text-muted fw-light">Support Query /</span> Admin Reply
         </h4>
 
         <div class="row">
             <div class="col-md-12">
 
                 <div class="card mb-4">
-                    <h5 class="card-header">Profile Details</h5>
-                    <!-- Account -->
-                    <div class="card-body">
-                        <div class="d-flex align-items-start align-items-sm-center gap-4">
-                            <img src="http://127.0.0.1:8000/admin/assets/img/avatars/14.png"
-                                alt="user-avatar" class="d-block w-px-100 h-px-100 rounded"
-                                id="uploadedAvatar" />
-                            <div class="button-wrapper">
-                                <label for="upload" class="btn btn-primary me-2 mb-3" tabindex="0">
-                                    <span class="d-none d-sm-block">Hi, Kapil</span>
-                                    <i class="ti ti-upload d-block d-sm-none"></i>
-
-                                </label>
-
-                            </div>
-                        </div>
-                    </div>
+                    <h5 class="card-header">Admin reply</h5>
                     <hr class="my-0">
                     @if(session()->has('message'))
                     <div class="alert alert-success">

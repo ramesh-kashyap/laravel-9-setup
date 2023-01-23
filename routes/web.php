@@ -124,14 +124,14 @@ Route::group(['middleware' => ['admin']], function ()
 //DepositManagmentController
  Route::get('/depodit-request', [App\Http\Controllers\Admin\DepositManagmentController::class, 'deposit_request'])->name('admin.deposit-request');
  Route::get('/depodit-list-decline', [App\Http\Controllers\Admin\DepositManagmentController::class, 'deposit_list_decline'])->name('admin.deposit-decline');
- Route::get('/depodit-list-approved', [App\Http\Controllers\Admin\DepositManagmentController::class, 'deposit_approved_list'])->name('admin.c');
+ Route::get('/depodit-list-approved', [App\Http\Controllers\Admin\DepositManagmentController::class, 'deposit_approved_list'])->name('admin.deposit-approved');
  Route::any('deposit_request_done', [App\Http\Controllers\Admin\DepositManagmentController::class, 'deposit_request_done'])->name('admin.deposit_request_done');
 // end DepositManagmentController
 
 //fundController
  Route::get('Add-fund-list', [App\Http\Controllers\Admin\FundController::class, 'add_fund_report'])->name('admin.add-fund-list');
- Route::get('fund_request_done', [App\Http\Controllers\Admin\FundController::class, 'fund_request_done'])->name('fund_request_done');
- Route::get('Add-fund-Report', [App\Http\Controllers\Admin\FundController::class, 'add_fund_reports'])->name('Add-fund-Report');
+ Route::get('fund_request_done', [App\Http\Controllers\Admin\FundController::class, 'fund_request_done'])->name('admin.fund_request_done');
+ Route::get('All-fund-Report', [App\Http\Controllers\Admin\FundController::class, 'all_fund_reports'])->name('admin.All-fund-Report');
 
 //end fundController
 
@@ -144,7 +144,8 @@ Route::get('level-bonus', [App\Http\Controllers\Admin\BonusController::class, 'l
 
 Route::get('withdraw-request-users', [App\Http\Controllers\Admin\WithdrawController::class, 'withdraw_request_user'])->name('admin.withdraw-request-users');
 Route::get('withdraw_request_done', [App\Http\Controllers\Admin\WithdrawController::class, 'withdraw_request_done'])->name('admin.withdraw_request_done');
-Route::get('withdraw-history-users', [App\Http\Controllers\Admin\WithdrawController::class, 'withdraw_history_user'])->name('admin.withdraw-history-users');
+Route::get('withdraw-rejected-history', [App\Http\Controllers\Admin\WithdrawController::class, 'withdraw_rejected_history'])->name('admin.withdraw-rejected-history');
+Route::get('withdraw-approved-history', [App\Http\Controllers\Admin\WithdrawController::class, 'withdraw_approved_history'])->name('admin.withdraw-approved-history');
 //end withdraw
 
 //changeAdminPassword

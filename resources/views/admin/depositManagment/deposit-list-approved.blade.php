@@ -6,7 +6,7 @@
 
 
         <h4 class="fw-bold py-3 mb-4">
-            <span class="text-muted fw-light">Deposit /</span> Deposit decline
+            <span class="text-muted fw-light">Deposit /</span> Deposit Approved
         </h4>
 
 

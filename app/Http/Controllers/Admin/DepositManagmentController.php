@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Investment;
+use App\Models\User;
+use App\Models\Extra_user;
+use App\Models\Income;
 
 class DepositManagmentController extends Controller
 {
@@ -53,15 +56,6 @@ class DepositManagmentController extends Controller
 
          if ($users->active_status=="Pending")
           {
-             $datas = [
-               'cycle' => 1,
-               'days' =>15,
-               'user_id' => $user->user_id,
-               'withdraw_date' =>date('Y-m-d', strtotime($today. ' + 15 day')),
-           ];
-           $payment =  Extra_user::firstOrCreate(['user_id'=>$user->user_id],$datas);
-
-
 
            $user_update=array('active_status'=>'Active','adate'=>Date("Y-m-d H:i:s"),'package'=>$user->amount);
           User::where('id',$users->id)->update($user_update);
@@ -110,11 +104,11 @@ class DepositManagmentController extends Controller
             Extra_user::where('user_id',$users->id)->update(['cycle' =>$newCycle,'days'=>$InsertDays,'withdraw_date'=>$withdraw_date]);
           }
          }
-         add_level_income($user->user_id,$user->amount);
+        // add_level_income($user->user_id,$user->amount);
 
          $update_data['status']= 'Active';
          $update_data['roiStartDate']=  $InsertstartDate;
-         $update_data['days']= $InsertDays;
+       //  $update_data['days']= $InsertDays;
          Investment::where('id',$id)->update($update_data);
      return redirect()->back()->with('message', 'Deposit request Approved successfully');
       }

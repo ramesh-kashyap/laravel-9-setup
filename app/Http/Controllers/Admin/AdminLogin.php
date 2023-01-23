@@ -21,12 +21,10 @@ class AdminLogin extends Controller
     {
          Auth::guard('admin')->logout();
          $notify[] = ['success', 'Admin Logout successfully'];
-<<<<<<< HEAD
+
          return redirect()->route('admin.admin-login')->withNotify($notify);
 
-=======
-        return redirect()->route('admin.admin-login')->withNotify($notify);
->>>>>>> 847c1c9a2005ae68b1c052961cecdcffbbb60a4a
+
 
     }
 

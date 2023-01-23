@@ -17,7 +17,7 @@
 
             <div class="card-datatable text-nowrap">
                 <form class="form-repeater" style="margin-left: 14px;" method="GET"
-                    action="{{ route('admin.withdraw-history-users') }}">
+                    action="{{ route('admin.withdraw-approved-history') }}">
                     <div data-repeater-list="group-a">
                         <div data-repeater-item="">
                             <div class="row">
@@ -42,7 +42,7 @@
                                     <button class="btn btn-primary waves-effect waves-light search-button">
                                         Submit
                                     </button>
-                                    <a href="{{ route('admin.withdraw-history-users') }}"
+                                    <a href="{{ route('admin.withdraw-approved-history') }}"
                                         class="btn btn-danger waves-effect waves-light search-button">
                                         Reset
                                     </a>
@@ -77,8 +77,6 @@
 
                                       <td>{{$value->user_id_fk}}</td>
                                       <td>&#36; {{$value->amount}}</td>
-
-
                                       <td>{{$value->created_at}}</td>
                                       <td>{{$value->payment_mode}}</td>
                                       <td>{{$value->txn_id}}</td>

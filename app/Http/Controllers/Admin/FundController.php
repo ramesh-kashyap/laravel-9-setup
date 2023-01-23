@@ -19,24 +19,20 @@ class FundController extends Controller
         $notes = BuyFund::where('status','Pending')->orderBy('id', 'DESC');
 
         if($search <> null && $request->reset!="Reset"){
-            $notes = BuyFund::where(function($q) use($search){
-              $q->Where('txn_no', 'LIKE', '%' . $search . '%')
-              ->orWhere('bdate', 'LIKE', '%' . $search . '%')
-              ->orWhere('user_id_fk', 'LIKE', '%' . $search . '%')
-              ->orWhere('status', 'LIKE', '%' . $search . '%')
+            $notes = $notes->where(function($q) use($search){
+                $q->Where('txn_no', 'LIKE', '%' . $search . '%')
+                ->orWhere('bdate', 'LIKE', '%' . $search . '%')
+                ->orWhere('user_id_fk', 'LIKE', '%' . $search . '%')
+                ->orWhere('status', 'LIKE', '%' . $search . '%')
+                ->orWhere('type', 'LIKE', '%' . $search . '%');
+            });
 
-              ->orWhere('type', 'LIKE', '%' . $search . '%');
-            })->paginate($limit)
-                ->appends([
-                    'limit' => $limit
-                ]);
+          }
+    $notes = $notes->paginate($limit)
+        ->appends([
+            'limit' => $limit
+        ]);
 
-      }
-
-            $notes = BuyFund::paginate($limit)
-                ->appends([
-                    'limit' => $limit
-                ]);
 
                 $this->data['add_fund_report'] =  $notes;
                 $this->data['search'] = $search;
@@ -44,7 +40,7 @@ class FundController extends Controller
                 return $this->admin_dashboard();
     }
 
-    public function fund_request_done(Request $request, $id)
+    public function fund_request_done(Request $request)
     {
 
        $id= $request->id ; // or any params
@@ -67,8 +63,38 @@ class FundController extends Controller
       return redirect()->back()->with('message', 'Fund request Rejected successfully');
       }
 
+   }
+
+   public function all_fund_reports(Request $request)
+   {
+
+    $limit = $request->limit ? $request->limit : 10;
+    $status = $request->status ? $request->status : null;
+    $search = $request->search ? $request->search : null;
+
+    $notes = BuyFund::paginate($limit)
+        ->appends([
+            'limit' => $limit
+        ]);
 
 
+   if($search <> null && $request->reset!="Reset"){
+    $notes = BuyFund::where(function($q) use($search){
+      $q->Where('txn_no', 'LIKE', '%' . $search . '%')
+      ->orWhere('bdate', 'LIKE', '%' . $search . '%')
+      ->orWhere('user_id_fk', 'LIKE', '%' . $search . '%')
+      ->orWhere('status', 'LIKE', '%' . $search . '%')
 
+      ->orWhere('type', 'LIKE', '%' . $search . '%');
+    })->paginate($limit)
+        ->appends([
+            'limit' => $limit
+        ]);
+
+}
+$this->data['all_fund_reports'] =  $notes;
+$this->data['search'] = $search;
+$this->data['page'] = 'admin.fund.all-fund-reports';
+return $this->admin_dashboard();
    }
 }

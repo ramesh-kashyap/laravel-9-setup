@@ -256,7 +256,7 @@
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="#" class="menu-link">
+                                <a href="{{ route('admin.All-fund-Report') }}" class="menu-link">
                                     <div data-i18n="Preview">Fund Report</div>
                                 </a>
                             </li>
@@ -297,13 +297,13 @@
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{ route('admin.withdraw-history-users') }}"
+                                <a href="{{ route('admin.withdraw-rejected-history') }}"
                                     class="menu-link">
                                     <div data-i18n="withdraw history">Rejected Withdrawal</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{ asset('') }}admin/html/vertical-menu-template-semi-dark/app-access-permission.html"
+                                <a href="{{ route('admin.withdraw-approved-history') }}"
                                     class="menu-link">
                                     <div data-i18n="withdraw history">Approved Withdrawal</div>
                                 </a>
@@ -321,21 +321,18 @@
 
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons ti ti-layout-grid"></i>
-                            <div data-i18n="Support management">Support </div>
+                            <i class='menu-icon tf-icons ti ti-layout-grid'></i>
+                            <div data-i18n="Support">Support </div>
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                    <div data-i18n="Support query">Support Query</div>
+                                <a href="{{ route('admin.support-query') }}"
+                                    class="menu-link">
+                                    <div data-i18n="support query">Support Query</div>
                                 </a>
                             </li>
-
                         </ul>
                     </li>
-
-
-
 
 
 

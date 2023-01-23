@@ -76,15 +76,13 @@ class WithdrawController extends Controller
 
    }
 
-    public function withdraw_history_user(Request $request)
+    public function withdraw_rejected_history(Request $request)
     {
         $limit = $request->limit ? $request->limit : 10;
         $status = $request->status ? $request->status : null;
         $search = $request->search ? $request->search : null;
-        $notes = Withdraw::paginate($limit)
-            ->appends([
-                'limit' => $limit
-            ]);
+        $notes = Withdraw::where('status','Failed')->orderBy('id', 'DESC');
+
 
        if($search <> null && $request->reset!="Reset"){
         $notes = $notes->where(function($q) use($search){
@@ -94,16 +92,54 @@ class WithdrawController extends Controller
           ->orWhere('status', 'LIKE', '%' . $search . '%')
           ->orWhere('txn_id', 'LIKE', '%' . $search . '%')
           ->orWhere('wdate', 'LIKE', '%' . $search . '%');
-        })->paginate($limit)
-            ->appends([
-                'limit' => $limit
-            ]);
+        });
 
   }
 
+  $notes = $notes->paginate($limit)
+  ->appends([
+      'limit' => $limit
+  ]);
+
+
         $this->data['withdraw_request_user'] =  $notes;
         $this->data['search'] = $search;
-        $this->data['page'] = 'admin.withdraw.withdraw-history-users';
+        $this->data['page'] = 'admin.withdraw.withdraw-rejected-history';
+        return $this->admin_dashboard();
+
+
+
+    }
+
+    public function withdraw_approved_history(Request $request)
+    {
+        $limit = $request->limit ? $request->limit : 10;
+        $status = $request->status ? $request->status : null;
+        $search = $request->search ? $request->search : null;
+        $notes = Withdraw::where('status','Approved')->orderBy('id', 'DESC');
+
+
+       if($search <> null && $request->reset!="Reset"){
+        $notes = $notes->where(function($q) use($search){
+          $q->Where('user_id_fk', 'LIKE', '%' . $search . '%')
+          ->orWhere('amount', 'LIKE', '%' . $search . '%')
+          ->orWhere('user_id_fk', 'LIKE', '%' . $search . '%')
+          ->orWhere('status', 'LIKE', '%' . $search . '%')
+          ->orWhere('txn_id', 'LIKE', '%' . $search . '%')
+          ->orWhere('wdate', 'LIKE', '%' . $search . '%');
+        });
+
+  }
+
+  $notes = $notes->paginate($limit)
+  ->appends([
+      'limit' => $limit
+  ]);
+
+
+        $this->data['withdraw_request_user'] =  $notes;
+        $this->data['search'] = $search;
+        $this->data['page'] = 'admin.withdraw.withdraw-approved-history';
         return $this->admin_dashboard();
 
 

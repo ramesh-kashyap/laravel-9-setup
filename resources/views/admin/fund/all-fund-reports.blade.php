@@ -17,7 +17,7 @@
 
             <div class="card-datatable text-nowrap">
                 <form class="form-repeater" style="margin-left: 14px;" method="GET"
-                    action="{{ route('admin.add-fund-list') }}">
+                    action="{{ route('admin.All-fund-Report') }}">
                     <div data-repeater-list="group-a">
                         <div data-repeater-item="">
                             <div class="row">
@@ -42,7 +42,7 @@
                                     <button class="btn btn-primary waves-effect waves-light search-button">
                                         Submit
                                     </button>
-                                    <a href="{{ route('admin.add-fund-list') }}"
+                                    <a href="{{ route('admin.All-fund-Report') }}"
                                         class="btn btn-danger waves-effect waves-light search-button">
                                         Reset
                                     </a>
@@ -66,15 +66,15 @@
                                 <th>Transaction ID.</th>
                                 <th>Status</th>
                                 <th>Payment Mode</th>
-                                <th>Action</th>
+
 
                             </tr>
                         </thead>
                         <tbody>
-                            <?php if(is_array($add_fund_report) || is_object($add_fund_report)){ ?>
+                            <?php if(is_array($all_fund_reports) || is_object($all_fund_reports)){ ?>
 
-                            <?php $cnt =$add_fund_report->perPage() * ($add_fund_report->currentPage() - 1); ?>
-                            @foreach($add_fund_report as $value)
+                            <?php $cnt =$all_fund_reports->perPage() * ($all_fund_reports->currentPage() - 1); ?>
+                            @foreach($all_fund_reports as $value)
                                 <tr>
                                     <td><?= $cnt += 1?></td>
 
@@ -86,9 +86,6 @@
 
                                     <td ><span class="badge bg-{{ $value->status == 'Approved' ? 'success' : 'danger' }}">{{ $value->status }}</span></td>
                                     <td>{{ $value->type }}</td>
-
-                                    <td><a href="{{asset('admin/fund_request_done?id=')}}{{$value->id}}&user_Id={{$value->user_id}}&withdraw_status=success" class='btn btn-success'>Success</a> <a href="{{asset('admin/fund_request_done?id=')}}{{$value->id}}&user_Id={{$value->user_id}}&withdraw_status=blocked" class='btn btn-danger'>Reject</a></td>
-
                                 </tr>
                             @endforeach
 
@@ -100,7 +97,7 @@
                     <br>
 
 
-                    {{ $add_fund_report->withQueryString()->links() }}
+                    {{ $all_fund_reports->withQueryString()->links() }}
 
                 </div>
             </div>
